@@ -2,22 +2,58 @@
 #
 #
 import os
+import json
 import subprocess
+import collections
+import shutil
+from XMLParser import XMLParser
 
 outdir = "render"
 infile_svg = "pygc.svg"
+#output_width = 1920	# 1080p
+output_width = 1280		# 720p
+try:
+	shutil.rmtree(outdir)
+except FileNotFoundError:
+	pass
 try:
 	os.mkdir(outdir)
 except FileExistsError:
 	pass
 
+xml = XMLParser().parsefile(infile_svg)
+layer_names = { }
+for layer_node in xml.search("g", **{ "inkscape:groupmode": "layer" }):
+	layer_id = layer_node["id"]
+	layer_name = layer_node["inkscape:label"]
+	layer_names[layer_id] = layer_name
+
 stdout = subprocess.check_output([ "inkscape", "--query-all", infile_svg ], stderr = subprocess.DEVNULL)
-layers = [ line.split(",") for line in stdout.decode("ascii").rstrip("\r\n").split("\n") if line.startswith("layer") ]
+layer_query = [ line.split(",") for line in stdout.decode("ascii").rstrip("\r\n").split("\n") if line.startswith("layer") ]
 
-for (itemid, offsetx, offsety, width, height) in layers:
-	subprocess.check_call(["inkscape", "-i", itemid, "-j", infile_svg, "--export-png=%s/%s.png" % (outdir, itemid) ])
-#	inkscape presentation.svg -i layer1 -j -C --export-png=layer1.png
-	print(itemid)
-#print(layers)
+Layer = collections.namedtuple("Layer", [ "gid", "name", "offsetx", "offsety", "width", "height" ])
+layers = { }
+for (layer_id, offsetx, offsety, width, height) in layer_query:
+	layer_name = layer_names.get(layer_id)
+	if layer_name is not None:
+		offsetx = float(offsetx)
+		offsety = float(offsety)
+		width = float(width)
+		height = float(height)
+		layer = Layer(gid = layer_id, name = layer_name, offsetx = offsetx, offsety = offsety, width = width, height = height)		
+		layers[layer_name] = layer
 
+page_layer = layers["_page"]
+dpi = output_width / page_layer.width * 96
+layer_info = { }
+for layer in layers.values():
+	if layer.name.startswith("_"):
+		continue
+	layer_info[layer.name] = {
+		"geometry":	[ layer.width, layer.height ],
+		"offset":	[ layer.offsetx, layer.offsety ],
+	}
+	subprocess.check_call(["inkscape", "-i", layer.gid, "-j", infile_svg, "--export-dpi=%f" % (dpi), "--export-png=%s/%s.png" % (outdir, layer.name) ])
 
+with open(outdir + "/layers.json", "w") as f:
+	print(json.dumps(layer_info), file = f)
