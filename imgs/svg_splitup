@@ -1,0 +1,23 @@
+#!/usr/bin/python3
+#
+#
+import os
+import subprocess
+
+outdir = "render"
+infile_svg = "pygc.svg"
+try:
+	os.mkdir(outdir)
+except FileExistsError:
+	pass
+
+stdout = subprocess.check_output([ "inkscape", "--query-all", infile_svg ], stderr = subprocess.DEVNULL)
+layers = [ line.split(",") for line in stdout.decode("ascii").rstrip("\r\n").split("\n") if line.startswith("layer") ]
+
+for (itemid, offsetx, offsety, width, height) in layers:
+	subprocess.check_call(["inkscape", "-i", itemid, "-j", infile_svg, "--export-png=%s/%s.png" % (outdir, itemid) ])
+#	inkscape presentation.svg -i layer1 -j -C --export-png=layer1.png
+	print(itemid)
+#print(layers)
+
+
