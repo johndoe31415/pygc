@@ -25,7 +25,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -70,27 +70,37 @@
      fit-margin-left="0"
      fit-margin-right="0"
      fit-margin-bottom="0"
-     showguides="false"
+     showguides="true"
      inkscape:guide-bbox="true"
-     inkscape:zoom="0.5"
-     inkscape:cx="219.10932"
-     inkscape:cy="30.258028"
+     inkscape:zoom="64.000001"
+     inkscape:cx="310.49194"
+     inkscape:cy="253.01895"
      inkscape:window-x="1600"
      inkscape:window-y="27"
      inkscape:window-maximized="1"
-     inkscape:current-layer="layer3"
+     inkscape:current-layer="layer15"
      inkscape:snap-bbox="false"
      inkscape:snap-object-midpoints="true"
      inkscape:snap-center="true">
     <sodipodi:guide
-       position="-0.20935581,461.83891"
-       orientation="1,0"
-       id="guide5057"
+       position="-435,0"
+       orientation="0,1"
+       id="guide1050"
        inkscape:locked="false" />
     <sodipodi:guide
-       position="-16.120397,432.11039"
+       position="-516,432"
        orientation="0,1"
-       id="guide5059"
+       id="guide1052"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="0,794.78802"
+       orientation="1,0"
+       id="guide1054"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="767.99999,454.25"
+       orientation="1,0"
+       id="guide1056"
        inkscape:locked="false" />
   </sodipodi:namedview>
   <g
@@ -105,6 +115,19 @@
        height="432"
        x="0"
        y="0" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer12"
+     inkscape:label="_clip-ahoriz-skygnd"
+     style="display:inline">
+    <rect
+       style="display:inline;opacity:1;fill:none;fill-opacity:1;stroke:#ffffff;stroke-width:0.1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect1163"
+       width="625.39996"
+       height="412.76648"
+       x="0.48630819"
+       y="33.761951" />
   </g>
   <path
      style="opacity:1;fill:none;fill-opacity:1;stroke:#ffffff;stroke-width:0.37457788;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
@@ -150,7 +173,7 @@
      style="display:inline">
     <path
        style="display:inline;fill:none;fill-rule:evenodd;stroke:#f1c40f;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="m 205.06097,213.50401 90.86322,-33.94113 90.86322,35.00179"
+       d="m 220.21746,213.50401 90.86322,-33.94113 90.86322,35.00179"
        id="path1287"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="ccc" />
@@ -163,36 +186,30 @@
     <circle
        style="display:inline;opacity:1;fill:#000000;fill-opacity:0.16818183;stroke:none;stroke-width:1.58354437;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        id="path1291"
-       cx="296.03006"
-       cy="342.26346"
+       cx="314.13715"
+       cy="330.63379"
        r="91.258408" />
     <circle
        style="display:inline;opacity:1;fill:none;fill-opacity:0.16818183;stroke:#ffffff;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        id="path1291-2"
-       cx="296.03006"
-       cy="342.26346"
+       cx="314.13715"
+       cy="330.63379"
        r="37.454773" />
-    <path
-       style="fill:#ffffff;fill-rule:evenodd;stroke:none;stroke-width:0.72807378px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 296.03006,336.11039 c -0.74962,-0.006 -1.59977,1.8728 -1.59977,1.8728 v 2.20555 l -5.01547,1.81592 v 1.81591 h 5.01547 v 2.48143 l -1.65097,1.42202 v 0.69252 h 6.50148 v -0.69252 l -1.65097,-1.42202 v -2.48143 h 5.01546 v -1.81591 l -5.01546,-1.81592 v -2.20555 c 0,0 -0.82665,-1.86709 -1.59977,-1.8728 z"
-       id="path1937"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="sccccccccccccccccs" />
     <circle
        style="display:inline;opacity:1;fill:none;fill-opacity:0.16818183;stroke:#ffffff;stroke-width:0.32282466;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        id="path1291-2-6-7"
-       cx="296.03006"
-       cy="342.26346"
+       cx="314.13715"
+       cy="330.63379"
        r="2.3439248" />
     <path
        style="fill:#ffffff;fill-rule:evenodd;stroke:#ffffff;stroke-width:0.76957315px;stroke-linecap:butt;stroke-linejoin:round;stroke-opacity:1"
-       d="m 293.37011,246.4507 2.65995,5.87924 2.65995,-5.87924 z"
+       d="m 311.47721,234.82104 2.65995,5.87924 2.65995,-5.87924 z"
        id="path2021"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="cccc" />
     <path
        style="display:inline;fill:none;fill-rule:evenodd;stroke:#ffffff;stroke-width:1px;stroke-linecap:round;stroke-linejoin:miter;stroke-opacity:1"
-       d="M 203.875,342.26346 H 196.75"
+       d="m 221.9821,330.6338 h -7.125"
        id="path2032"
        inkscape:connector-curvature="0"
        inkscape:transform-center-x="95.717557"
@@ -204,7 +221,7 @@
        inkscape:transform-center-x="4.784316e-06"
        inkscape:transform-center-y="95.717554"
        id="use2041"
-       transform="rotate(-90,296.03005,342.26346)"
+       transform="rotate(-90,314.13715,330.6338)"
        width="100%"
        height="100%" />
     <use
@@ -214,7 +231,7 @@
        inkscape:transform-center-x="-95.717547"
        inkscape:transform-center-y="2.1701701e-06"
        id="use2043"
-       transform="rotate(180,296.03005,342.26346)"
+       transform="rotate(180,314.13715,330.63378)"
        width="100%"
        height="100%" />
     <use
@@ -224,7 +241,7 @@
        inkscape:transform-center-x="67.682535"
        inkscape:transform-center-y="-67.682528"
        id="use2045"
-       transform="rotate(45,296.03005,342.26346)"
+       transform="rotate(45,314.13716,330.6338)"
        width="100%"
        height="100%" />
     <use
@@ -234,7 +251,7 @@
        inkscape:transform-center-x="67.682535"
        inkscape:transform-center-y="67.682532"
        id="use2047"
-       transform="rotate(-45,296.03005,342.26346)"
+       transform="rotate(-45,314.13716,330.6338)"
        width="100%"
        height="100%" />
     <use
@@ -244,7 +261,7 @@
        inkscape:transform-center-x="-67.682525"
        inkscape:transform-center-y="67.682532"
        id="use2049"
-       transform="rotate(-135,296.03005,342.26346)"
+       transform="rotate(-135,314.13716,330.6338)"
        width="100%"
        height="100%" />
     <use
@@ -254,7 +271,7 @@
        inkscape:transform-center-x="-67.682525"
        inkscape:transform-center-y="-67.682528"
        id="use2051"
-       transform="rotate(135,296.03005,342.26346)"
+       transform="rotate(135,314.13716,330.6338)"
        width="100%"
        height="100%" />
   </g>
@@ -266,30 +283,30 @@
     <circle
        style="display:inline;opacity:1;fill:none;fill-opacity:0.16818183;stroke:#ffffff;stroke-width:0.32282466;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        id="path1291-2-6"
-       cx="267.54895"
-       cy="342.26346"
+       cx="285.65604"
+       cy="330.63379"
        r="2.3439248" />
     <circle
        style="display:inline;opacity:1;fill:none;fill-opacity:0.16818183;stroke:#ffffff;stroke-width:0.32282466;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        id="path1291-2-6-1"
-       cx="281.78949"
-       cy="342.26346"
+       cx="299.89658"
+       cy="330.63379"
        r="2.3439248" />
     <circle
        style="display:inline;opacity:1;fill:none;fill-opacity:0.16818183;stroke:#ffffff;stroke-width:0.32282466;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        id="path1291-2-6-9"
-       cx="324.51114"
-       cy="342.26346"
+       cx="342.61823"
+       cy="330.63379"
        r="2.3439248" />
     <circle
        style="display:inline;opacity:1;fill:none;fill-opacity:0.16818183;stroke:#ffffff;stroke-width:0.32282466;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        id="path1291-2-6-9-0"
-       cx="310.2706"
-       cy="342.26346"
+       cx="328.37769"
+       cy="330.63379"
        r="2.3439248" />
     <path
        style="display:inline;fill:none;fill-rule:evenodd;stroke:#d405d4;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="m 296.03005,367.53438 v 41.5"
+       d="m 314.13715,355.90472 v 41.5"
        id="path3250-8"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="cc"
@@ -297,7 +314,8 @@
        inkscape:transform-center-y="45.807973" />
     <g
        style="display:inline"
-       id="g3398">
+       id="g3398"
+       transform="translate(18.107105,-11.629665)">
       <path
          inkscape:transform-center-y="-45.807969"
          inkscape:transform-center-x="0.18171583"
@@ -327,7 +345,7 @@
      style="display:inline">
     <path
        style="display:inline;fill:none;fill-rule:evenodd;stroke:#ffffff;stroke-width:1px;stroke-linecap:round;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 296.03006,251.55845 v 7.125"
+       d="m 314.13716,239.92879 v 7.125"
        id="path2032-2"
        inkscape:connector-curvature="0"
        inkscape:transform-center-y="-87.14251" />
@@ -337,7 +355,7 @@
        xlink:href="#path2032-2"
        inkscape:transform-center-y="-85.818619"
        id="use2160"
-       transform="rotate(10,296.03006,342.26346)"
+       transform="rotate(10,314.13717,330.6338)"
        width="100%"
        height="100%"
        inkscape:transform-center-x="-15.132138" />
@@ -347,7 +365,7 @@
        xlink:href="#path2032-2"
        inkscape:transform-center-y="-81.887173"
        id="use2160-2"
-       transform="rotate(20,296.03006,342.26346)"
+       transform="rotate(20,314.13716,330.6338)"
        width="100%"
        height="100%"
        inkscape:transform-center-x="-29.804492" />
@@ -357,7 +375,7 @@
        xlink:href="#path2032-2"
        inkscape:transform-center-y="-75.467626"
        id="use2160-8"
-       transform="rotate(30,296.03006,342.26346)"
+       transform="rotate(30,314.13715,330.63379)"
        width="100%"
        height="100%"
        inkscape:transform-center-x="-43.571253" />
@@ -367,7 +385,7 @@
        xlink:href="#path2032-2"
        inkscape:transform-center-y="-66.755036"
        id="use2160-2-9"
-       transform="rotate(40,296.03006,342.26346)"
+       transform="rotate(40,314.13716,330.6338)"
        width="100%"
        height="100%"
        inkscape:transform-center-x="-56.014123" />
@@ -377,7 +395,7 @@
        xlink:href="#path2032-2"
        inkscape:transform-center-y="-56.014124"
        id="use2160-7"
-       transform="rotate(50,296.03006,342.26346)"
+       transform="rotate(50,314.13717,330.63379)"
        width="100%"
        height="100%"
        inkscape:transform-center-x="-66.755033" />
@@ -387,7 +405,7 @@
        xlink:href="#path2032-2"
        inkscape:transform-center-y="-43.571254"
        id="use2160-2-3"
-       transform="rotate(60,296.03006,342.26346)"
+       transform="rotate(60,314.13715,330.6338)"
        width="100%"
        height="100%"
        inkscape:transform-center-x="-75.467625" />
@@ -397,7 +415,7 @@
        xlink:href="#path2032-2"
        inkscape:transform-center-y="-29.804492"
        id="use2160-8-6"
-       transform="rotate(70,296.03006,342.26346)"
+       transform="rotate(70,314.13716,330.6338)"
        width="100%"
        height="100%"
        inkscape:transform-center-x="-81.88717" />
@@ -407,7 +425,7 @@
        xlink:href="#path2032-2"
        inkscape:transform-center-y="-15.132138"
        id="use2160-2-9-1"
-       transform="rotate(80,296.03006,342.26346)"
+       transform="rotate(80,314.13716,330.6338)"
        width="100%"
        height="100%"
        inkscape:transform-center-x="-85.818616" />
@@ -417,7 +435,7 @@
        xlink:href="#path2032-2"
        inkscape:transform-center-y="6.2010518e-06"
        id="use2160-29"
-       transform="rotate(90,296.03006,342.26346)"
+       transform="rotate(90,314.13716,330.6338)"
        width="100%"
        height="100%"
        inkscape:transform-center-x="-87.142502" />
@@ -427,7 +445,7 @@
        xlink:href="#path2032-2"
        inkscape:transform-center-y="15.132142"
        id="use2160-2-31"
-       transform="rotate(100,296.03006,342.26346)"
+       transform="rotate(100,314.13718,330.6338)"
        width="100%"
        height="100%"
        inkscape:transform-center-x="-85.818613" />
@@ -437,7 +455,7 @@
        xlink:href="#path2032-2"
        inkscape:transform-center-y="29.804497"
        id="use2160-8-9"
-       transform="rotate(110,296.03006,342.26346)"
+       transform="rotate(110,314.13716,330.63379)"
        width="100%"
        height="100%"
        inkscape:transform-center-x="-81.887167" />
@@ -446,7 +464,7 @@
        y="0"
        xlink:href="#path2032-2"
        id="use2160-2-9-4"
-       transform="rotate(120,296.03006,342.26346)"
+       transform="rotate(120,314.13715,330.63379)"
        width="100%"
        height="100%"
        inkscape:transform-center-x="-75.467622"
@@ -457,7 +475,7 @@
        xlink:href="#path2032-2"
        inkscape:transform-center-y="56.014129"
        id="use2160-7-7"
-       transform="rotate(130,296.03006,342.26346)"
+       transform="rotate(130,314.13715,330.6338)"
        width="100%"
        height="100%"
        inkscape:transform-center-x="-66.755029" />
@@ -467,7 +485,7 @@
        xlink:href="#path2032-2"
        inkscape:transform-center-y="66.755039"
        id="use2160-2-3-8"
-       transform="rotate(140,296.03006,342.26346)"
+       transform="rotate(140,314.13715,330.63379)"
        width="100%"
        height="100%"
        inkscape:transform-center-x="-56.01412" />
@@ -477,7 +495,7 @@
        xlink:href="#path2032-2"
        inkscape:transform-center-y="75.46763"
        id="use2160-8-6-4"
-       transform="rotate(150,296.03006,342.26346)"
+       transform="rotate(150,314.13716,330.63379)"
        width="100%"
        height="100%"
        inkscape:transform-center-x="-43.571247" />
@@ -486,7 +504,7 @@
        y="0"
        xlink:href="#path2032-2"
        id="use2160-2-9-1-5"
-       transform="rotate(160,296.03006,342.26346)"
+       transform="rotate(160,314.13715,330.6338)"
        width="100%"
        height="100%"
        inkscape:transform-center-x="-29.804487"
@@ -496,7 +514,7 @@
        y="0"
        xlink:href="#path2032-2"
        id="use2160-0"
-       transform="rotate(170,296.03007,342.26346)"
+       transform="rotate(170,314.13717,330.63379)"
        width="100%"
        height="100%"
        inkscape:transform-center-x="-15.13214"
@@ -507,7 +525,7 @@
        xlink:href="#path2032-2"
        inkscape:transform-center-y="87.142489"
        id="use2160-2-36"
-       transform="rotate(180,296.03008,342.26345)"
+       transform="rotate(180,314.13718,330.63377)"
        width="100%"
        height="100%"
        inkscape:transform-center-x="-2.6481215e-05" />
@@ -517,7 +535,7 @@
        xlink:href="#path2032-2"
        inkscape:transform-center-y="85.818603"
        id="use2160-8-1"
-       transform="rotate(-170,296.03008,342.26345)"
+       transform="rotate(-170,314.13718,330.63378)"
        width="100%"
        height="100%"
        inkscape:transform-center-x="15.13211" />
@@ -527,7 +545,7 @@
        xlink:href="#path2032-2"
        inkscape:transform-center-y="81.887183"
        id="use2160-2-9-0"
-       transform="rotate(-160,296.03008,342.26346)"
+       transform="rotate(-160,314.13717,330.6338)"
        width="100%"
        height="100%"
        inkscape:transform-center-x="29.804468" />
@@ -537,7 +555,7 @@
        xlink:href="#path2032-2"
        inkscape:transform-center-y="75.467635"
        id="use2160-7-6"
-       transform="rotate(-150,296.03008,342.26346)"
+       transform="rotate(-150,314.13718,330.63379)"
        width="100%"
        height="100%"
        inkscape:transform-center-x="43.571232" />
@@ -547,7 +565,7 @@
        xlink:href="#path2032-2"
        inkscape:transform-center-y="66.755051"
        id="use2160-2-3-3"
-       transform="rotate(-140,296.03008,342.26346)"
+       transform="rotate(-140,314.13717,330.63379)"
        width="100%"
        height="100%"
        inkscape:transform-center-x="56.014105" />
@@ -557,7 +575,7 @@
        xlink:href="#path2032-2"
        inkscape:transform-center-y="56.014142"
        id="use2160-8-6-2"
-       transform="rotate(-130,296.03008,342.26346)"
+       transform="rotate(-130,314.13717,330.6338)"
        width="100%"
        height="100%"
        inkscape:transform-center-x="66.755017" />
@@ -567,7 +585,7 @@
        xlink:href="#path2032-2"
        inkscape:transform-center-y="43.571273"
        id="use2160-2-9-1-0"
-       transform="rotate(-120,296.03008,342.26346)"
+       transform="rotate(-120,314.13717,330.63379)"
        width="100%"
        height="100%"
        inkscape:transform-center-x="75.467612" />
@@ -577,7 +595,7 @@
        xlink:href="#path2032-2"
        inkscape:transform-center-y="29.804504"
        id="use2160-29-6"
-       transform="rotate(-110,296.03008,342.26346)"
+       transform="rotate(-110,314.13718,330.63379)"
        width="100%"
        height="100%"
        inkscape:transform-center-x="81.887158" />
@@ -587,7 +605,7 @@
        xlink:href="#path2032-2"
        inkscape:transform-center-y="15.132153"
        id="use2160-2-31-1"
-       transform="rotate(-100,296.03008,342.26346)"
+       transform="rotate(-100,314.1372,330.6338)"
        width="100%"
        height="100%"
        inkscape:transform-center-x="85.818608" />
@@ -597,7 +615,7 @@
        xlink:href="#path2032-2"
        inkscape:transform-center-y="1.664669e-05"
        id="use2160-8-9-5"
-       transform="rotate(-90,296.03008,342.26346)"
+       transform="rotate(-90,314.13718,330.6338)"
        width="100%"
        height="100%"
        inkscape:transform-center-x="87.142501" />
@@ -606,7 +624,7 @@
        y="0"
        xlink:href="#path2032-2"
        id="use2160-2-9-4-5"
-       transform="rotate(-80,296.03008,342.26346)"
+       transform="rotate(-80,314.13718,330.6338)"
        width="100%"
        height="100%"
        inkscape:transform-center-x="85.818614"
@@ -616,7 +634,7 @@
        y="0"
        xlink:href="#path2032-2"
        id="use2160-7-7-4"
-       transform="rotate(-70,296.03008,342.26346)"
+       transform="rotate(-70,314.13718,330.6338)"
        width="100%"
        height="100%"
        inkscape:transform-center-x="81.887172"
@@ -626,7 +644,7 @@
        y="0"
        xlink:href="#path2032-2"
        id="use2160-2-3-8-7"
-       transform="rotate(-60,296.03008,342.26346)"
+       transform="rotate(-60,314.13717,330.6338)"
        width="100%"
        height="100%"
        inkscape:transform-center-x="75.467632"
@@ -636,7 +654,7 @@
        y="0"
        xlink:href="#path2032-2"
        id="use2160-8-6-4-6"
-       transform="rotate(-50,296.03008,342.26346)"
+       transform="rotate(-50,314.13719,330.63379)"
        width="100%"
        height="100%"
        inkscape:transform-center-x="66.755037"
@@ -646,7 +664,7 @@
        y="0"
        xlink:href="#path2032-2"
        id="use2160-2-9-1-5-5"
-       transform="rotate(-40,296.03008,342.26346)"
+       transform="rotate(-40,314.13718,330.6338)"
        width="100%"
        height="100%"
        inkscape:transform-center-x="56.014131"
@@ -657,7 +675,7 @@
        xlink:href="#path2032-2"
        inkscape:transform-center-y="-75.46763"
        id="use2160-6"
-       transform="rotate(-30,296.03006,342.26345)"
+       transform="rotate(-30,314.13715,330.63378)"
        width="100%"
        height="100%"
        inkscape:transform-center-x="43.571253" />
@@ -667,7 +685,7 @@
        xlink:href="#path2032-2"
        inkscape:transform-center-y="-81.887171"
        id="use2160-2-93"
-       transform="rotate(-20,296.03007,342.26345)"
+       transform="rotate(-20,314.13717,330.63379)"
        width="100%"
        height="100%"
        inkscape:transform-center-x="29.804495" />
@@ -677,13 +695,13 @@
        xlink:href="#path2032-2"
        inkscape:transform-center-y="-85.81862"
        id="use2160-74"
-       transform="rotate(-10,296.03006,342.26345)"
+       transform="rotate(-10,314.13717,330.63379)"
        width="100%"
        height="100%"
        inkscape:transform-center-x="15.132139" />
     <path
        style="display:inline;fill:none;fill-rule:evenodd;stroke:#ffffff;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="m 303.93552,251.90361 -0.31049,3.54894"
+       d="m 322.04262,240.27395 -0.31049,3.54894"
        id="path2032-2-5"
        inkscape:connector-curvature="0"
        inkscape:transform-center-y="-88.58538"
@@ -696,7 +714,7 @@
        inkscape:transform-center-x="-23.015167"
        inkscape:transform-center-y="-85.893757"
        id="use2659"
-       transform="rotate(10,296.03005,342.26346)"
+       transform="rotate(10,314.13716,330.6338)"
        width="100%"
        height="100%" />
     <use
@@ -706,7 +724,7 @@
        inkscape:transform-center-x="-37.580808"
        inkscape:transform-center-y="-80.592296"
        id="use2659-0"
-       transform="rotate(20,296.03005,342.26345)"
+       transform="rotate(20,314.13715,330.63379)"
        width="100%"
        height="100%" />
     <use
@@ -716,7 +734,7 @@
        inkscape:transform-center-x="-51.004575"
        inkscape:transform-center-y="-72.842079"
        id="use2659-6"
-       transform="rotate(30,296.03005,342.26345)"
+       transform="rotate(30,314.13714,330.63378)"
        width="100%"
        height="100%" />
     <use
@@ -726,7 +744,7 @@
        inkscape:transform-center-x="-62.878594"
        inkscape:transform-center-y="-62.878592"
        id="use2659-1"
-       transform="rotate(40,296.03005,342.26345)"
+       transform="rotate(40,314.13715,330.63379)"
        width="100%"
        height="100%" />
     <use
@@ -736,7 +754,7 @@
        inkscape:transform-center-x="-80.592292"
        inkscape:transform-center-y="-37.580803"
        id="use2659-5"
-       transform="rotate(60,296.03005,342.26345)"
+       transform="rotate(60,314.13714,330.63379)"
        width="100%"
        height="100%" />
     <use
@@ -746,7 +764,7 @@
        inkscape:transform-center-x="-72.842078"
        inkscape:transform-center-y="-51.004571"
        id="use2659-9"
-       transform="rotate(50,296.03005,342.26345)"
+       transform="rotate(50,314.13716,330.63378)"
        width="100%"
        height="100%" />
     <use
@@ -756,7 +774,7 @@
        inkscape:transform-center-x="-85.89375"
        inkscape:transform-center-y="-23.015161"
        id="use2659-4"
-       transform="rotate(70,296.03005,342.26345)"
+       transform="rotate(70,314.13715,330.63379)"
        width="100%"
        height="100%" />
     <use
@@ -766,7 +784,7 @@
        inkscape:transform-center-x="-88.58537"
        inkscape:transform-center-y="-7.7502153"
        id="use2659-90"
-       transform="rotate(80,296.03005,342.26345)"
+       transform="rotate(80,314.13715,330.63379)"
        width="100%"
        height="100%" />
     <use
@@ -776,7 +794,7 @@
        inkscape:transform-center-x="-88.585368"
        inkscape:transform-center-y="7.7502162"
        id="use2659-91"
-       transform="rotate(90,296.03005,342.26345)"
+       transform="rotate(90,314.13715,330.63379)"
        width="100%"
        height="100%" />
     <use
@@ -786,7 +804,7 @@
        inkscape:transform-center-x="-85.893746"
        inkscape:transform-center-y="23.015161"
        id="use2659-0-7"
-       transform="rotate(100,296.03005,342.26345)"
+       transform="rotate(100,314.13717,330.63379)"
        width="100%"
        height="100%" />
     <use
@@ -796,7 +814,7 @@
        inkscape:transform-center-x="-80.592285"
        inkscape:transform-center-y="37.580802"
        id="use2659-6-7"
-       transform="rotate(110,296.03005,342.26345)"
+       transform="rotate(110,314.13715,330.63378)"
        width="100%"
        height="100%" />
     <use
@@ -806,7 +824,7 @@
        inkscape:transform-center-x="-72.842068"
        inkscape:transform-center-y="51.00457"
        id="use2659-1-1"
-       transform="rotate(120,296.03005,342.26345)"
+       transform="rotate(120,314.13714,330.63378)"
        width="100%"
        height="100%" />
     <use
@@ -816,7 +834,7 @@
        inkscape:transform-center-x="-51.004561"
        inkscape:transform-center-y="72.842072"
        id="use2659-5-1"
-       transform="rotate(140,296.03005,342.26345)"
+       transform="rotate(140,314.13714,330.63378)"
        width="100%"
        height="100%" />
     <use
@@ -826,7 +844,7 @@
        inkscape:transform-center-x="-62.878582"
        inkscape:transform-center-y="62.878589"
        id="use2659-9-5"
-       transform="rotate(130,296.03005,342.26345)"
+       transform="rotate(130,314.13714,330.63379)"
        width="100%"
        height="100%" />
     <use
@@ -836,7 +854,7 @@
        inkscape:transform-center-x="-37.580791"
        inkscape:transform-center-y="80.592286"
        id="use2659-4-9"
-       transform="rotate(150,296.03005,342.26345)"
+       transform="rotate(150,314.13715,330.63378)"
        width="100%"
        height="100%" />
     <use
@@ -846,7 +864,7 @@
        inkscape:transform-center-x="-23.01515"
        inkscape:transform-center-y="85.893744"
        id="use2659-90-7"
-       transform="rotate(160,296.03005,342.26345)"
+       transform="rotate(160,314.13714,330.63379)"
        width="100%"
        height="100%" />
     <use
@@ -856,7 +874,7 @@
        inkscape:transform-center-x="-7.7502023"
        inkscape:transform-center-y="88.585364"
        id="use2659-7"
-       transform="rotate(170,296.03005,342.26345)"
+       transform="rotate(170,314.13715,330.63378)"
        width="100%"
        height="100%" />
     <use
@@ -866,7 +884,7 @@
        inkscape:transform-center-x="7.750228"
        inkscape:transform-center-y="88.585361"
        id="use2659-0-6"
-       transform="rotate(-180,296.03005,342.26345)"
+       transform="rotate(-180,314.13715,330.63377)"
        width="100%"
        height="100%" />
     <use
@@ -876,7 +894,7 @@
        inkscape:transform-center-x="23.015173"
        inkscape:transform-center-y="85.893739"
        id="use2659-6-73"
-       transform="rotate(-170,296.03005,342.26345)"
+       transform="rotate(-170,314.13715,330.63378)"
        width="100%"
        height="100%" />
     <use
@@ -886,7 +904,7 @@
        inkscape:transform-center-x="37.580815"
        inkscape:transform-center-y="80.592278"
        id="use2659-1-6"
-       transform="rotate(-160,296.03005,342.26345)"
+       transform="rotate(-160,314.13714,330.63379)"
        width="100%"
        height="100%" />
     <use
@@ -896,7 +914,7 @@
        inkscape:transform-center-x="62.8786"
        inkscape:transform-center-y="62.878575"
        id="use2659-5-5"
-       transform="rotate(-140,296.03005,342.26345)"
+       transform="rotate(-140,314.13714,330.63378)"
        width="100%"
        height="100%" />
     <use
@@ -906,7 +924,7 @@
        inkscape:transform-center-x="51.004581"
        inkscape:transform-center-y="72.842063"
        id="use2659-9-6"
-       transform="rotate(-150,296.03005,342.26345)"
+       transform="rotate(-150,314.13715,330.63378)"
        width="100%"
        height="100%" />
     <use
@@ -916,7 +934,7 @@
        inkscape:transform-center-x="72.842084"
        inkscape:transform-center-y="51.004552"
        id="use2659-4-3"
-       transform="rotate(-130,296.03005,342.26345)"
+       transform="rotate(-130,314.13714,330.63379)"
        width="100%"
        height="100%" />
     <use
@@ -926,7 +944,7 @@
        inkscape:transform-center-x="80.592298"
        inkscape:transform-center-y="37.580785"
        id="use2659-90-9"
-       transform="rotate(-120,296.03005,342.26345)"
+       transform="rotate(-120,314.13714,330.63378)"
        width="100%"
        height="100%" />
     <use
@@ -936,7 +954,7 @@
        inkscape:transform-center-x="85.893771"
        inkscape:transform-center-y="23.01517"
        id="use2659-48"
-       transform="rotate(-110,296.03005,342.26347)"
+       transform="rotate(-110,314.13715,330.6338)"
        width="100%"
        height="100%" />
     <use
@@ -946,7 +964,7 @@
        inkscape:transform-center-x="88.585383"
        inkscape:transform-center-y="7.7502272"
        id="use2659-0-1"
-       transform="rotate(-100,296.03006,342.26347)"
+       transform="rotate(-100,314.13718,330.63381)"
        width="100%"
        height="100%" />
     <use
@@ -956,7 +974,7 @@
        inkscape:transform-center-x="88.585384"
        inkscape:transform-center-y="-7.7502064"
        id="use2659-6-2"
-       transform="rotate(-90,296.03006,342.26347)"
+       transform="rotate(-90,314.13716,330.63381)"
        width="100%"
        height="100%" />
     <use
@@ -966,7 +984,7 @@
        inkscape:transform-center-x="85.893771"
        inkscape:transform-center-y="-23.015165"
        id="use2659-1-9"
-       transform="rotate(-80,296.03005,342.26347)"
+       transform="rotate(-80,314.13715,330.63381)"
        width="100%"
        height="100%" />
     <use
@@ -976,7 +994,7 @@
        inkscape:transform-center-x="72.842089"
        inkscape:transform-center-y="-51.004578"
        id="use2659-5-3"
-       transform="rotate(-60,296.03005,342.26347)"
+       transform="rotate(-60,314.13714,330.63381)"
        width="100%"
        height="100%" />
     <use
@@ -986,7 +1004,7 @@
        inkscape:transform-center-x="80.592309"
        inkscape:transform-center-y="-37.580807"
        id="use2659-9-9"
-       transform="rotate(-70,296.03005,342.26347)"
+       transform="rotate(-70,314.13715,330.63381)"
        width="100%"
        height="100%" />
     <use
@@ -996,7 +1014,7 @@
        inkscape:transform-center-x="62.878601"
        inkscape:transform-center-y="-62.8786"
        id="use2659-4-0"
-       transform="rotate(-50,296.03005,342.26347)"
+       transform="rotate(-50,314.13716,330.6338)"
        width="100%"
        height="100%" />
     <use
@@ -1006,7 +1024,7 @@
        inkscape:transform-center-x="51.004578"
        inkscape:transform-center-y="-72.842086"
        id="use2659-90-8"
-       transform="rotate(-40,296.03005,342.26347)"
+       transform="rotate(-40,314.13715,330.63381)"
        width="100%"
        height="100%" />
     <use
@@ -1016,7 +1034,7 @@
        inkscape:transform-center-x="37.580801"
        inkscape:transform-center-y="-80.592301"
        id="use2659-8"
-       transform="rotate(-30,296.03005,342.26346)"
+       transform="rotate(-30,314.13714,330.63379)"
        width="100%"
        height="100%" />
     <use
@@ -1026,7 +1044,7 @@
        inkscape:transform-center-x="23.01516"
        inkscape:transform-center-y="-85.893758"
        id="use2659-0-5"
-       transform="rotate(-20,296.03006,342.26347)"
+       transform="rotate(-20,314.13716,330.63381)"
        width="100%"
        height="100%" />
     <use
@@ -1036,174 +1054,174 @@
        inkscape:transform-center-x="7.7502145"
        inkscape:transform-center-y="-88.585375"
        id="use2659-6-0"
-       transform="rotate(-10,296.03009,342.26349)"
+       transform="rotate(-10,314.1372,330.63383)"
        width="100%"
        height="100%" />
     <text
        id="text5053-9-5-63-8-3-9"
-       y="273.55341"
-       x="290.81766"
+       y="261.92374"
+       x="308.92474"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.31547165px;line-height:125%;font-family:'Droid Sans';-inkscape-font-specification:'Droid Sans';letter-spacing:0px;word-spacing:0px;display:inline;fill:#ecf0f1;fill-opacity:1;stroke:none;stroke-width:1.44295597px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"
        inkscape:transform-center-x="5.9122495e-06"
        inkscape:transform-center-y="-75.021577"><tspan
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Bitstream Vera Sans Mono';-inkscape-font-specification:'Bitstream Vera Sans Mono';stroke-width:1.44295597px"
-         y="273.55341"
-         x="290.81766"
+         y="261.92374"
+         x="308.92474"
          id="tspan5051-8-2-50-0-6-6"
          sodipodi:role="line">N</tspan></text>
     <text
        id="text5053-9-5-63-8-3-9-3"
-       y="-364.74011"
-       x="336.77206"
+       y="-382.8472"
+       x="325.1424"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.31547165px;line-height:125%;font-family:'Droid Sans';-inkscape-font-specification:'Droid Sans';letter-spacing:0px;word-spacing:0px;display:inline;fill:#ecf0f1;fill-opacity:1;stroke:none;stroke-width:1.44295597px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"
        inkscape:transform-center-x="-75.021577"
        inkscape:transform-center-y="-5.2644547e-06"
        transform="rotate(90)"><tspan
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Bitstream Vera Sans Mono';-inkscape-font-specification:'Bitstream Vera Sans Mono';stroke-width:1.44295597px"
-         y="-364.74011"
-         x="336.77206"
+         y="-382.8472"
+         x="325.1424"
          id="tspan5051-8-2-50-0-6-6-8"
          sodipodi:role="line">E</tspan></text>
     <text
        id="text5053-9-5-63-8-3-9-5"
-       y="-410.97351"
-       x="-301.2594"
+       y="-399.34384"
+       x="-319.36649"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.31547165px;line-height:125%;font-family:'Droid Sans';-inkscape-font-specification:'Droid Sans';letter-spacing:0px;word-spacing:0px;display:inline;fill:#ecf0f1;fill-opacity:1;stroke:none;stroke-width:1.44295597px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"
        inkscape:transform-center-x="-5.5411558e-06"
        inkscape:transform-center-y="75.021578"
        transform="scale(-1)"><tspan
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Bitstream Vera Sans Mono';-inkscape-font-specification:'Bitstream Vera Sans Mono';stroke-width:1.44295597px"
-         y="-410.97351"
-         x="-301.2594"
+         y="-399.34384"
+         x="-319.36649"
          id="tspan5051-8-2-50-0-6-6-6"
          sodipodi:role="line">S</tspan></text>
     <text
        id="text5053-9-5-63-8-3-9-1"
-       y="227.32001"
-       x="-347.47589"
+       y="245.42712"
+       x="-335.84622"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.31547165px;line-height:125%;font-family:'Droid Sans';-inkscape-font-specification:'Droid Sans';letter-spacing:0px;word-spacing:0px;display:inline;fill:#ecf0f1;fill-opacity:1;stroke:none;stroke-width:1.44295597px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"
        inkscape:transform-center-x="75.021578"
        inkscape:transform-center-y="6.1889506e-06"
        transform="rotate(-90)"><tspan
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Bitstream Vera Sans Mono';-inkscape-font-specification:'Bitstream Vera Sans Mono';stroke-width:1.44295597px"
-         y="227.32001"
-         x="-347.47589"
+         y="245.42712"
+         x="-335.84622"
          id="tspan5051-8-2-50-0-6-6-1"
          sodipodi:role="line">W</tspan></text>
     <text
        id="text5053-9-5-63-8-3-9-59"
-       y="76.683762"
-       x="423.52765"
+       y="57.558624"
+       x="433.39404"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.20026779px;line-height:125%;font-family:'Droid Sans';-inkscape-font-specification:'Droid Sans';letter-spacing:0px;word-spacing:0px;display:inline;fill:#ecf0f1;fill-opacity:1;stroke:none;stroke-width:1.10002232px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"
        inkscape:transform-center-x="-38.260777"
        inkscape:transform-center-y="-66.269674"
        transform="rotate(30)"><tspan
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Bitstream Vera Sans Mono';-inkscape-font-specification:'Bitstream Vera Sans Mono';stroke-width:1.10002232px"
-         y="76.683762"
-         x="423.52765"
+         y="57.558624"
+         x="433.39404"
          id="tspan5051-8-2-50-0-6-6-84"
          sodipodi:role="line">3</tspan></text>
     <text
        id="text5053-9-5-63-8-3-9-59-3"
-       y="-156.94789"
-       x="440.45026"
+       y="-178.44394"
+       x="439.43222"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.20026779px;line-height:125%;font-family:'Droid Sans';-inkscape-font-specification:'Droid Sans';letter-spacing:0px;word-spacing:0px;display:inline;fill:#ecf0f1;fill-opacity:1;stroke:none;stroke-width:1.10002232px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"
        inkscape:transform-center-x="-66.26964"
        inkscape:transform-center-y="-38.260834"
        transform="rotate(60)"><tspan
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Bitstream Vera Sans Mono';-inkscape-font-specification:'Bitstream Vera Sans Mono';stroke-width:1.10002232px"
-         y="-156.94789"
-         x="440.45026"
+         y="-178.44394"
+         x="439.43222"
          id="tspan5051-8-2-50-0-6-6-84-0"
          sodipodi:role="line">6</tspan></text>
     <text
        id="text5053-9-5-63-8-3-9-59-3-4"
-       y="-490.51685"
-       x="166.88684"
+       y="-501.38373"
+       x="148.31194"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.20026779px;line-height:125%;font-family:'Droid Sans';-inkscape-font-specification:'Droid Sans';letter-spacing:0px;word-spacing:0px;display:inline;fill:#ecf0f1;fill-opacity:1;stroke:none;stroke-width:1.10002232px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"
        inkscape:transform-center-x="-66.152923"
        inkscape:transform-center-y="38.399132"
        transform="rotate(116.95961)"><tspan
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Bitstream Vera Sans Mono';-inkscape-font-specification:'Bitstream Vera Sans Mono';stroke-width:1.10002232px"
-         y="-490.51685"
-         x="166.88684"
+         y="-501.38373"
+         x="148.31194"
          id="tspan5051-8-2-50-0-6-6-84-0-4"
          sodipodi:role="line">12</tspan></text>
     <text
        id="text5053-9-5-63-8-3-9-59-3-4-3"
-       y="-519.81659"
-       x="-65.491325"
+       y="-519.94012"
+       x="-87.011108"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.20026779px;line-height:125%;font-family:'Droid Sans';-inkscape-font-specification:'Droid Sans';letter-spacing:0px;word-spacing:0px;display:inline;fill:#ecf0f1;fill-opacity:1;stroke:none;stroke-width:1.10002232px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"
        inkscape:transform-center-x="-38.110276"
        inkscape:transform-center-y="66.369873"
        transform="rotate(146.95961)"><tspan
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Bitstream Vera Sans Mono';-inkscape-font-specification:'Bitstream Vera Sans Mono';stroke-width:1.10002232px"
-         y="-519.81659"
-         x="-65.491325"
+         y="-519.94012"
+         x="-87.011108"
          id="tspan5051-8-2-50-0-6-6-84-0-4-1"
          sodipodi:role="line">15</tspan></text>
     <text
        id="text5053-9-5-63-8-3-9-59-3-4-7"
-       y="-242.40628"
-       x="-422.94998"
+       y="-223.83138"
+       x="-433.81686"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.20026779px;line-height:125%;font-family:'Droid Sans';-inkscape-font-specification:'Droid Sans';letter-spacing:0px;word-spacing:0px;display:inline;fill:#ecf0f1;fill-opacity:1;stroke:none;stroke-width:1.10002232px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"
        inkscape:transform-center-x="38.399134"
        inkscape:transform-center-y="66.152922"
        transform="rotate(-153.04039)"><tspan
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Bitstream Vera Sans Mono';-inkscape-font-specification:'Bitstream Vera Sans Mono';stroke-width:1.10002232px"
-         y="-242.40628"
-         x="-422.94998"
+         y="-223.83138"
+         x="-433.81686"
          id="tspan5051-8-2-50-0-6-6-84-0-4-5"
          sodipodi:role="line">21</tspan></text>
     <text
        id="text5053-9-5-63-8-3-9-59-3-4-9"
-       y="-10.028114"
-       x="-452.24973"
+       y="11.49167"
+       x="-452.37326"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.20026779px;line-height:125%;font-family:'Droid Sans';-inkscape-font-specification:'Droid Sans';letter-spacing:0px;word-spacing:0px;display:inline;fill:#ecf0f1;fill-opacity:1;stroke:none;stroke-width:1.10002232px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"
        inkscape:transform-center-x="66.369859"
        inkscape:transform-center-y="38.110277"
        transform="rotate(-123.04039)"><tspan
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Bitstream Vera Sans Mono';-inkscape-font-specification:'Bitstream Vera Sans Mono';stroke-width:1.10002232px"
-         y="-10.028114"
-         x="-452.24973"
+         y="11.49167"
+         x="-452.37326"
          id="tspan5051-8-2-50-0-6-6-84-0-4-6"
          sodipodi:role="line">24</tspan></text>
     <text
        id="text5053-9-5-63-8-3-9-59-3-4-2"
-       y="347.43054"
-       x="-174.83942"
+       y="358.29742"
+       x="-156.26451"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.20026779px;line-height:125%;font-family:'Droid Sans';-inkscape-font-specification:'Droid Sans';letter-spacing:0px;word-spacing:0px;display:inline;fill:#ecf0f1;fill-opacity:1;stroke:none;stroke-width:1.10002232px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"
        inkscape:transform-center-x="66.152924"
        inkscape:transform-center-y="-38.399134"
        transform="rotate(-63.04039)"><tspan
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Bitstream Vera Sans Mono';-inkscape-font-specification:'Bitstream Vera Sans Mono';stroke-width:1.10002232px"
-         y="347.43054"
-         x="-174.83942"
+         y="358.29742"
+         x="-156.26451"
          id="tspan5051-8-2-50-0-6-6-84-0-4-17"
          sodipodi:role="line">30</tspan></text>
     <text
        id="text5053-9-5-63-8-3-9-59-3-4-8"
-       y="376.73029"
-       x="57.538746"
+       y="376.85382"
+       x="79.058533"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.20026779px;line-height:125%;font-family:'Droid Sans';-inkscape-font-specification:'Droid Sans';letter-spacing:0px;word-spacing:0px;display:inline;fill:#ecf0f1;fill-opacity:1;stroke:none;stroke-width:1.10002232px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"
        inkscape:transform-center-x="38.110267"
        inkscape:transform-center-y="-66.369856"
        transform="rotate(-33.04039)"><tspan
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Bitstream Vera Sans Mono';-inkscape-font-specification:'Bitstream Vera Sans Mono';stroke-width:1.10002232px"
-         y="376.73029"
-         x="57.538746"
+         y="376.85382"
+         x="79.058533"
          id="tspan5051-8-2-50-0-6-6-84-0-4-57"
          sodipodi:role="line">33</tspan></text>
   </g>
@@ -1214,10 +1232,22 @@
      style="display:inline">
     <path
        style="display:inline;fill:none;fill-rule:evenodd;stroke:#d405d4;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="m 296.03005,321.63846 v 41.25"
+       d="m 314.13715,310.0088 v 41.25"
        id="path3250"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="cc" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer13"
+     inkscape:label="compass-fix-plane"
+     style="display:inline">
+    <path
+       style="display:inline;fill:#ffffff;fill-rule:evenodd;stroke:none;stroke-width:0.72807378px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 314.13716,324.48073 c -0.74962,-0.006 -1.59977,1.8728 -1.59977,1.8728 v 2.20555 l -5.01547,1.81592 v 1.81591 h 5.01547 v 2.48143 l -1.65097,1.42202 v 0.69252 h 6.50148 v -0.69252 l -1.65097,-1.42202 v -2.48143 h 5.01546 V 330.375 l -5.01546,-1.81592 v -2.20555 c 0,0 -0.82665,-1.86709 -1.59977,-1.8728 z"
+       id="path1937"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="sccccccccccccccccs" />
   </g>
   <g
      inkscape:groupmode="layer"
@@ -1226,7 +1256,7 @@
      style="display:inline">
     <g
        id="g1268"
-       transform="translate(2.5441942,-65.118718)">
+       transform="translate(19.789113,-64.94953)">
       <text
          id="text5053-9-5-63-8-3"
          y="148.9037"
@@ -1407,19 +1437,105 @@
   </g>
   <g
      inkscape:groupmode="layer"
-     id="layer1"
-     inkscape:label="_no-render"
+     id="layer14"
+     inkscape:label="_clip-ahoriz-degs"
      style="display:inline">
     <rect
-       style="opacity:1;fill:#2c3e50;fill-opacity:1;stroke:#ecf0f1;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       style="display:inline;opacity:1;fill:none;fill-opacity:1;stroke:#ffffff;stroke-width:0.06737891;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect1163-3"
+       width="621.96045"
+       height="188.42891"
+       x="0.10042807"
+       y="37.712776" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer11"
+     inkscape:label="right-menu"
+     style="display:inline">
+    <rect
+       style="display:inline;opacity:1;fill:#2c3e50;fill-opacity:1;stroke:#ecf0f1;stroke-width:1.39489627;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect5049-5"
+       width="406.01721"
+       height="149.506"
+       x="36.929657"
+       y="-772.66608"
+       transform="rotate(90)" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12px;line-height:125%;font-family:'Droid Sans';-inkscape-font-specification:'Droid Sans';letter-spacing:0px;word-spacing:0px;display:inline;fill:#ecf0f1;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="631.94342"
+       y="375.44565"
+       id="text5053-5-5-9"><tspan
+         sodipodi:role="line"
+         id="tspan5051-4-8-3"
+         x="631.94342"
+         y="375.44565"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Bitstream Vera Sans Mono';-inkscape-font-specification:'Bitstream Vera Sans Mono'">XPDR</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12px;line-height:125%;font-family:'Droid Sans';-inkscape-font-specification:'Droid Sans';letter-spacing:0px;word-spacing:0px;display:inline;fill:#ecf0f1;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="632.4162"
+       y="408.11099"
+       id="text5053-5-5-9-8"><tspan
+         sodipodi:role="line"
+         id="tspan5051-4-8-3-3"
+         x="632.4162"
+         y="408.11099"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Bitstream Vera Sans Mono';-inkscape-font-specification:'Bitstream Vera Sans Mono'">UTC</tspan></text>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer10"
+     inkscape:label="top-menu"
+     style="display:inline">
+    <rect
+       style="display:inline;opacity:1;fill:#2c3e50;fill-opacity:1;stroke:#ecf0f1;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        id="rect5049"
        width="776.28326"
        height="40.188236"
        x="-3.3456511"
        y="-3.4560299" />
+    <path
+       style="display:inline;fill:none;fill-rule:evenodd;stroke:#ecf0f1;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 141.58848,35.926613 V -4.7835372"
+       id="path5055"
+       inkscape:connector-curvature="0" />
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12px;line-height:125%;font-family:'Droid Sans';-inkscape-font-specification:'Droid Sans';letter-spacing:0px;word-spacing:0px;fill:#ecf0f1;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12px;line-height:125%;font-family:'Droid Sans';-inkscape-font-specification:'Droid Sans';letter-spacing:0px;word-spacing:0px;display:inline;fill:#ecf0f1;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="730.99884"
+       y="13.52584"
+       id="text5053-97"><tspan
+         sodipodi:role="line"
+         id="tspan5051-2"
+         x="730.99884"
+         y="13.52584"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Bitstream Vera Sans Mono';-inkscape-font-specification:'Bitstream Vera Sans Mono'">COM1</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12px;line-height:125%;font-family:'Droid Sans';-inkscape-font-specification:'Droid Sans';letter-spacing:0px;word-spacing:0px;display:inline;fill:#ecf0f1;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="725.79779"
+       y="27.891342"
+       id="text5053-5-5"><tspan
+         sodipodi:role="line"
+         id="tspan5051-4-8"
+         x="725.79779"
+         y="27.891342"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Bitstream Vera Sans Mono';-inkscape-font-specification:'Bitstream Vera Sans Mono'">COM2</tspan></text>
+    <path
+       style="display:inline;fill:none;fill-rule:evenodd;stroke:#ecf0f1;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 623.70798,36.758777 V -3.9513738"
+       id="path5055-3"
+       inkscape:connector-curvature="0" />
+    <path
+       style="display:inline;fill:none;fill-rule:evenodd;stroke:#ecf0f1;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 141.63552,16.46619 H 622.51379"
+       id="path5055-33"
+       inkscape:connector-curvature="0" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12px;line-height:125%;font-family:'Droid Sans';-inkscape-font-specification:'Droid Sans';letter-spacing:0px;word-spacing:0px;display:inline;fill:#ecf0f1;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="2.6430943"
        y="11.853293"
        id="text5053"><tspan
@@ -1428,14 +1544,9 @@
          x="2.6430943"
          y="11.853293"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Bitstream Vera Sans Mono';-inkscape-font-specification:'Bitstream Vera Sans Mono'">NAV1</tspan></text>
-    <path
-       style="fill:none;fill-rule:evenodd;stroke:#ecf0f1;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="M 141.58848,35.926613 V -4.7835372"
-       id="path5055"
-       inkscape:connector-curvature="0" />
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12px;line-height:125%;font-family:'Droid Sans';-inkscape-font-specification:'Droid Sans';letter-spacing:0px;word-spacing:0px;fill:#ecf0f1;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12px;line-height:125%;font-family:'Droid Sans';-inkscape-font-specification:'Droid Sans';letter-spacing:0px;word-spacing:0px;display:inline;fill:#ecf0f1;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="2.2572362"
        y="28.521713"
        id="text5053-5"><tspan
@@ -1444,6 +1555,12 @@
          x="2.2572362"
          y="28.521713"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Bitstream Vera Sans Mono';-inkscape-font-specification:'Bitstream Vera Sans Mono'">NAV2</tspan></text>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer1"
+     inkscape:label="_no-render"
+     style="display:inline">
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12px;line-height:125%;font-family:'Droid Sans';-inkscape-font-specification:'Droid Sans';letter-spacing:0px;word-spacing:0px;fill:#2ecc71;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -1490,28 +1607,6 @@
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Bitstream Vera Sans Mono';-inkscape-font-specification:'Bitstream Vera Sans Mono'">119.10</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12px;line-height:125%;font-family:'Droid Sans';-inkscape-font-specification:'Droid Sans';letter-spacing:0px;word-spacing:0px;fill:#ecf0f1;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="730.99884"
-       y="13.52584"
-       id="text5053-97"><tspan
-         sodipodi:role="line"
-         id="tspan5051-2"
-         x="730.99884"
-         y="13.52584"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Bitstream Vera Sans Mono';-inkscape-font-specification:'Bitstream Vera Sans Mono'">COM1</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12px;line-height:125%;font-family:'Droid Sans';-inkscape-font-specification:'Droid Sans';letter-spacing:0px;word-spacing:0px;fill:#ecf0f1;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="725.79779"
-       y="27.891342"
-       id="text5053-5-5"><tspan
-         sodipodi:role="line"
-         id="tspan5051-4-8"
-         x="725.79779"
-         y="27.891342"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Bitstream Vera Sans Mono';-inkscape-font-specification:'Bitstream Vera Sans Mono'">COM2</tspan></text>
-    <text
-       xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12px;line-height:125%;font-family:'Droid Sans';-inkscape-font-specification:'Droid Sans';letter-spacing:0px;word-spacing:0px;fill:#2ecc71;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="676.15234"
        y="12.751408"
@@ -1554,16 +1649,6 @@
          x="627.46771"
          y="27.371336"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Bitstream Vera Sans Mono';-inkscape-font-specification:'Bitstream Vera Sans Mono'">119.10</tspan></text>
-    <path
-       style="fill:none;fill-rule:evenodd;stroke:#ecf0f1;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="M 623.70798,36.758777 V -3.9513738"
-       id="path5055-3"
-       inkscape:connector-curvature="0" />
-    <path
-       style="fill:none;fill-rule:evenodd;stroke:#ecf0f1;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="M 141.63552,16.46619 H 622.51379"
-       id="path5055-33"
-       inkscape:connector-curvature="0" />
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12px;line-height:125%;font-family:'Droid Sans';-inkscape-font-specification:'Droid Sans';letter-spacing:0px;word-spacing:0px;fill:#2ecc71;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -1653,25 +1738,6 @@
          x="320.44397"
          y="11.206162"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Bitstream Vera Sans Mono';-inkscape-font-specification:'Bitstream Vera Sans Mono';fill:#9b59b6">278°</tspan></text>
-    <rect
-       style="opacity:1;fill:#2c3e50;fill-opacity:1;stroke:#ecf0f1;stroke-width:1.39489627;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-       id="rect5049-5"
-       width="406.01721"
-       height="149.506"
-       x="36.929657"
-       y="-772.66608"
-       transform="rotate(90)" />
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12px;line-height:125%;font-family:'Droid Sans';-inkscape-font-specification:'Droid Sans';letter-spacing:0px;word-spacing:0px;fill:#ecf0f1;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="631.94342"
-       y="375.44565"
-       id="text5053-5-5-9"><tspan
-         sodipodi:role="line"
-         id="tspan5051-4-8-3"
-         x="631.94342"
-         y="375.44565"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Bitstream Vera Sans Mono';-inkscape-font-specification:'Bitstream Vera Sans Mono'">XPDR</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12px;line-height:125%;font-family:'Droid Sans';-inkscape-font-specification:'Droid Sans';letter-spacing:0px;word-spacing:0px;fill:#2ecc71;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -1697,17 +1763,6 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12px;line-height:125%;font-family:'Droid Sans';-inkscape-font-specification:'Droid Sans';letter-spacing:0px;word-spacing:0px;fill:#ecf0f1;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="632.4162"
-       y="408.11099"
-       id="text5053-5-5-9-8"><tspan
-         sodipodi:role="line"
-         id="tspan5051-4-8-3-3"
-         x="632.4162"
-         y="408.11099"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Bitstream Vera Sans Mono';-inkscape-font-specification:'Bitstream Vera Sans Mono'">UTC</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12px;line-height:125%;font-family:'Droid Sans';-inkscape-font-specification:'Droid Sans';letter-spacing:0px;word-spacing:0px;fill:#ecf0f1;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="639.48029"
        y="421.92261"
        id="text5053-9-3-24-4-56"><tspan
@@ -1716,5 +1771,29 @@
          x="639.48029"
          y="421.92261"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Bitstream Vera Sans Mono';-inkscape-font-specification:'Bitstream Vera Sans Mono';fill:#ecf0f1">14:03:57</tspan></text>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer15"
+     inkscape:label="_center_of_rotation"
+     style="display:inline">
+    <circle
+       style="display:inline;opacity:1;fill:none;fill-opacity:1;stroke:#c0392b;stroke-width:1.94880724;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="path1058"
+       cx="311.08069"
+       cy="179.56288"
+       r="0.91844583">
+      <title
+         id="title1086">ahoriz-degs</title>
+    </circle>
+    <circle
+       style="display:inline;opacity:1;fill:none;fill-opacity:1;stroke:#c0392b;stroke-width:1.94880724;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="path1058-3"
+       cx="311.08069"
+       cy="179.56288"
+       r="0.91844583">
+      <title
+         id="title1086-6">ahoriz-skygnd</title>
+    </circle>
   </g>
 </svg>

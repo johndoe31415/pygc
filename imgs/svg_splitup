@@ -28,32 +28,68 @@ for layer_node in xml.search("g", **{ "inkscape:groupmode": "layer" }):
 	layer_name = layer_node["inkscape:label"]
 	layer_names[layer_id] = layer_name
 
+SVGObject = collections.namedtuple("SVGObject", [ "oid", "x", "y", "width", "height" ])
 stdout = subprocess.check_output([ "inkscape", "--query-all", infile_svg ], stderr = subprocess.DEVNULL)
-layer_query = [ line.split(",") for line in stdout.decode("ascii").rstrip("\r\n").split("\n") if line.startswith("layer") ]
+svg_objects = [ ]
+for line in stdout.decode("ascii").rstrip("\r\n").split("\n"):
+	line = line.split(",")
+	(oid, x, y, width, height) = line
+	x = float(x)
+	y = float(y)
+	width = float(width)
+	height = float(height)
+	svgobj = SVGObject(oid = oid, x = x, y = y, width = width, height = height)
+	svg_objects.append(svgobj)
 
-Layer = collections.namedtuple("Layer", [ "gid", "name", "offsetx", "offsety", "width", "height" ])
+svg_objdict = { obj.oid: obj for obj in svg_objects }
+
+Layer = collections.namedtuple("Layer", [ "order", "name", "svgobj", "clip", "cor" ])
+
+def parse_layers(layers, layer_objects, only_clip = False, layer_cors = { }):
+	for svg_object in layer_objects:
+		layer_name = layer_names.get(svg_object.oid)
+		if (layer_name is not None) and (layer_name.startswith("_") == only_clip):
+			layer = Layer(order = len(layers), name = layer_name, svgobj = svg_object, clip = layers.get("_clip-" + layer_name), cor = layer_cors.get(layer_name))
+			layers[layer_name] = layer
+
+layer_cors = { }
+cor_layer_node = xml.searchunique("g", **{ "inkscape:label": "_center_of_rotation"})
+for circlenode in cor_layer_node.circle:
+	svgobj = svg_objdict[circlenode["id"]]
+	corx = svgobj.x + svgobj.width / 2
+	cory = svgobj.y + svgobj.height / 2
+	name = circlenode.title.getcdata()
+	layer_cors[name] = (corx, cory)
+
 layers = { }
-for (layer_id, offsetx, offsety, width, height) in layer_query:
-	layer_name = layer_names.get(layer_id)
-	if layer_name is not None:
-		offsetx = float(offsetx)
-		offsety = float(offsety)
-		width = float(width)
-		height = float(height)
-		layer = Layer(gid = layer_id, name = layer_name, offsetx = offsetx, offsety = offsety, width = width, height = height)		
-		layers[layer_name] = layer
+# Run the same process twice to resolve all clipping areas
+layer_objects = [ obj for obj in svg_objects if obj.oid.startswith("layer") ]
+parse_layers(layers, layer_objects, only_clip = True)
+parse_layers(layers, layer_objects, layer_cors = layer_cors)
 
 page_layer = layers["_page"]
-dpi = output_width / page_layer.width * 96
-layer_info = { }
-for layer in layers.values():
+dpi = output_width / page_layer.svgobj.width * 96
+tpc = dpi / 96		# to-pixel-coefficient
+layer_info = [ ]
+for layer in sorted(layers.values(), key = lambda layer: layer.order):
 	if layer.name.startswith("_"):
 		continue
-	layer_info[layer.name] = {
-		"geometry":	[ layer.width, layer.height ],
-		"offset":	[ layer.offsetx, layer.offsety ],
+	next_layer_info = {
+		"name": layer.name,
+		"dimensions":	[ layer.svgobj.width * tpc, layer.svgobj.height * tpc ],
+		"offset":		[ layer.svgobj.x * tpc, layer.svgobj.y * tpc ],
 	}
-	subprocess.check_call(["inkscape", "-i", layer.gid, "-j", infile_svg, "--export-dpi=%f" % (dpi), "--export-png=%s/%s.png" % (outdir, layer.name) ])
+	if layer.clip is not None:
+		next_layer_info["clip"] = {
+			"dimensions":	[ layer.clip.svgobj.width * tpc, layer.clip.svgobj.height * tpc ],
+			"offset":		[ layer.clip.svgobj.x * tpc, layer.clip.svgobj.y * tpc ],
+		}
+	if layer.cor is not None:
+		next_layer_info["cor"] = [ layer.cor[0] * tpc, layer.cor[1] * tpc ]
+	layer_info.append(next_layer_info)
+	print(next_layer_info)
+	subprocess.check_call(["inkscape", "-i", layer.svgobj.oid, "-j", infile_svg, "--export-dpi=%f" % (dpi), "--export-png=%s/%s.png" % (outdir, layer.name) ], stderr = subprocess.DEVNULL)
+	print("~" * 120)
 
 with open(outdir + "/layers.json", "w") as f:
 	print(json.dumps(layer_info), file = f)
