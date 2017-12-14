@@ -1,11 +1,16 @@
 import cairo
+import collections
 from geo import Vector2d
+
+_FontExtents = collections.namedtuple("FontExtents", [ "ascent", "descent", "height", "max_x_advance", "max_y_advance" ])
+_TextExtents = collections.namedtuple("TextExtents", [ "x_bearing", "y_bearing", "width", "height", "x_advance", "y_advance" ])
 
 class CairoContext(object):
 	def __init__(self, dimensions, surface, cairoctx):
 		self._dimensions = dimensions
 		self._surface = surface
 		self._cairoctx = cairoctx
+		self._font_extents = None
 
 	@property
 	def dimensions(self):
@@ -57,11 +62,40 @@ class CairoContext(object):
 		else:
 			# Black by default
 			self._cairoctx.set_source_rgb(0, 0, 0)
+		self._cairoctx.select_font_face(fontname, cairo.FONT_SLANT_NORMAL, cairo.FONT_WEIGHT_NORMAL)
 		self._cairoctx.set_font_size(fontsize)
-#		self._cairoctx.set_font_face(fontname, cairo.FONT_SLANT_NORMAL, cairo.FONT_WEIGHT_NORMAL)
-#		self._cairoctx.set_font_face(fontname)
+		self._font_extents = _FontExtents(*self._cairoctx.font_extents())
 
-	def text(self, pos, text):
+	def text(self, pos, text, anchor = "tl"):
+		# Anchor is one of top/center/bottom - left/center/right combinations
+		assert(len(anchor) == 2)
+		(valign, halign) = anchor
+		assert(valign in "tcb")
+		assert(halign in "lcr")
+
+		text_extents = _TextExtents(*self._cairoctx.text_extents(text))
+		if valign == "b":
+			# Baseline, Cairo default
+			pass
+		elif valign == "t":
+			# Top left
+			pos -= Vector2d(0, text_extents.y_bearing)
+		elif valign == "c":
+			# Center left
+			pos -= Vector2d(0, text_extents.y_bearing / 2)
+		else:
+			raise Exception(NotImplemented)
+		if halign == "l":
+			# Left-aligned, Cairo default
+			pass
+		elif halign == "r":
+			# Right-alighed
+			pos -= Vector2d(text_extents.x_advance, 0)
+		elif valign == "c":
+			# Center alignment
+			pos -= Vector2d(text_extents.x_advance / 2, 0)
+		else:
+			raise Exception(NotImplemented)
 		self._cairoctx.move_to(pos.x, pos.y)
 		self._cairoctx.show_text(text)
 

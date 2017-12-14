@@ -67,7 +67,7 @@ class GlassCockpit(object):
 
 	def _render_textelements(self, screen):
 		screen.font_select("Sans", 22, fontcolor = (1, 1, 1))
-		screen.text(self._pois["ias"], "%.0f" % ((self._data["pos"]["ias"])))
+		screen.text(self._pois["ias"], "%.0f" % ((self._data["pos"]["ias"])), anchor = "cr")
 
 	def render(self, screen):
 		for element in self._elements:
