@@ -56,23 +56,42 @@ class GlassCockpit(object):
 		self._autoconfig["pixel_per_deg_deviation"] = abs((self._pois["leftmost-cdi-dot"] - self._pois["rightmost-cdi-dot"]).x / 8)
 		self._autoconfig["speedindicator_pixel_per_kt"] = abs((self._pois["speedindicator-top"] - self._pois["speedindicator-bottom"]).y / 50)
 
+
 	def _speedindicator_tics_text(self, element, at_offset):
 		element.font_select("Nimbus Sans L", 14, fontcolor = self._COLORS["ias_text"])
-		mid_speed = int(self._data["pos"]["ias"] // 10) * 10
-		speed_offset = mid_speed - 30
+		center_speed = int(self._data["pos"]["ias"] // 10) * 10
+		speed_offset = center_speed - 30
 		for i in range(8):
 			speed = speed_offset + (10 * i)
 			if speed < 0:
 				continue
-
 			translation = Vector2d(0, (self._data["pos"]["ias"] % 10) * self._autoconfig["speedindicator_pixel_per_kt"])
 			element.text((self._pois["speedindicator-top"] - at_offset) + (Vector2d(0, self._autoconfig["speedindicator_pixel_per_kt"]) * (10 * (6 - i))) + translation, str(speed), anchor = "cr")
+
+	def _determine_clipping_ias_bar(self, element, color):
+		min_shown_speed = self._data["pos"]["ias"] - 30
+		max_shown_speed = min_shown_speed + 60
+		(bar_show_min, bar_show_max) = self._data["ias_bars"][color]
+
+		if (bar_show_min > max_shown_speed) or (bar_show_max < min_shown_speed):
+			# Don't render at all
+			return None
+		else:
+			overlap_speed = (max(bar_show_min, min_shown_speed), min(bar_show_max, max_shown_speed))
+			clip_speed_bottom = overlap_speed[0] - min_shown_speed
+			clip_speed_top = max_shown_speed - overlap_speed[1]
+#			print("%10s: SPD [%3d %3d], RNG [%3d %3d], OVL [%3d %3d], CLIP TOP %3d, BTM %3d" % (color, min_shown_speed, max_shown_speed, bar_show_min, bar_show_max, overlap_speed[0], overlap_speed[1], clip_speed_top, clip_speed_bottom))
+			clip_px_top = clip_speed_top * self._autoconfig["speedindicator_pixel_per_kt"]
+			clip_px_bottom = clip_speed_bottom * self._autoconfig["speedindicator_pixel_per_kt"]
+			clip = Box2d(element.clip.base + Vector2d(0, clip_px_top), element.clip.dimensions - Vector2d(0, clip_px_top + clip_px_bottom))
+			return clip
 
 	def _determine_renderopts(self, element):
 		clip = element.clip
 		translation = None
 		rotation_rad = None
 		clipped_callback = None
+		do_draw = True
 
 		if element.name in [ "ahoriz-skygnd", "ahoriz-degs" ]:
 			translation = Vector2d(0, self._autoconfig["pixel_per_deg_pitch"] * self._data["pos"]["pitch_angle_deg"])
@@ -94,7 +113,12 @@ class GlassCockpit(object):
 			clipped_callback = self._speedindicator_tics_text
 		elif element.name == "speedindicator-tics":
 			translation = Vector2d(0, (self._data["pos"]["ias"] % 10) * self._autoconfig["speedindicator_pixel_per_kt"])
-		return (clip, translation, rotation_rad, clipped_callback)
+		elif element.name.startswith("speedindicator-bar-"):
+			color = element.name[19:]
+			clip = self._determine_clipping_ias_bar(element, color)
+			if clip is None:
+				do_draw = False
+		return (clip, translation, rotation_rad, clipped_callback, do_draw)
 
 	def feed_data(self, data):
 		self._data = data
@@ -120,10 +144,11 @@ class GlassCockpit(object):
 
 	def render(self, screen):
 		for element in self._elements:
-			(clip, translation, rotation_rad, clipped_callback) = self._determine_renderopts(element)
-			offset = element.offset
-			if translation is not None:
-				offset += translation
-			screen.blit(element.cctx, offset = offset, clip = clip, rotation_rad = rotation_rad, center_of_rotation = element.center_of_rotation, clipped_callback = clipped_callback)
+			(clip, translation, rotation_rad, clipped_callback, do_draw) = self._determine_renderopts(element)
+			if do_draw:
+				offset = element.offset
+				if translation is not None:
+					offset += translation
+				screen.blit(element.cctx, offset = offset, clip = clip, rotation_rad = rotation_rad, center_of_rotation = element.center_of_rotation, clipped_callback = clipped_callback)
 
 		self._render_textelements(screen)

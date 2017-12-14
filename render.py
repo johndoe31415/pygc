@@ -48,6 +48,13 @@ instrument_data = {
 	"xpdr": {
 		"squawk":			7003,
 	},
+	"ias_bars": {
+		"white":			[0, 100],		# flaps permitted until V_FE
+		"red":				[0, 60],		# stall speed V_S
+		"green":			[60, 150],		# design maneuvering speed
+		"yellow":			[150, 220],		# maximum structural crusining speed V_NO to never exceed
+		"redwhite":			[220, 9999],	# never exceed V_NE
+	},
 }
 glasscockpit.feed_data(instrument_data)
 

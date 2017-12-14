@@ -24,4 +24,4 @@ class Box2d(object):
 		return self.v0 + (self._dimensions / 2)
 
 	def __repr__(self):
-		return "Box<%s, %s>" % (self.v0, self.v1)
+		return "Box<base %s, dim %s>" % (self.base, self.dimensions)
