@@ -21,6 +21,10 @@ class CairoContext(object):
 		return self._surface
 
 	@classmethod
+	def wrap(cls, dimensions, cairoctx):
+		return cls(dimensions = dimensions, surface = None, cairoctx = cairoctx)
+
+	@classmethod
 	def create(cls, dimensions):
 		surface = cairo.ImageSurface(cairo.FORMAT_ARGB32, dimensions.x, dimensions.y)
 		cairoctx = cairo.Context(surface)

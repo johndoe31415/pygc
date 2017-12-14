@@ -21,6 +21,9 @@ class GlassCockpit(object):
 		"ias_text":				Color.from_rgb_int(0xffffff),
 		"active_freq_text":		Color.from_rgb_int(0x2ecc71),
 		"standby_freq_text":	Color.from_rgb_int(0xecf0f1),
+
+		"hdgbug-text":			Color.from_rgb_int(0x05d5cb),
+		"crs-text":				Color.from_rgb_int(0xd405d4),
 	}
 
 	def __init__(self, config):
@@ -145,8 +148,10 @@ class GlassCockpit(object):
 		screen.font_select("Nimbus Sans L", 22, fontcolor = self._COLORS["ias_text"])
 		screen.text(self._pois["hdg-text"], "%.0f°" % ((self._data["pos"]["heading_deg"])), anchor = "cc")
 
-		screen.font_select("Nimbus Sans L", 14, fontcolor = self._COLORS["ias_text"])
+		screen.font_select("Nimbus Sans L", 14, fontcolor = self._COLORS["hdgbug-text"])
 		screen.text(self._pois["hdgbug-text"], "%.0f°" % ((self._data["ap"]["hdgbug_deg"])), anchor = "bl")
+
+		screen.font_select("Nimbus Sans L", 14, fontcolor = self._COLORS["crs-text"])
 		screen.text(self._pois["crs-text"], "%.0f°" % ((self._data["vor1"]["obs"])), anchor = "bl")
 
 	def render(self, screen):
@@ -159,3 +164,6 @@ class GlassCockpit(object):
 				screen.blit(element.cctx, offset = offset, clip = clip, rotation_rad = rotation_rad, center_of_rotation = element.center_of_rotation, clipped_callback = clipped_callback)
 
 		self._render_textelements(screen)
+
+	def render_direct(self, cairo_context):
+		return self.render(cwrap.CairoContext.wrap(Vector2d(1280, 720), cairo_context))
