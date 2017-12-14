@@ -10,6 +10,7 @@ _GCElement = collections.namedtuple("GCElement", [ "name", "offset", "dimensions
 class GlassCockpit(object):
 	def __init__(self, config):
 		self._config = config
+		self._autoconfig = { }
 		self._data = { }
 		self._elements = [ ]
 		self._load_elements("imgs/render/")
@@ -17,7 +18,7 @@ class GlassCockpit(object):
 	def _load_elements(self, basedir):
 		with open(basedir + "layers.json") as f:
 			data = json.loads(f.read())
-		for element in data:
+		for element in data["layers"]:
 			name = element["name"]
 			offset = Vector2d(*element["offset"])
 			dimensions = Vector2d(*element["dimensions"])
@@ -35,26 +36,28 @@ class GlassCockpit(object):
 			gcelement = _GCElement(name = name, offset = offset, dimensions = dimensions, clip = clip, center_of_rotation = center_of_rotation, cctx = cctx)
 			self._elements.append(gcelement)
 
+		pois = { name: Vector2d(*poi) for (name, poi) in data["pois"].items() }
+		self._autoconfig["pixel_per_deg_pitch"] = abs((pois["pitch-40deg"] - pois["pitch-0deg"]).y / 40)
+		self._autoconfig["pixel_per_deg_deviation"] = abs((pois["leftmost-cdi-dot"] - pois["rightmost-cdi-dot"]).x / 8)
+
 	def _determine_renderopts(self, name):
 		translation = None
 		rotation_rad = None
 
 		if name in [ "ahoriz-skygnd", "ahoriz-degs" ]:
-			pixel_per_deg_pitch = 124 / 30
-			translation = Vector2d(0, pixel_per_deg_pitch * self._data["pos"]["pitch_angle_deg"])
+			translation = Vector2d(0, self._autoconfig["pixel_per_deg_pitch"] * self._data["pos"]["pitch_angle_deg"])
 			rotation_rad = self._data["pos"]["roll_angle_deg"] / 180 * math.pi
 		elif name == "compass-rot":
 			rotation_rad = -self._data["pos"]["heading_deg"] / 180 * math.pi
 		elif name in [ "compass-obs", "compass-obs-center" ]:
 			rotation_rad = (self._data["vor1"]["obs"] - self._data["pos"]["heading_deg"]) / 180 * math.pi
 			if name == "compass-obs-center":
-				pixel_per_deg_deviation = 47 / 4
 				deviation_deg = self._data["vor1"]["deviation_deg"]
 				if deviation_deg < -4:
 					deviation_deg = -4
 				elif deviation_deg > 4:
 					deviation_deg = 4
-				translation = Vector2d(deviation_deg * pixel_per_deg_deviation, 0)
+				translation = Vector2d(deviation_deg * self._autoconfig["pixel_per_deg_deviation"], 0)
 		return (translation, rotation_rad)
 
 	def feed_data(self, data):

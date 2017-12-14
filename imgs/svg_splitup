@@ -52,14 +52,20 @@ def parse_layers(layers, layer_objects, only_clip = False, layer_cors = { }):
 			layer = Layer(order = len(layers), name = layer_name, svgobj = svg_object, clip = layers.get("_clip-" + layer_name), cor = layer_cors.get(layer_name))
 			layers[layer_name] = layer
 
-layer_cors = { }
-cor_layer_node = xml.searchunique("g", **{ "inkscape:label": "_center_of_rotation"})
-for circlenode in cor_layer_node.circle:
-	svgobj = svg_objdict[circlenode["id"]]
-	corx = svgobj.x + svgobj.width / 2
-	cory = svgobj.y + svgobj.height / 2
-	name = circlenode.title.getcdata()
-	layer_cors[name] = (corx, cory)
+def find_centerpoints_in_layer(layer_node):
+	result = { }
+	for circlenode in layer_node.circle:
+		svgobj = svg_objdict[circlenode["id"]]
+		corx = svgobj.x + svgobj.width / 2
+		cory = svgobj.y + svgobj.height / 2
+		name = circlenode.title.getcdata()
+		if name in result:
+			raise Exception("Duplicate centerpoint/point of interest entry: %s" % (name))
+		result[name] = (corx, cory)
+	return result
+
+layer_cors = find_centerpoints_in_layer(xml.searchunique("g", **{ "inkscape:label": "_center_of_rotation"}))
+pois = find_centerpoints_in_layer(xml.searchunique("g", **{ "inkscape:label": "_point_of_interest"}))
 
 layers = { }
 # Run the same process twice to resolve all clipping areas
@@ -91,5 +97,9 @@ for layer in sorted(layers.values(), key = lambda layer: layer.order):
 	subprocess.check_call(["inkscape", "-i", layer.svgobj.oid, "-j", infile_svg, "--export-dpi=%f" % (dpi), "--export-png=%s/%s.png" % (outdir, layer.name) ], stderr = subprocess.DEVNULL)
 	print("~" * 120)
 
+all_info = {
+	"layers":	layer_info,
+	"pois":		{ name : [ poi[0] * tpc, poi[1] * tpc ] for (name, poi) in pois.items() },
+}
 with open(outdir + "/layers.json", "w") as f:
-	print(json.dumps(layer_info), file = f)
+	print(json.dumps(all_info), file = f)

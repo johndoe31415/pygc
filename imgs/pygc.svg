@@ -72,13 +72,13 @@
      fit-margin-bottom="0"
      showguides="true"
      inkscape:guide-bbox="true"
-     inkscape:zoom="64.000001"
-     inkscape:cx="310.49194"
-     inkscape:cy="253.01895"
+     inkscape:zoom="1.4142136"
+     inkscape:cx="291.15913"
+     inkscape:cy="126.53798"
      inkscape:window-x="1600"
      inkscape:window-y="27"
      inkscape:window-maximized="1"
-     inkscape:current-layer="layer15"
+     inkscape:current-layer="layer16"
      inkscape:snap-bbox="false"
      inkscape:snap-object-midpoints="true"
      inkscape:snap-center="true">
@@ -1794,6 +1794,71 @@
        r="0.91844583">
       <title
          id="title1086-6">ahoriz-skygnd</title>
+    </circle>
+    <circle
+       style="display:inline;opacity:1;fill:none;fill-opacity:1;stroke:#c0392b;stroke-width:1.94880724;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="path1058-3-3"
+       cx="314.31888"
+       cy="330.84674"
+       r="0.91844583">
+      <title
+         id="title1086-6-6">compass-obs-center</title>
+    </circle>
+    <circle
+       style="display:inline;opacity:1;fill:none;fill-opacity:1;stroke:#c0392b;stroke-width:1.94880724;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="path1058-3-3-7"
+       cx="314.31888"
+       cy="330.84674"
+       r="0.91844583">
+      <title
+         id="title1086-6-6-5">compass-obs</title>
+    </circle>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer16"
+     inkscape:label="_point_of_interest">
+    <circle
+       style="display:inline;opacity:1;fill:none;fill-opacity:1;stroke:#c0392b;stroke-width:1.94880724;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="path1058-3-3-7-3"
+       cx="285.65604"
+       cy="330.63379"
+       r="0.91844583">
+      <title
+         id="title1086-6-6-5-5">leftmost-cdi-dot</title>
+    </circle>
+    <circle
+       style="display:inline;opacity:1;fill:none;fill-opacity:1;stroke:#c0392b;stroke-width:1.94880724;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="path1058-3-3-7-3-6"
+       cx="342.61823"
+       cy="330.63379"
+       r="0.91844583"
+       inkscape:transform-center-x="32.375"
+       inkscape:transform-center-y="0.375">
+      <title
+         id="title1086-6-6-5-5-2">rightmost-cdi-dot</title>
+    </circle>
+    <circle
+       style="display:inline;opacity:1;fill:none;fill-opacity:1;stroke:#c0392b;stroke-width:1.94880724;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="path1058-3-3-7-3-6-9"
+       cx="311.08069"
+       cy="79.586014"
+       r="0.91844583"
+       inkscape:transform-center-x="32.375"
+       inkscape:transform-center-y="0.375">
+      <title
+         id="title1086-6-6-5-5-2-1">pitch-40deg</title>
+    </circle>
+    <circle
+       style="display:inline;opacity:1;fill:none;fill-opacity:1;stroke:#c0392b;stroke-width:1.94880724;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="path1058-3-3-7-3-6-9-2"
+       cx="311.08069"
+       cy="179.56288"
+       r="0.91844583"
+       inkscape:transform-center-x="32.375"
+       inkscape:transform-center-y="0.375">
+      <title
+         id="title1086-6-6-5-5-2-1-7">pitch-0deg</title>
     </circle>
   </g>
 </svg>
