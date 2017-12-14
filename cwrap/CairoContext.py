@@ -51,5 +51,19 @@ class CairoContext(object):
 		self._cairoctx.fill()
 		self._cairoctx.restore()
 
+	def font_select(self, fontname, fontsize, fontcolor = None):
+		if fontcolor is not None:
+			self._cairoctx.set_source_rgb(*fontcolor)
+		else:
+			# Black by default
+			self._cairoctx.set_source_rgb(0, 0, 0)
+		self._cairoctx.set_font_size(fontsize)
+#		self._cairoctx.set_font_face(fontname, cairo.FONT_SLANT_NORMAL, cairo.FONT_WEIGHT_NORMAL)
+#		self._cairoctx.set_font_face(fontname)
+
+	def text(self, pos, text):
+		self._cairoctx.move_to(pos.x, pos.y)
+		self._cairoctx.show_text(text)
+
 	def __str__(self):
 		return "CairoContext<%s>" % (self._dimensions)

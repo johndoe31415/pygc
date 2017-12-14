@@ -36,9 +36,9 @@ class GlassCockpit(object):
 			gcelement = _GCElement(name = name, offset = offset, dimensions = dimensions, clip = clip, center_of_rotation = center_of_rotation, cctx = cctx)
 			self._elements.append(gcelement)
 
-		pois = { name: Vector2d(*poi) for (name, poi) in data["pois"].items() }
-		self._autoconfig["pixel_per_deg_pitch"] = abs((pois["pitch-40deg"] - pois["pitch-0deg"]).y / 40)
-		self._autoconfig["pixel_per_deg_deviation"] = abs((pois["leftmost-cdi-dot"] - pois["rightmost-cdi-dot"]).x / 8)
+		self._pois = { name: Vector2d(*poi) for (name, poi) in data["pois"].items() }
+		self._autoconfig["pixel_per_deg_pitch"] = abs((self._pois["pitch-40deg"] - self._pois["pitch-0deg"]).y / 40)
+		self._autoconfig["pixel_per_deg_deviation"] = abs((self._pois["leftmost-cdi-dot"] - self._pois["rightmost-cdi-dot"]).x / 8)
 
 	def _determine_renderopts(self, name):
 		translation = None
@@ -58,10 +58,16 @@ class GlassCockpit(object):
 				elif deviation_deg > 4:
 					deviation_deg = 4
 				translation = Vector2d(deviation_deg * self._autoconfig["pixel_per_deg_deviation"], 0)
+		elif name == "hdgbug":
+			rotation_rad = (self._data["ap"]["hdgbug_deg"] - self._data["pos"]["heading_deg"]) / 180 * math.pi
 		return (translation, rotation_rad)
 
 	def feed_data(self, data):
 		self._data = data
+
+	def _render_textelements(self, screen):
+		screen.font_select("Sans", 22, fontcolor = (1, 1, 1))
+		screen.text(self._pois["ias"], "%.0f" % ((self._data["pos"]["ias"])))
 
 	def render(self, screen):
 		for element in self._elements:
@@ -70,3 +76,5 @@ class GlassCockpit(object):
 			if translation is not None:
 				offset += translation
 			screen.blit(element.cctx, offset = offset, clip = element.clip, rotation_rad = rotation_rad, center_of_rotation = element.center_of_rotation)
+
+		self._render_textelements(screen)

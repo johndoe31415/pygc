@@ -12,6 +12,7 @@ class GCGTKApplication(Gtk.Window):
 		self._frametime_millis = frametime_millis
 		self._data_callback = data_callback
 		self.connect("delete-event", Gtk.main_quit)
+		self.connect("key_press_event", self.on_keypress)
 
 		self._darea = Gtk.DrawingArea()
 		self._darea.connect("draw", self.on_draw)
@@ -23,6 +24,11 @@ class GCGTKApplication(Gtk.Window):
 		self.show_all()
 		self._t0 = 0
 		self.on_frame()
+
+	def on_keypress(self, wid, key):
+		if key.get_keycode().keycode == 9:
+			# ESC
+			Gtk.main_quit()
 
 	def on_frame(self, *args):
 		if self._data_callback is not None:
