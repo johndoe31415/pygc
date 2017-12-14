@@ -125,7 +125,7 @@ class GlassCockpit(object):
 
 	def _render_textelements(self, screen):
 		screen.font_select("Nimbus Sans L", 22, fontcolor = self._COLORS["ias_text"])
-		screen.text(self._pois["ias"], "%.0f" % ((self._data["pos"]["ias"])), anchor = "cr")
+		screen.text(self._pois["ias-text"], "%.0f" % ((self._data["pos"]["ias"])), anchor = "cr")
 
 		screen.font_select("Nimbus Sans L", 20, fontcolor = self._COLORS["active_freq_text"])
 		screen.text(self._pois["com1-act-freq"], "%.3f" % ((self._data["freq"]["com1"]["active"])), anchor = "bl")
@@ -141,6 +141,13 @@ class GlassCockpit(object):
 
 		screen.text(self._pois["xpdr-squawk"], "%04d" % (self._data["xpdr"]["squawk"]), anchor = "bl")
 		screen.text(self._pois["time-utc"], datetime.datetime.utcnow().strftime("%H:%M:%S"), anchor = "bl")
+
+		screen.font_select("Nimbus Sans L", 22, fontcolor = self._COLORS["ias_text"])
+		screen.text(self._pois["hdg-text"], "%.0f°" % ((self._data["pos"]["heading_deg"])), anchor = "cc")
+
+		screen.font_select("Nimbus Sans L", 14, fontcolor = self._COLORS["ias_text"])
+		screen.text(self._pois["hdgbug-text"], "%.0f°" % ((self._data["ap"]["hdgbug_deg"])), anchor = "bl")
+		screen.text(self._pois["crs-text"], "%.0f°" % ((self._data["vor1"]["obs"])), anchor = "bl")
 
 	def render(self, screen):
 		for element in self._elements:
