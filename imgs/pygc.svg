@@ -160,9 +160,9 @@
      fit-margin-bottom="0"
      showguides="true"
      inkscape:guide-bbox="true"
-     inkscape:zoom="0.7071068"
-     inkscape:cx="669.06692"
-     inkscape:cy="317.99784"
+     inkscape:zoom="4.0000001"
+     inkscape:cx="135.09011"
+     inkscape:cy="273.56933"
      inkscape:window-x="1600"
      inkscape:window-y="27"
      inkscape:window-maximized="1"
@@ -1831,6 +1831,19 @@
        inkscape:transform-center-x="0.18171083" />
   </g>
   <g
+     style="display:inline"
+     inkscape:label="_clip-speedindicator"
+     id="g1129"
+     inkscape:groupmode="layer">
+    <rect
+       y="76.993584"
+       x="145.78558"
+       height="147.06097"
+       width="37.245155"
+       id="rect1127"
+       style="display:inline;opacity:1;fill:none;fill-opacity:1;stroke:#ffffff;stroke-width:0.01456641;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+  </g>
+  <g
      inkscape:groupmode="layer"
      id="layer19"
      inkscape:label="speedindicator"
@@ -1846,7 +1859,7 @@
   <g
      inkscape:groupmode="layer"
      id="g2854"
-     inkscape:label="_clip-speedindicator-ticks copy"
+     inkscape:label="_clip-speedindicator-tics"
      style="display:inline">
     <rect
        style="display:inline;opacity:1;fill:none;fill-opacity:1;stroke:#ffffff;stroke-width:0.01456641;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
@@ -1859,7 +1872,7 @@
   <g
      inkscape:groupmode="layer"
      id="layer20"
-     inkscape:label="speedindicator-ticks"
+     inkscape:label="speedindicator-tics"
      style="display:inline">
     <g
        id="g1241"
@@ -2196,6 +2209,30 @@
        inkscape:label="#path1058">
       <title
          id="title1086-6-6-5-5-2-1-6-7-5-3-1-6-5">time-utc</title>
+    </circle>
+    <circle
+       style="display:inline;opacity:1;fill:none;fill-opacity:1;stroke:#c0392b;stroke-width:1.94880724;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="path1058-3-3-7-3-6-9-3-5-8-7-3"
+       cx="176.125"
+       cy="78.213432"
+       r="0.91844583"
+       inkscape:transform-center-x="32.375"
+       inkscape:transform-center-y="0.375"
+       inkscape:label="#path1058">
+      <title
+         id="title1086-6-6-5-5-2-1-6-7-5-3-6">speedindicator-top</title>
+    </circle>
+    <circle
+       style="display:inline;opacity:1;fill:none;fill-opacity:1;stroke:#c0392b;stroke-width:1.94880724;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="path1058-3-3-7-3-6-9-3-5-8-7-3-7"
+       cx="176.125"
+       cy="200.03929"
+       r="0.91844583"
+       inkscape:transform-center-x="32.375"
+       inkscape:transform-center-y="0.375"
+       inkscape:label="#path1058">
+      <title
+         id="title1086-6-6-5-5-2-1-6-7-5-3-6-5">speedindicator-bottom</title>
     </circle>
   </g>
 </svg>

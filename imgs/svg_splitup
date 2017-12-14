@@ -69,9 +69,23 @@ pois = find_centerpoints_in_layer(xml.searchunique("g", **{ "inkscape:label": "_
 
 layers = { }
 # Run the same process twice to resolve all clipping areas
-layer_objects = [ obj for obj in svg_objects if obj.oid.startswith("layer") ]
+layer_objects = [ obj for obj in svg_objects if obj.oid in layer_names ]
 parse_layers(layers, layer_objects, only_clip = True)
 parse_layers(layers, layer_objects, layer_cors = layer_cors)
+print("%d clipped layers found." % (len(list(layer.name for layer in layers.values() if layer.clip is not None))))
+
+for layer in layers.values():
+	if layer.name.startswith("_"):
+		if layer.name in [ "_page", "_no-render", "_center_of_rotation", "_point_of_interest" ]:
+			continue
+		elif layer.name.startswith("_clip-"):
+			drawlayer = layer.name[6:]
+			if drawlayer not in layers:
+				raise Exception("Clipping layer %s present, but drawing layer %s not found." % (layer.name, drawlayer))
+			if layers[drawlayer].clip is None:
+				raise Exception("Clipping layer %s present, but missing in object of %s not found." % (layer.name, drawlayer))
+		else:
+			raise Exception("Unexpected private layer name: %s" % (layer.name))
 
 page_layer = layers["_page"]
 dpi = output_width / page_layer.svgobj.width * 96

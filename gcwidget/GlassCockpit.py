@@ -54,28 +54,47 @@ class GlassCockpit(object):
 		self._pois = { name: Vector2d(*poi) for (name, poi) in data["pois"].items() }
 		self._autoconfig["pixel_per_deg_pitch"] = abs((self._pois["pitch-40deg"] - self._pois["pitch-0deg"]).y / 40)
 		self._autoconfig["pixel_per_deg_deviation"] = abs((self._pois["leftmost-cdi-dot"] - self._pois["rightmost-cdi-dot"]).x / 8)
+		self._autoconfig["speedindicator_pixel_per_kt"] = abs((self._pois["speedindicator-top"] - self._pois["speedindicator-bottom"]).y / 50)
 
-	def _determine_renderopts(self, name):
+	def _speedindicator_tics_text(self, element, at_offset):
+		element.font_select("Nimbus Sans L", 14, fontcolor = self._COLORS["ias_text"])
+		mid_speed = int(self._data["pos"]["ias"] // 10) * 10
+		speed_offset = mid_speed - 30
+		for i in range(8):
+			speed = speed_offset + (10 * i)
+			if speed < 0:
+				continue
+
+			translation = Vector2d(0, (self._data["pos"]["ias"] % 10) * self._autoconfig["speedindicator_pixel_per_kt"])
+			element.text((self._pois["speedindicator-top"] - at_offset) + (Vector2d(0, self._autoconfig["speedindicator_pixel_per_kt"]) * (10 * (6 - i))) + translation, str(speed), anchor = "cr")
+
+	def _determine_renderopts(self, element):
+		clip = element.clip
 		translation = None
 		rotation_rad = None
+		clipped_callback = None
 
-		if name in [ "ahoriz-skygnd", "ahoriz-degs" ]:
+		if element.name in [ "ahoriz-skygnd", "ahoriz-degs" ]:
 			translation = Vector2d(0, self._autoconfig["pixel_per_deg_pitch"] * self._data["pos"]["pitch_angle_deg"])
 			rotation_rad = self._data["pos"]["roll_angle_deg"] / 180 * math.pi
-		elif name == "compass-rot":
+		elif element.name == "compass-rot":
 			rotation_rad = -self._data["pos"]["heading_deg"] / 180 * math.pi
-		elif name in [ "compass-obs", "compass-obs-center" ]:
+		elif element.name in [ "compass-obs", "compass-obs-center" ]:
 			rotation_rad = (self._data["vor1"]["obs"] - self._data["pos"]["heading_deg"]) / 180 * math.pi
-			if name == "compass-obs-center":
+			if element.name == "compass-obs-center":
 				deviation_deg = self._data["vor1"]["deviation_deg"]
 				if deviation_deg < -4:
 					deviation_deg = -4
 				elif deviation_deg > 4:
 					deviation_deg = 4
 				translation = Vector2d(deviation_deg * self._autoconfig["pixel_per_deg_deviation"], 0)
-		elif name == "hdgbug":
+		elif element.name == "hdgbug":
 			rotation_rad = (self._data["ap"]["hdgbug_deg"] - self._data["pos"]["heading_deg"]) / 180 * math.pi
-		return (translation, rotation_rad)
+		elif element.name == "speedindicator":
+			clipped_callback = self._speedindicator_tics_text
+		elif element.name == "speedindicator-tics":
+			translation = Vector2d(0, (self._data["pos"]["ias"] % 10) * self._autoconfig["speedindicator_pixel_per_kt"])
+		return (clip, translation, rotation_rad, clipped_callback)
 
 	def feed_data(self, data):
 		self._data = data
@@ -101,10 +120,10 @@ class GlassCockpit(object):
 
 	def render(self, screen):
 		for element in self._elements:
-			(translation, rotation_rad) = self._determine_renderopts(element.name)
+			(clip, translation, rotation_rad, clipped_callback) = self._determine_renderopts(element)
 			offset = element.offset
 			if translation is not None:
 				offset += translation
-			screen.blit(element.cctx, offset = offset, clip = element.clip, rotation_rad = rotation_rad, center_of_rotation = element.center_of_rotation)
+			screen.blit(element.cctx, offset = offset, clip = clip, rotation_rad = rotation_rad, center_of_rotation = element.center_of_rotation, clipped_callback = clipped_callback)
 
 		self._render_textelements(screen)

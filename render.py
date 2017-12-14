@@ -18,7 +18,7 @@ instrument_data = {
 		"pitch_angle_deg":	10,
 		"roll_angle_deg":	10,
 		"tas":				123,
-		"ias":				80,
+		"ias":				0,
 	},
 	"ap": {
 		"hdgbug_deg":		90,
@@ -54,7 +54,7 @@ glasscockpit.feed_data(instrument_data)
 def modify_data():
 	instrument_data["pos"]["heading_deg"] += 0.5
 	instrument_data["pos"]["roll_angle_deg"] += 0.5
-	instrument_data["pos"]["ias"] += 0.33
+	instrument_data["pos"]["ias"] += 0.13
 
 GCGTKApplication.run(glasscockpit, screen, 0, data_callback = modify_data)
 #glasscockpit.render(screen)

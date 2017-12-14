@@ -36,7 +36,7 @@ class CairoContext(object):
 	def write_to_png(self, filename):
 		self._surface.write_to_png(filename)
 
-	def blit(self, source, offset = None, clip = None, rotation_rad = None, center_of_rotation = None):
+	def blit(self, source, offset = None, clip = None, rotation_rad = None, center_of_rotation = None, clipped_callback = None):
 		if offset is None:
 			offset = Vector2d(0, 0)
 		self._cairoctx.save()
@@ -54,6 +54,8 @@ class CairoContext(object):
 		self._cairoctx.set_source_surface(source.surface)
 		self._cairoctx.rectangle(0, 0, source.dimensions.x, source.dimensions.y)
 		self._cairoctx.fill()
+		if clipped_callback is not None:
+			clipped_callback(self, offset)
 		self._cairoctx.restore()
 
 	def font_select(self, fontname, fontsize, fontcolor = None):
