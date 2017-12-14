@@ -160,13 +160,13 @@
      fit-margin-bottom="0"
      showguides="true"
      inkscape:guide-bbox="true"
-     inkscape:zoom="16"
-     inkscape:cx="153.40046"
-     inkscape:cy="290.01733"
+     inkscape:zoom="0.7071068"
+     inkscape:cx="669.06692"
+     inkscape:cy="317.99784"
      inkscape:window-x="1600"
      inkscape:window-y="27"
      inkscape:window-maximized="1"
-     inkscape:current-layer="layer18"
+     inkscape:current-layer="layer16"
      inkscape:snap-bbox="false"
      inkscape:snap-object-midpoints="true"
      inkscape:snap-center="true"
@@ -190,6 +190,16 @@
        position="767.99999,454.25"
        orientation="1,0"
        id="guide1056"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="52.900427,401.23891"
+       orientation="0,1"
+       id="guide1134"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="52.944621,417.81173"
+       orientation="0,1"
+       id="guide1136"
        inkscape:locked="false" />
   </sodipodi:namedview>
   <g
@@ -1149,56 +1159,56 @@
     <text
        id="text5053-9-5-63-8-3-9"
        y="261.92374"
-       x="308.92474"
+       x="307.88626"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.31547165px;line-height:125%;font-family:'Droid Sans';-inkscape-font-specification:'Droid Sans';letter-spacing:0px;word-spacing:0px;display:inline;fill:#ecf0f1;fill-opacity:1;stroke:none;stroke-width:1.44295597px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"
        inkscape:transform-center-x="5.9122495e-06"
        inkscape:transform-center-y="-75.021577"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Bitstream Vera Sans Mono';-inkscape-font-specification:'Bitstream Vera Sans Mono';stroke-width:1.44295597px"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Nimbus Sans L';-inkscape-font-specification:'Nimbus Sans L';stroke-width:1.44295597px"
          y="261.92374"
-         x="308.92474"
+         x="307.88626"
          id="tspan5051-8-2-50-0-6-6"
          sodipodi:role="line">N</tspan></text>
     <text
        id="text5053-9-5-63-8-3-9-3"
        y="-382.8472"
-       x="325.1424"
+       x="324.54742"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.31547165px;line-height:125%;font-family:'Droid Sans';-inkscape-font-specification:'Droid Sans';letter-spacing:0px;word-spacing:0px;display:inline;fill:#ecf0f1;fill-opacity:1;stroke:none;stroke-width:1.44295597px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"
        inkscape:transform-center-x="-75.021577"
        inkscape:transform-center-y="-5.2644547e-06"
        transform="rotate(90)"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Bitstream Vera Sans Mono';-inkscape-font-specification:'Bitstream Vera Sans Mono';stroke-width:1.44295597px"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Nimbus Sans L';-inkscape-font-specification:'Nimbus Sans L';stroke-width:1.44295597px"
          y="-382.8472"
-         x="325.1424"
+         x="324.54742"
          id="tspan5051-8-2-50-0-6-6-8"
          sodipodi:role="line">E</tspan></text>
     <text
        id="text5053-9-5-63-8-3-9-5"
        y="-399.34384"
-       x="-319.36649"
+       x="-319.92923"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.31547165px;line-height:125%;font-family:'Droid Sans';-inkscape-font-specification:'Droid Sans';letter-spacing:0px;word-spacing:0px;display:inline;fill:#ecf0f1;fill-opacity:1;stroke:none;stroke-width:1.44295597px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"
        inkscape:transform-center-x="-5.5411558e-06"
        inkscape:transform-center-y="75.021578"
        transform="scale(-1)"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Bitstream Vera Sans Mono';-inkscape-font-specification:'Bitstream Vera Sans Mono';stroke-width:1.44295597px"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Nimbus Sans L';-inkscape-font-specification:'Nimbus Sans L';stroke-width:1.44295597px"
          y="-399.34384"
-         x="-319.36649"
+         x="-319.92923"
          id="tspan5051-8-2-50-0-6-6-6"
          sodipodi:role="line">S</tspan></text>
     <text
        id="text5053-9-5-63-8-3-9-1"
        y="245.42712"
-       x="-335.84622"
+       x="-338.86734"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.31547165px;line-height:125%;font-family:'Droid Sans';-inkscape-font-specification:'Droid Sans';letter-spacing:0px;word-spacing:0px;display:inline;fill:#ecf0f1;fill-opacity:1;stroke:none;stroke-width:1.44295597px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"
        inkscape:transform-center-x="75.021578"
        inkscape:transform-center-y="6.1889506e-06"
        transform="rotate(-90)"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Bitstream Vera Sans Mono';-inkscape-font-specification:'Bitstream Vera Sans Mono';stroke-width:1.44295597px"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Nimbus Sans L';-inkscape-font-specification:'Nimbus Sans L';stroke-width:1.44295597px"
          y="245.42712"
-         x="-335.84622"
+         x="-338.86734"
          id="tspan5051-8-2-50-0-6-6-1"
          sodipodi:role="line">W</tspan></text>
     <text
@@ -1210,7 +1220,7 @@
        inkscape:transform-center-x="-38.260777"
        inkscape:transform-center-y="-66.269674"
        transform="rotate(30)"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Bitstream Vera Sans Mono';-inkscape-font-specification:'Bitstream Vera Sans Mono';stroke-width:1.10002232px"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Nimbus Sans L';-inkscape-font-specification:'Nimbus Sans L';stroke-width:1.10002232px;"
          y="57.558624"
          x="433.39404"
          id="tspan5051-8-2-50-0-6-6-84"
@@ -1224,7 +1234,7 @@
        inkscape:transform-center-x="-66.26964"
        inkscape:transform-center-y="-38.260834"
        transform="rotate(60)"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Bitstream Vera Sans Mono';-inkscape-font-specification:'Bitstream Vera Sans Mono';stroke-width:1.10002232px"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Nimbus Sans L';-inkscape-font-specification:'Nimbus Sans L';stroke-width:1.10002232px;"
          y="-178.44394"
          x="439.43222"
          id="tspan5051-8-2-50-0-6-6-84-0"
@@ -1238,7 +1248,7 @@
        inkscape:transform-center-x="-66.152923"
        inkscape:transform-center-y="38.399132"
        transform="rotate(116.95961)"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Bitstream Vera Sans Mono';-inkscape-font-specification:'Bitstream Vera Sans Mono';stroke-width:1.10002232px"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Nimbus Sans L';-inkscape-font-specification:'Nimbus Sans L';stroke-width:1.10002232px;"
          y="-501.38373"
          x="148.31194"
          id="tspan5051-8-2-50-0-6-6-84-0-4"
@@ -1252,23 +1262,23 @@
        inkscape:transform-center-x="-38.110276"
        inkscape:transform-center-y="66.369873"
        transform="rotate(146.95961)"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Bitstream Vera Sans Mono';-inkscape-font-specification:'Bitstream Vera Sans Mono';stroke-width:1.10002232px"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Nimbus Sans L';-inkscape-font-specification:'Nimbus Sans L';stroke-width:1.10002232px;"
          y="-519.94012"
          x="-87.011108"
          id="tspan5051-8-2-50-0-6-6-84-0-4-1"
          sodipodi:role="line">15</tspan></text>
     <text
        id="text5053-9-5-63-8-3-9-59-3-4-7"
-       y="-223.83138"
-       x="-433.81686"
+       y="-216.86096"
+       x="-436.22281"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.20026779px;line-height:125%;font-family:'Droid Sans';-inkscape-font-specification:'Droid Sans';letter-spacing:0px;word-spacing:0px;display:inline;fill:#ecf0f1;fill-opacity:1;stroke:none;stroke-width:1.10002232px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"
-       inkscape:transform-center-x="38.399134"
-       inkscape:transform-center-y="66.152922"
-       transform="rotate(-153.04039)"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Bitstream Vera Sans Mono';-inkscape-font-specification:'Bitstream Vera Sans Mono';stroke-width:1.10002232px"
-         y="-223.83138"
-         x="-433.81686"
+       inkscape:transform-center-x="37.656101"
+       inkscape:transform-center-y="66.31432"
+       transform="rotate(-152.114)"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Nimbus Sans L';-inkscape-font-specification:'Nimbus Sans L';stroke-width:1.10002232px"
+         y="-216.86096"
+         x="-436.22281"
          id="tspan5051-8-2-50-0-6-6-84-0-4-5"
          sodipodi:role="line">21</tspan></text>
     <text
@@ -1280,37 +1290,37 @@
        inkscape:transform-center-x="66.369859"
        inkscape:transform-center-y="38.110277"
        transform="rotate(-123.04039)"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Bitstream Vera Sans Mono';-inkscape-font-specification:'Bitstream Vera Sans Mono';stroke-width:1.10002232px"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Nimbus Sans L';-inkscape-font-specification:'Nimbus Sans L';stroke-width:1.10002232px;"
          y="11.49167"
          x="-452.37326"
          id="tspan5051-8-2-50-0-6-6-84-0-4-6"
          sodipodi:role="line">24</tspan></text>
     <text
        id="text5053-9-5-63-8-3-9-59-3-4-2"
-       y="358.29742"
-       x="-156.26451"
+       y="360.29236"
+       x="-150.52263"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.20026779px;line-height:125%;font-family:'Droid Sans';-inkscape-font-specification:'Droid Sans';letter-spacing:0px;word-spacing:0px;display:inline;fill:#ecf0f1;fill-opacity:1;stroke:none;stroke-width:1.10002232px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"
-       inkscape:transform-center-x="66.152924"
-       inkscape:transform-center-y="-38.399134"
-       transform="rotate(-63.04039)"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Bitstream Vera Sans Mono';-inkscape-font-specification:'Bitstream Vera Sans Mono';stroke-width:1.10002232px"
-         y="358.29742"
-         x="-156.26451"
+       inkscape:transform-center-x="65.689885"
+       inkscape:transform-center-y="-38.502608"
+       transform="rotate(-62.276788)"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Nimbus Sans L';-inkscape-font-specification:'Nimbus Sans L';stroke-width:1.10002232px"
+         y="360.29236"
+         x="-150.52263"
          id="tspan5051-8-2-50-0-6-6-84-0-4-17"
          sodipodi:role="line">30</tspan></text>
     <text
        id="text5053-9-5-63-8-3-9-59-3-4-8"
-       y="376.85382"
-       x="79.058533"
+       y="375.62167"
+       x="85.456322"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.20026779px;line-height:125%;font-family:'Droid Sans';-inkscape-font-specification:'Droid Sans';letter-spacing:0px;word-spacing:0px;display:inline;fill:#ecf0f1;fill-opacity:1;stroke:none;stroke-width:1.10002232px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"
-       inkscape:transform-center-x="38.110267"
-       inkscape:transform-center-y="-66.369856"
-       transform="rotate(-33.04039)"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Bitstream Vera Sans Mono';-inkscape-font-specification:'Bitstream Vera Sans Mono';stroke-width:1.10002232px"
-         y="376.85382"
-         x="79.058533"
+       inkscape:transform-center-x="38.042302"
+       inkscape:transform-center-y="-66.324938"
+       transform="rotate(-32.222366)"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Nimbus Sans L';-inkscape-font-specification:'Nimbus Sans L';stroke-width:1.10002232px"
+         y="375.62167"
+         x="85.456322"
          id="tspan5051-8-2-50-0-6-6-84-0-4-57"
          sodipodi:role="line">33</tspan></text>
   </g>
@@ -1348,89 +1358,89 @@
        transform="translate(19.789113,-64.94953)">
       <text
          id="text5053-9-5-63-8-3"
-         y="148.9037"
+         y="148.65154"
          x="355.4332"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12px;line-height:125%;font-family:'Droid Sans';-inkscape-font-specification:'Droid Sans';letter-spacing:0px;word-spacing:0px;display:inline;fill:#ecf0f1;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
          xml:space="preserve"><tspan
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Bitstream Vera Sans Mono';-inkscape-font-specification:'Bitstream Vera Sans Mono'"
-           y="148.9037"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Nimbus Sans L';-inkscape-font-specification:'Nimbus Sans L'"
+           y="148.65154"
            x="355.4332"
            id="tspan5051-8-2-50-0-6"
            sodipodi:role="line">40</tspan></text>
       <text
          id="text5053-9-5-63-8-3-7"
-         y="198.89215"
+         y="198.63998"
          x="355.14023"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12px;line-height:125%;font-family:'Droid Sans';-inkscape-font-specification:'Droid Sans';letter-spacing:0px;word-spacing:0px;display:inline;fill:#ecf0f1;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
          xml:space="preserve"><tspan
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Bitstream Vera Sans Mono';-inkscape-font-specification:'Bitstream Vera Sans Mono'"
-           y="198.89215"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Nimbus Sans L';-inkscape-font-specification:'Nimbus Sans L'"
+           y="198.63998"
            x="355.14023"
            id="tspan5051-8-2-50-0-6-5"
            sodipodi:role="line">20</tspan></text>
       <text
          id="text5053-9-5-63-8-3-7-3"
-         y="173.89795"
+         y="173.64578"
          x="355.22812"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12px;line-height:125%;font-family:'Droid Sans';-inkscape-font-specification:'Droid Sans';letter-spacing:0px;word-spacing:0px;display:inline;fill:#ecf0f1;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
          xml:space="preserve"><tspan
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Bitstream Vera Sans Mono';-inkscape-font-specification:'Bitstream Vera Sans Mono'"
-           y="173.89795"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Nimbus Sans L';-inkscape-font-specification:'Nimbus Sans L'"
+           y="173.64578"
            x="355.22812"
            id="tspan5051-8-2-50-0-6-5-5"
            sodipodi:role="line">30</tspan></text>
       <text
          id="text5053-9-5-63-8-3-7-6"
-         y="223.88635"
+         y="223.63419"
          x="354.58945"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12px;line-height:125%;font-family:'Droid Sans';-inkscape-font-specification:'Droid Sans';letter-spacing:0px;word-spacing:0px;display:inline;fill:#ecf0f1;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
          xml:space="preserve"><tspan
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Bitstream Vera Sans Mono';-inkscape-font-specification:'Bitstream Vera Sans Mono'"
-           y="223.88635"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Nimbus Sans L';-inkscape-font-specification:'Nimbus Sans L'"
+           y="223.63419"
            x="354.58945"
            id="tspan5051-8-2-50-0-6-5-2"
            sodipodi:role="line">10</tspan></text>
       <text
          id="text5053-9-5-63-8-3-7-6-9"
-         y="273.87479"
+         y="273.62262"
          x="354.58945"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12px;line-height:125%;font-family:'Droid Sans';-inkscape-font-specification:'Droid Sans';letter-spacing:0px;word-spacing:0px;display:inline;fill:#ecf0f1;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
          xml:space="preserve"><tspan
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Bitstream Vera Sans Mono';-inkscape-font-specification:'Bitstream Vera Sans Mono'"
-           y="273.87479"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Nimbus Sans L';-inkscape-font-specification:'Nimbus Sans L'"
+           y="273.62262"
            x="354.58945"
            id="tspan5051-8-2-50-0-6-5-2-1"
            sodipodi:role="line">10</tspan></text>
       <text
          id="text5053-9-5-63-8-3-7-6-2"
-         y="298.86902"
+         y="298.61685"
          x="355.14023"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12px;line-height:125%;font-family:'Droid Sans';-inkscape-font-specification:'Droid Sans';letter-spacing:0px;word-spacing:0px;display:inline;fill:#ecf0f1;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
          xml:space="preserve"><tspan
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Bitstream Vera Sans Mono';-inkscape-font-specification:'Bitstream Vera Sans Mono'"
-           y="298.86902"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Nimbus Sans L';-inkscape-font-specification:'Nimbus Sans L'"
+           y="298.61685"
            x="355.14023"
            id="tspan5051-8-2-50-0-6-5-2-7"
            sodipodi:role="line">20</tspan></text>
       <text
          id="text5053-9-5-63-8-3-7-6-0"
-         y="323.86322"
+         y="323.61105"
          x="355.22812"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12px;line-height:125%;font-family:'Droid Sans';-inkscape-font-specification:'Droid Sans';letter-spacing:0px;word-spacing:0px;display:inline;fill:#ecf0f1;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
          xml:space="preserve"><tspan
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Bitstream Vera Sans Mono';-inkscape-font-specification:'Bitstream Vera Sans Mono'"
-           y="323.86322"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Nimbus Sans L';-inkscape-font-specification:'Nimbus Sans L'"
+           y="323.61105"
            x="355.22812"
            id="tspan5051-8-2-50-0-6-5-2-9"
            sodipodi:role="line">30</tspan></text>
       <text
          id="text5053-9-5-63-8-3-6"
-         y="348.85742"
+         y="348.60526"
          x="355.4332"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12px;line-height:125%;font-family:'Droid Sans';-inkscape-font-specification:'Droid Sans';letter-spacing:0px;word-spacing:0px;display:inline;fill:#ecf0f1;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
          xml:space="preserve"><tspan
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Bitstream Vera Sans Mono';-inkscape-font-specification:'Bitstream Vera Sans Mono'"
-           y="348.85742"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Nimbus Sans L';-inkscape-font-specification:'Nimbus Sans L'"
+           y="348.60526"
            x="355.4332"
            id="tspan5051-8-2-50-0-6-0"
            sodipodi:role="line">40</tspan></text>
@@ -1560,7 +1570,7 @@
          id="tspan5051-4-8-3"
          x="631.94342"
          y="375.44565"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Bitstream Vera Sans Mono';-inkscape-font-specification:'Bitstream Vera Sans Mono'">XPDR</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Nimbus Sans L';-inkscape-font-specification:'Nimbus Sans L';">XPDR</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12px;line-height:125%;font-family:'Droid Sans';-inkscape-font-specification:'Droid Sans';letter-spacing:0px;word-spacing:0px;display:inline;fill:#ecf0f1;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -1571,7 +1581,7 @@
          id="tspan5051-4-8-3-3"
          x="632.4162"
          y="408.11099"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Bitstream Vera Sans Mono';-inkscape-font-specification:'Bitstream Vera Sans Mono'">UTC</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Nimbus Sans L';-inkscape-font-specification:'Nimbus Sans L';">UTC</tspan></text>
   </g>
   <g
      inkscape:groupmode="layer"
@@ -1582,36 +1592,36 @@
        style="display:inline;opacity:1;fill:#2c3e50;fill-opacity:1;stroke:#ecf0f1;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        id="rect5049"
        width="776.28326"
-       height="40.188236"
+       height="37.381908"
        x="-3.3456511"
-       y="-3.4560299" />
+       y="-0.64969987" />
     <path
        style="display:inline;fill:none;fill-rule:evenodd;stroke:#ecf0f1;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="M 141.58848,35.926613 V -4.7835372"
+       d="M 141.63552,36.821265 V -3.8888851"
        id="path5055"
        inkscape:connector-curvature="0" />
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12px;line-height:125%;font-family:'Droid Sans';-inkscape-font-specification:'Droid Sans';letter-spacing:0px;word-spacing:0px;display:inline;fill:#ecf0f1;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="730.99884"
-       y="13.52584"
+       y="14.15507"
        id="text5053-97"><tspan
          sodipodi:role="line"
          id="tspan5051-2"
          x="730.99884"
-         y="13.52584"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Bitstream Vera Sans Mono';-inkscape-font-specification:'Bitstream Vera Sans Mono'">COM1</tspan></text>
+         y="14.15507"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Nimbus Sans L';-inkscape-font-specification:'Nimbus Sans L'">COM1</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12px;line-height:125%;font-family:'Droid Sans';-inkscape-font-specification:'Droid Sans';letter-spacing:0px;word-spacing:0px;display:inline;fill:#ecf0f1;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="725.79779"
-       y="27.891342"
+       x="730.01483"
+       y="30.82349"
        id="text5053-5-5"><tspan
          sodipodi:role="line"
          id="tspan5051-4-8"
-         x="725.79779"
-         y="27.891342"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Bitstream Vera Sans Mono';-inkscape-font-specification:'Bitstream Vera Sans Mono'">COM2</tspan></text>
+         x="730.01483"
+         y="30.82349"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Nimbus Sans L';-inkscape-font-specification:'Nimbus Sans L'">COM2</tspan></text>
     <path
        style="display:inline;fill:none;fill-rule:evenodd;stroke:#ecf0f1;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        d="M 623.70798,36.758777 V -3.9513738"
@@ -1619,31 +1629,36 @@
        inkscape:connector-curvature="0" />
     <path
        style="display:inline;fill:none;fill-rule:evenodd;stroke:#ecf0f1;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="M 141.63552,16.46619 H 622.51379"
+       d="M 141.63552,18.041254 H 622.51379"
        id="path5055-33"
        inkscape:connector-curvature="0" />
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12px;line-height:125%;font-family:'Droid Sans';-inkscape-font-specification:'Droid Sans';letter-spacing:0px;word-spacing:0px;display:inline;fill:#ecf0f1;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="2.6430943"
-       y="11.853293"
+       x="3.8716476"
+       y="14.15507"
        id="text5053"><tspan
          sodipodi:role="line"
          id="tspan5051"
-         x="2.6430943"
-         y="11.853293"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Bitstream Vera Sans Mono';-inkscape-font-specification:'Bitstream Vera Sans Mono'">NAV1</tspan></text>
+         x="3.8716476"
+         y="14.15507"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Nimbus Sans L';-inkscape-font-specification:'Nimbus Sans L'">NAV1</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12px;line-height:125%;font-family:'Droid Sans';-inkscape-font-specification:'Droid Sans';letter-spacing:0px;word-spacing:0px;display:inline;fill:#ecf0f1;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="2.2572362"
-       y="28.521713"
+       x="3.8716476"
+       y="30.82349"
        id="text5053-5"><tspan
          sodipodi:role="line"
          id="tspan5051-4"
-         x="2.2572362"
-         y="28.521713"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Bitstream Vera Sans Mono';-inkscape-font-specification:'Bitstream Vera Sans Mono'">NAV2</tspan></text>
+         x="3.8716476"
+         y="30.82349"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Nimbus Sans L';-inkscape-font-specification:'Nimbus Sans L'">NAV2</tspan></text>
+    <path
+       style="display:inline;fill:none;fill-rule:evenodd;stroke:#ecf0f1;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 426.12023,36.841453 V -3.8686966"
+       id="path5055-6"
+       inkscape:connector-curvature="0" />
   </g>
   <g
      inkscape:groupmode="layer"
@@ -1653,113 +1668,25 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12px;line-height:125%;font-family:'Droid Sans';-inkscape-font-specification:'Droid Sans';letter-spacing:0px;word-spacing:0px;fill:#2ecc71;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="41.665558"
-       y="11.656133"
-       id="text5053-9"><tspan
-         sodipodi:role="line"
-         id="tspan5051-8"
-         x="41.665558"
-         y="11.656133"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Bitstream Vera Sans Mono';-inkscape-font-specification:'Bitstream Vera Sans Mono';fill:#2ecc71">109.10</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12px;line-height:125%;font-family:'Droid Sans';-inkscape-font-specification:'Droid Sans';letter-spacing:0px;word-spacing:0px;fill:#2ecc71;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="42.257782"
-       y="27.194149"
-       id="text5053-9-3"><tspan
-         sodipodi:role="line"
-         id="tspan5051-8-8"
-         x="42.257782"
-         y="27.194149"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Bitstream Vera Sans Mono';-inkscape-font-specification:'Bitstream Vera Sans Mono';fill:#2ecc71">119.10</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12px;line-height:125%;font-family:'Droid Sans';-inkscape-font-specification:'Droid Sans';letter-spacing:0px;word-spacing:0px;fill:#ecf0f1;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="94.830299"
-       y="12.00395"
-       id="text5053-9-5"><tspan
-         sodipodi:role="line"
-         id="tspan5051-8-2"
-         x="94.830299"
-         y="12.00395"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Bitstream Vera Sans Mono';-inkscape-font-specification:'Bitstream Vera Sans Mono'">109.10</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12px;line-height:125%;font-family:'Droid Sans';-inkscape-font-specification:'Droid Sans';letter-spacing:0px;word-spacing:0px;fill:#ecf0f1;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="94.830307"
-       y="26.868212"
-       id="text5053-9-3-2"><tspan
-         sodipodi:role="line"
-         id="tspan5051-8-8-2"
-         x="94.830307"
-         y="26.868212"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Bitstream Vera Sans Mono';-inkscape-font-specification:'Bitstream Vera Sans Mono'">119.10</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12px;line-height:125%;font-family:'Droid Sans';-inkscape-font-specification:'Droid Sans';letter-spacing:0px;word-spacing:0px;fill:#2ecc71;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="676.15234"
-       y="12.751408"
-       id="text5053-9-9"><tspan
-         sodipodi:role="line"
-         id="tspan5051-8-0"
-         x="676.15234"
-         y="12.751408"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Bitstream Vera Sans Mono';-inkscape-font-specification:'Bitstream Vera Sans Mono';fill:#2ecc71">109.10</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12px;line-height:125%;font-family:'Droid Sans';-inkscape-font-specification:'Droid Sans';letter-spacing:0px;word-spacing:0px;fill:#2ecc71;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="676.74457"
-       y="28.289423"
-       id="text5053-9-3-24"><tspan
-         sodipodi:role="line"
-         id="tspan5051-8-8-7"
-         x="676.74457"
-         y="28.289423"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Bitstream Vera Sans Mono';-inkscape-font-specification:'Bitstream Vera Sans Mono';fill:#2ecc71">119.10</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12px;line-height:125%;font-family:'Droid Sans';-inkscape-font-specification:'Droid Sans';letter-spacing:0px;word-spacing:0px;fill:#ecf0f1;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="627.46771"
-       y="12.507077"
-       id="text5053-9-5-6"><tspan
-         sodipodi:role="line"
-         id="tspan5051-8-2-5"
-         x="627.46771"
-         y="12.507077"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Bitstream Vera Sans Mono';-inkscape-font-specification:'Bitstream Vera Sans Mono'">109.10</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12px;line-height:125%;font-family:'Droid Sans';-inkscape-font-specification:'Droid Sans';letter-spacing:0px;word-spacing:0px;fill:#ecf0f1;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="627.46771"
-       y="27.371336"
-       id="text5053-9-3-2-7"><tspan
-         sodipodi:role="line"
-         id="tspan5051-8-8-2-1"
-         x="627.46771"
-         y="27.371336"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Bitstream Vera Sans Mono';-inkscape-font-specification:'Bitstream Vera Sans Mono'">119.10</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12px;line-height:125%;font-family:'Droid Sans';-inkscape-font-specification:'Droid Sans';letter-spacing:0px;word-spacing:0px;fill:#2ecc71;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="144.65698"
-       y="31.055326"
+       y="30.82349"
        id="text5053-9-3-8"><tspan
          sodipodi:role="line"
          id="tspan5051-8-8-5"
          x="144.65698"
-         y="31.055326"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Bitstream Vera Sans Mono';-inkscape-font-specification:'Bitstream Vera Sans Mono';fill:#2ecc71">GPS</tspan></text>
+         y="30.82349"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Nimbus Sans L';-inkscape-font-specification:'Nimbus Sans L';fill:#2ecc71">GPS</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12px;line-height:125%;font-family:'Droid Sans';-inkscape-font-specification:'Droid Sans';letter-spacing:0px;word-spacing:0px;fill:#2ecc71;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="176.84842"
-       y="31.474039"
+       y="30.82349"
        id="text5053-9-3-8-1"><tspan
          sodipodi:role="line"
          id="tspan5051-8-8-5-0"
          x="176.84842"
-         y="31.474039"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Bitstream Vera Sans Mono';-inkscape-font-specification:'Bitstream Vera Sans Mono';fill:#2ecc71">AP</tspan></text>
+         y="30.82349"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Nimbus Sans L';-inkscape-font-specification:'Nimbus Sans L';fill:#2ecc71">AP</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12px;line-height:125%;font-family:'Droid Sans';-inkscape-font-specification:'Droid Sans';letter-spacing:0px;word-spacing:0px;fill:#9b59b6;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -1770,7 +1697,7 @@
          id="tspan5051-8-8-5-7"
          x="160.66772"
          y="11.729552"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Bitstream Vera Sans Mono';-inkscape-font-specification:'Bitstream Vera Sans Mono';fill:#9b59b6">UNSER</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Nimbus Sans L';-inkscape-font-specification:'Nimbus Sans L';fill:#9b59b6;">UNSER</tspan></text>
     <path
        style="fill:none;fill-rule:evenodd;stroke:#9b59b6;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        d="M 149.88737,13.351622 V 0.91652191 c 0,0 4.39705,0.0803095 4.3064,6.50464399 -0.0906,6.4243341 -4.3064,5.9304561 -4.3064,5.9304561 z"
@@ -1793,7 +1720,7 @@
          id="tspan5051-8-2-50"
          x="208.05913"
          y="11.79831"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Bitstream Vera Sans Mono';-inkscape-font-specification:'Bitstream Vera Sans Mono'">DIS</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Nimbus Sans L';-inkscape-font-specification:'Nimbus Sans L';">DIS</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12px;line-height:125%;font-family:'Droid Sans';-inkscape-font-specification:'Droid Sans';letter-spacing:0px;word-spacing:0px;fill:#ecf0f1;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -1804,7 +1731,7 @@
          id="tspan5051-8-2-50-0"
          x="291.25992"
          y="12.090668"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Bitstream Vera Sans Mono';-inkscape-font-specification:'Bitstream Vera Sans Mono'">BRG</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Nimbus Sans L';-inkscape-font-specification:'Nimbus Sans L';">BRG</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12px;line-height:125%;font-family:'Droid Sans';-inkscape-font-specification:'Droid Sans';letter-spacing:0px;word-spacing:0px;fill:#9b59b6;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -1815,7 +1742,7 @@
          id="tspan5051-8-8-5-7-1"
          x="233.79327"
          y="11.375882"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Bitstream Vera Sans Mono';-inkscape-font-specification:'Bitstream Vera Sans Mono';fill:#9b59b6">27.9nm</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Nimbus Sans L';-inkscape-font-specification:'Nimbus Sans L';fill:#9b59b6;">27.9nm</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12px;line-height:125%;font-family:'Droid Sans';-inkscape-font-specification:'Droid Sans';letter-spacing:0px;word-spacing:0px;fill:#9b59b6;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -1826,40 +1753,18 @@
          id="tspan5051-8-8-5-7-1-3"
          x="320.44397"
          y="11.206162"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Bitstream Vera Sans Mono';-inkscape-font-specification:'Bitstream Vera Sans Mono';fill:#9b59b6">278°</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Nimbus Sans L';-inkscape-font-specification:'Nimbus Sans L';fill:#9b59b6;">278°</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12px;line-height:125%;font-family:'Droid Sans';-inkscape-font-specification:'Droid Sans';letter-spacing:0px;word-spacing:0px;fill:#2ecc71;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="634.56396"
-       y="389.82913"
-       id="text5053-9-3-24-4"><tspan
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12px;line-height:125%;font-family:'Droid Sans';-inkscape-font-specification:'Droid Sans';letter-spacing:0px;word-spacing:0px;display:inline;fill:#ecf0f1;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="431.23999"
+       y="14.15507"
+       id="text5053-9-5-63-7"><tspan
          sodipodi:role="line"
-         id="tspan5051-8-8-7-1"
-         x="634.56396"
-         y="389.82913"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Bitstream Vera Sans Mono';-inkscape-font-specification:'Bitstream Vera Sans Mono';fill:#2ecc71">7002</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12px;line-height:125%;font-family:'Droid Sans';-inkscape-font-specification:'Droid Sans';letter-spacing:0px;word-spacing:0px;fill:#2ecc71;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="667.67859"
-       y="389.82913"
-       id="text5053-9-3-24-4-5"><tspan
-         sodipodi:role="line"
-         id="tspan5051-8-8-7-1-0"
-         x="667.67859"
-         y="389.82913"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Bitstream Vera Sans Mono';-inkscape-font-specification:'Bitstream Vera Sans Mono';fill:#2ecc71">C</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12px;line-height:125%;font-family:'Droid Sans';-inkscape-font-specification:'Droid Sans';letter-spacing:0px;word-spacing:0px;fill:#ecf0f1;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="639.48029"
-       y="421.92261"
-       id="text5053-9-3-24-4-56"><tspan
-         sodipodi:role="line"
-         id="tspan5051-8-8-7-1-5"
-         x="639.48029"
-         y="421.92261"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Bitstream Vera Sans Mono';-inkscape-font-specification:'Bitstream Vera Sans Mono';fill:#ecf0f1">14:03:57</tspan></text>
+         id="tspan5051-8-2-50-9"
+         x="431.23999"
+         y="14.15507"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Nimbus Sans L';-inkscape-font-specification:'Nimbus Sans L'">DME</tspan></text>
   </g>
   <g
      inkscape:groupmode="layer"
@@ -2039,6 +1944,58 @@
        id="rect2822" />
   </g>
   <g
+     style="display:inline"
+     inkscape:label="speedindicator-bar-red"
+     id="g1875"
+     inkscape:groupmode="layer">
+    <rect
+       id="rect1873"
+       y="76.31588"
+       x="184.15128"
+       height="148.5"
+       width="6.5"
+       style="fill:#c0392b;fill-opacity:1;stroke:none;stroke-width:0.43443343" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="g1885"
+     inkscape:label="speedindicator-bar-green"
+     style="display:inline">
+    <rect
+       style="fill:#27ae60;fill-opacity:1;stroke:none;stroke-width:0.43443343"
+       width="6.5"
+       height="148.5"
+       x="184.15128"
+       y="76.31588"
+       id="rect1883" />
+  </g>
+  <g
+     style="display:inline"
+     inkscape:label="speedindicator-bar-yellow"
+     id="g1893"
+     inkscape:groupmode="layer">
+    <rect
+       id="rect1891"
+       y="76.31588"
+       x="184.15128"
+       height="148.5"
+       width="6.5"
+       style="fill:#f1c40f;fill-opacity:1;stroke:none;stroke-width:0.43443343" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="g1897"
+     inkscape:label="speedindicator-bar-white"
+     style="display:inline">
+    <rect
+       style="fill:#ecf0f1;fill-opacity:1;stroke:none;stroke-width:0.24871919"
+       width="2.1305194"
+       height="148.5"
+       x="184.15128"
+       y="76.31588"
+       id="rect1895" />
+  </g>
+  <g
      inkscape:groupmode="layer"
      id="layer18"
      inkscape:label="textfields"
@@ -2119,6 +2076,126 @@
        inkscape:label="#path1058">
       <title
          id="title1086-6-6-5-5-2-1-6">ias</title>
+    </circle>
+    <circle
+       style="display:inline;opacity:1;fill:none;fill-opacity:1;stroke:#c0392b;stroke-width:1.94880724;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="path1058-3-3-7-3-6-9-3-5"
+       cx="47.140625"
+       cy="30.808968"
+       r="0.91844583"
+       inkscape:transform-center-x="32.375"
+       inkscape:transform-center-y="0.375"
+       inkscape:label="#path1058">
+      <title
+         id="title1086-6-6-5-5-2-1-6-7">nav2-act-freq</title>
+    </circle>
+    <circle
+       style="display:inline;opacity:1;fill:none;fill-opacity:1;stroke:#c0392b;stroke-width:1.94880724;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="path1058-3-3-7-3-6-9-3-5-8"
+       cx="47.140625"
+       cy="14.188277"
+       r="0.91844583"
+       inkscape:transform-center-x="32.375"
+       inkscape:transform-center-y="0.375"
+       inkscape:label="#path1058">
+      <title
+         id="title1086-6-6-5-5-2-1-6-7-5">nav1-act-freq</title>
+    </circle>
+    <circle
+       style="display:inline;opacity:1;fill:none;fill-opacity:1;stroke:#c0392b;stroke-width:1.94880724;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="path1058-3-3-7-3-6-9-3-5-9"
+       cx="98.875"
+       cy="30.808968"
+       r="0.91844583"
+       inkscape:transform-center-x="32.375"
+       inkscape:transform-center-y="0.375"
+       inkscape:label="#path1058">
+      <title
+         id="title1086-6-6-5-5-2-1-6-7-2">nav2-stby-freq</title>
+    </circle>
+    <circle
+       style="display:inline;opacity:1;fill:none;fill-opacity:1;stroke:#c0392b;stroke-width:1.94880724;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="path1058-3-3-7-3-6-9-3-5-8-7"
+       cx="98.875"
+       cy="14.188277"
+       r="0.91844583"
+       inkscape:transform-center-x="32.375"
+       inkscape:transform-center-y="0.375"
+       inkscape:label="#path1058">
+      <title
+         id="title1086-6-6-5-5-2-1-6-7-5-3">nav1-stby-freq</title>
+    </circle>
+    <circle
+       style="display:inline;opacity:1;fill:none;fill-opacity:1;stroke:#c0392b;stroke-width:1.94880724;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="path1058-3-3-7-3-6-9-3-5-3"
+       cx="631.13281"
+       cy="30.808968"
+       r="0.91844583"
+       inkscape:transform-center-x="32.375"
+       inkscape:transform-center-y="0.375"
+       inkscape:label="#path1058">
+      <title
+         id="title1086-6-6-5-5-2-1-6-7-6">com2-stby-freq</title>
+    </circle>
+    <circle
+       style="display:inline;opacity:1;fill:none;fill-opacity:1;stroke:#c0392b;stroke-width:1.94880724;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="path1058-3-3-7-3-6-9-3-5-8-75"
+       cx="631.13281"
+       cy="14.188277"
+       r="0.91844583"
+       inkscape:transform-center-x="32.375"
+       inkscape:transform-center-y="0.375"
+       inkscape:label="#path1058">
+      <title
+         id="title1086-6-6-5-5-2-1-6-7-5-35">com1-stby-freq</title>
+    </circle>
+    <circle
+       style="display:inline;opacity:1;fill:none;fill-opacity:1;stroke:#c0392b;stroke-width:1.94880724;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="path1058-3-3-7-3-6-9-3-5-9-6"
+       cx="682.86719"
+       cy="30.808968"
+       r="0.91844583"
+       inkscape:transform-center-x="32.375"
+       inkscape:transform-center-y="0.375"
+       inkscape:label="#path1058">
+      <title
+         id="title1086-6-6-5-5-2-1-6-7-2-2">com2-act-freq</title>
+    </circle>
+    <circle
+       style="display:inline;opacity:1;fill:none;fill-opacity:1;stroke:#c0392b;stroke-width:1.94880724;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="path1058-3-3-7-3-6-9-3-5-8-7-9"
+       cx="682.86719"
+       cy="14.188277"
+       r="0.91844583"
+       inkscape:transform-center-x="32.375"
+       inkscape:transform-center-y="0.375"
+       inkscape:label="#path1058">
+      <title
+         id="title1086-6-6-5-5-2-1-6-7-5-3-1">com1-act-freq</title>
+    </circle>
+    <circle
+       style="display:inline;opacity:1;fill:none;fill-opacity:1;stroke:#c0392b;stroke-width:1.94880724;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="path1058-3-3-7-3-6-9-3-5-8-7-9-3"
+       cx="640.25"
+       cy="389.125"
+       r="0.91844583"
+       inkscape:transform-center-x="32.375"
+       inkscape:transform-center-y="0.375"
+       inkscape:label="#path1058">
+      <title
+         id="title1086-6-6-5-5-2-1-6-7-5-3-1-6">xpdr-squawk</title>
+    </circle>
+    <circle
+       style="display:inline;opacity:1;fill:none;fill-opacity:1;stroke:#c0392b;stroke-width:1.94880724;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="path1058-3-3-7-3-6-9-3-5-8-7-9-3-7"
+       cx="640.25"
+       cy="421.25"
+       r="0.91844583"
+       inkscape:transform-center-x="32.375"
+       inkscape:transform-center-y="0.375"
+       inkscape:label="#path1058">
+      <title
+         id="title1086-6-6-5-5-2-1-6-7-5-3-1-6-5">time-utc</title>
     </circle>
   </g>
 </svg>

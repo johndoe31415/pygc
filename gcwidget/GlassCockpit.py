@@ -2,12 +2,27 @@ import json
 import collections
 import cwrap
 import math
+import datetime
 from geo import Vector2d, Box2d
 from .Tools import AngleTools
+from .Color import Color
 
 _GCElement = collections.namedtuple("GCElement", [ "name", "offset", "dimensions", "clip", "center_of_rotation", "cctx" ])
 
 class GlassCockpit(object):
+	_COLORS = {
+		"horizon_line":		Color.from_rgb_int(0xffffff),
+		"menu_bg":			Color.from_rgb_int(0x2c3e50),
+		"sep_lines":		Color.from_rgb_int(0xecf0f1),
+		"alpha_bg":			Color.from_rgba_int(0x00000030),
+		"vor_arrow":		Color.from_rgb_int(0xd407d5),
+		"heading_arrow":	Color.from_rgb_int(0xf1c40f),
+
+		"ias_text":				Color.from_rgb_int(0xffffff),
+		"active_freq_text":		Color.from_rgb_int(0x2ecc71),
+		"standby_freq_text":	Color.from_rgb_int(0xecf0f1),
+	}
+
 	def __init__(self, config):
 		self._config = config
 		self._autoconfig = { }
@@ -66,8 +81,23 @@ class GlassCockpit(object):
 		self._data = data
 
 	def _render_textelements(self, screen):
-		screen.font_select("Sans", 22, fontcolor = (1, 1, 1))
+		screen.font_select("Nimbus Sans L", 22, fontcolor = self._COLORS["ias_text"])
 		screen.text(self._pois["ias"], "%.0f" % ((self._data["pos"]["ias"])), anchor = "cr")
+
+		screen.font_select("Nimbus Sans L", 20, fontcolor = self._COLORS["active_freq_text"])
+		screen.text(self._pois["com1-act-freq"], "%.3f" % ((self._data["freq"]["com1"]["active"])), anchor = "bl")
+		screen.text(self._pois["com2-act-freq"], "%.3f" % ((self._data["freq"]["com2"]["active"])), anchor = "bl")
+		screen.text(self._pois["nav1-act-freq"], "%.2f" % ((self._data["freq"]["nav1"]["active"])), anchor = "bl")
+		screen.text(self._pois["nav2-act-freq"], "%.2f" % ((self._data["freq"]["nav2"]["active"])), anchor = "bl")
+
+		screen.font_select("Nimbus Sans L", 20, fontcolor =  self._COLORS["standby_freq_text"])
+		screen.text(self._pois["com1-stby-freq"], "%.3f" % ((self._data["freq"]["com1"]["stby"])), anchor = "bl")
+		screen.text(self._pois["com2-stby-freq"], "%.3f" % ((self._data["freq"]["com2"]["stby"])), anchor = "bl")
+		screen.text(self._pois["nav1-stby-freq"], "%.2f" % ((self._data["freq"]["nav1"]["stby"])), anchor = "bl")
+		screen.text(self._pois["nav2-stby-freq"], "%.2f" % ((self._data["freq"]["nav2"]["stby"])), anchor = "bl")
+
+		screen.text(self._pois["xpdr-squawk"], "%04d" % (self._data["xpdr"]["squawk"]), anchor = "bl")
+		screen.text(self._pois["time-utc"], datetime.datetime.utcnow().strftime("%H:%M:%S"), anchor = "bl")
 
 	def render(self, screen):
 		for element in self._elements:

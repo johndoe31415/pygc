@@ -58,7 +58,7 @@ class CairoContext(object):
 
 	def font_select(self, fontname, fontsize, fontcolor = None):
 		if fontcolor is not None:
-			self._cairoctx.set_source_rgb(*fontcolor)
+			fontcolor.cairo_set_source(self._cairoctx)
 		else:
 			# Black by default
 			self._cairoctx.set_source_rgb(0, 0, 0)
