@@ -57,9 +57,9 @@ class GlutApplication(object):
 
 		glMatrixMode(GL_PROJECTION)
 		glLoadIdentity()
-		glOrtho(0, self._glasscockpit.screen_dimension.x / self._glasscockpit.screen_dimension.y, 0, 1, -1, 1)
-		glScale(0.1, 0.1, 1)
-
+		glOrtho(0, 1, 0, 1, -1, 1)
+		glScale(1 / self._glasscockpit.screen_dimension.x, -1 / self._glasscockpit.screen_dimension.y, 1)
+		glTranslate(0, -self._glasscockpit.screen_dimension.y, 0)
 
 	def _draw_test_square(self, box):
 		vertices = list(box)
@@ -78,7 +78,7 @@ class GlutApplication(object):
 		glMatrixMode(GL_MODELVIEW)
 		glLoadIdentity()
 
-		self._draw_test_square(Box2d(Vector2d(0, 0), Vector2d(1, 1)))
+		self._draw_test_square(Box2d(Vector2d(0, 0), Vector2d(100, 100)))
 
 		glutSwapBuffers(1)
 
