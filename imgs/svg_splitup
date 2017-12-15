@@ -119,6 +119,10 @@ for layer in sorted(layers.values(), key = lambda layer: layer.order):
 	# For texture export, we need to have both length and width multiples 
 	gl_width = pwr2(layer_width)
 	gl_height = pwr2(layer_height)
+	while (gl_width * gl_height) > 1024 * 1024:
+		gl_width //= 2
+		gl_height //= 2
+
 	width_dpi = gl_width / layer_width * dpi
 	height_dpi = gl_height / layer_height * dpi
 	gl_dpi = max(width_dpi, height_dpi)
