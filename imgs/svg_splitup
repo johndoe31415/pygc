@@ -125,7 +125,7 @@ for layer in sorted(layers.values(), key = lambda layer: layer.order):
 	gl_overhead = (gl_width * gl_height) / (layer_width * layer_height)
 	print("OpenGL: %d x %d -> %d x %d (%.0f dpi -> %.0f dpi); factor %.2f" % (layer_width, layer_height, gl_width, gl_height, dpi, gl_dpi, gl_overhead))
 	subprocess.check_call(["inkscape", "-i", layer.svgobj.oid, "-j", infile_svg, "--export-dpi=%f" % (gl_dpi), "--export-png=%s/raw.png" % (outdir) ], stderr = subprocess.DEVNULL)
-	subprocess.check_call([ "convert", "+repage", "-geometry", "%dx%d!" % (gl_width, gl_height), "%s/raw.png" % (outdir), "%s/tex_%s.png" % (outdir, layer.name) ], stderr = subprocess.DEVNULL)
+	subprocess.check_call([ "convert", "+repage", "-geometry", "%dx%d!" % (gl_width, gl_height), "%s/raw.png" % (outdir), "-channel", "rgba", "-separate", "-swap", "0,2", "-combine", "%s/tex_%s.png" % (outdir, layer.name) ], stderr = subprocess.DEVNULL)
 	os.unlink("%s/raw.png" % (outdir))
 	print("~" * 120)
 

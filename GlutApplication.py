@@ -52,8 +52,11 @@ class GlutApplication(object):
 
 		glViewport(0, 0, self._glasscockpit.screen_dimension.x, self._glasscockpit.screen_dimension.y)
 		glClearDepth(1)
-		glClearColor(0, 0, 0, 0)
+		glClearColor(0.5, 0.5, 0.5, 0)
 		glClear(GL_COLOR_BUFFER_BIT)
+
+		glEnable(GL_TEXTURE_2D)
+		glEnable(GL_ALPHA_TEST)
 
 		glMatrixMode(GL_PROJECTION)
 		glLoadIdentity()
@@ -61,24 +64,31 @@ class GlutApplication(object):
 		glScale(1 / self._glasscockpit.screen_dimension.x, -1 / self._glasscockpit.screen_dimension.y, 1)
 		glTranslate(0, -self._glasscockpit.screen_dimension.y, 0)
 
-	def _draw_test_square(self, box):
+		glDepthMask(GL_FALSE)
+		glEnable(GL_BLEND)
+		glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA)
+
+
+	def _draw_test_square(self, box, zvalue = 0):
 		vertices = list(box)
 		print("Red %s, Green, %s, Blue %s and %s" % (vertices[0], vertices[1], vertices[2], vertices[3]))
 		glBegin(GL_QUADS)
 		glColor3f(1, 0, 0)
-		glVertex3f(vertices[0][0], vertices[0][1], 0)
+		glVertex3f(vertices[0][0], vertices[0][1], zvalue)
 		glColor3f(0, 1, 0)
-		glVertex3f(vertices[1][0], vertices[1][1], 0)
+		glVertex3f(vertices[1][0], vertices[1][1], zvalue)
 		glColor3f(0, 0, 1)
-		glVertex3f(vertices[2][0], vertices[2][1], 0)
-		glVertex3f(vertices[3][0], vertices[3][1], 0)
+		glVertex3f(vertices[2][0], vertices[2][1], zvalue)
+		glVertex3f(vertices[3][0], vertices[3][1], zvalue)
 		glEnd()
 
 	def _draw_gl_scene(self):
 		glMatrixMode(GL_MODELVIEW)
 		glLoadIdentity()
 
-		self._draw_test_square(Box2d(Vector2d(0, 0), Vector2d(100, 100)))
+		self._glasscockpit.render_opengl(self)
+
+		self._draw_test_square(Box2d(Vector2d(0, 0), Vector2d(100, 100)), 0)
 
 		glutSwapBuffers(1)
 

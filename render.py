@@ -13,7 +13,6 @@ config = {
 	"screen_dimension":	geo.Vector2d(res * 16 // 9, res),
 }
 
-glasscockpit = gcwidget.GlassCockpit(config)
 instrument_data = {
 	"pos": {
 		"heading_deg":		128,
@@ -59,7 +58,6 @@ instrument_data = {
 		"redwhite":			[220, 9999],	# never exceed V_NE
 	},
 }
-glasscockpit.feed_data(instrument_data)
 
 def modify_data():
 	instrument_data["pos"]["heading_deg"] = (instrument_data["pos"]["heading_deg"] + 0.5) % 360
@@ -68,7 +66,12 @@ def modify_data():
 	instrument_data["vor1"]["obs"] = (instrument_data["vor1"]["obs"] + 1.13) % 360
 	instrument_data["ap"]["hdgbug_deg"] = (instrument_data["ap"]["hdgbug_deg"] - 0.75) % 360
 
+#glasscockpit = gcwidget.GlassCockpit(config, context_class = cwrap.CairoContext)
+#glasscockpit.feed_data(instrument_data)
 #GCGTKApplication.run(glasscockpit, 0, data_callback = modify_data)
+
+glasscockpit = gcwidget.GlassCockpit(config, context_class = cwrap.OpenGLContext, img_prefix = "tex_")
+glasscockpit.feed_data(instrument_data)
 GlutApplication.run(glasscockpit, frametime_millis = 50)
 
 #screen = cwrap.CairoContext.create(geo.Vector2d(res * 16 // 9, res))

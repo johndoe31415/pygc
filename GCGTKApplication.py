@@ -47,7 +47,7 @@ class GCGTKApplication(Gtk.Window):
 #		cr.set_source_surface(self._screen.surface, 10, 10)
 #		cr.paint()
 		self._t0 = time.time()
-		self._glasscockpit.render_direct(cr)
+		self._glasscockpit.render_cairo(cr)
 		t1 = time.time()
 		tdiff = t1 - self._t0
 		print("%.1f ms / %.1f fps" % (tdiff * 1000, 1 / tdiff))

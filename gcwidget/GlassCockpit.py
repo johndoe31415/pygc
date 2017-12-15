@@ -26,11 +26,13 @@ class GlassCockpit(object):
 		"crs-text":				Color.from_rgb_int(0xd405d4),
 	}
 
-	def __init__(self, config):
+	def __init__(self, config, context_class, img_prefix = ""):
 		self._config = config
+		self._context_class = context_class
 		self._autoconfig = { }
 		self._data = { }
 		self._elements = [ ]
+		self._img_prefix = img_prefix
 		self._load_elements("imgs/render/")
 
 	@property
@@ -54,7 +56,7 @@ class GlassCockpit(object):
 				center_of_rotation = Vector2d(*element["cor"])
 			else:
 				center_of_rotation = offset + (dimensions / 2)
-			cctx = cwrap.CairoContext.load_from_png(basedir + name + ".png")
+			cctx = self._context_class.load_from_png(basedir + self._img_prefix + name + ".png", dimensions)
 			gcelement = _GCElement(name = name, offset = offset, dimensions = dimensions, clip = clip, center_of_rotation = center_of_rotation, cctx = cctx)
 			self._elements.append(gcelement)
 
@@ -169,5 +171,8 @@ class GlassCockpit(object):
 
 		self._render_textelements(screen)
 
-	def render_direct(self, cairo_context):
+	def render_cairo(self, cairo_context):
 		return self.render(cwrap.CairoContext.wrap(self._config["screen_dimension"], cairo_context))
+
+	def render_opengl(self, opengl_context):
+		return self.render(cwrap.OpenGLContext())

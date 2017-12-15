@@ -31,7 +31,7 @@ class CairoContext(object):
 		return cls(dimensions = dimensions, surface = surface, cairoctx = cairoctx)
 
 	@classmethod
-	def load_from_png(cls, png_filename):
+	def load_from_png(cls, png_filename, dimension):
 		surface = cairo.ImageSurface.create_from_png(png_filename)
 		cairoctx = cairo.Context(surface)
 		dimensions = Vector2d(surface.get_width(), surface.get_height())
