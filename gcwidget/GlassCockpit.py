@@ -33,6 +33,10 @@ class GlassCockpit(object):
 		self._elements = [ ]
 		self._load_elements("imgs/render/")
 
+	@property
+	def screen_dimension(self):
+		return self._config["screen_dimension"]
+
 	def _load_elements(self, basedir):
 		with open(basedir + "layers.json") as f:
 			data = json.loads(f.read())
@@ -166,4 +170,4 @@ class GlassCockpit(object):
 		self._render_textelements(screen)
 
 	def render_direct(self, cairo_context):
-		return self.render(cwrap.CairoContext.wrap(Vector2d(1280, 720), cairo_context))
+		return self.render(cwrap.CairoContext.wrap(self._config["screen_dimension"], cairo_context))

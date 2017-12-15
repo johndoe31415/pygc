@@ -1,3 +1,5 @@
+from .Vector2d import Vector2d
+
 class Box2d(object):
 	def __init__(self, base, dimensions):
 		self._base = base
@@ -22,6 +24,12 @@ class Box2d(object):
 	@property
 	def center(self):
 		return self.v0 + (self._dimensions / 2)
+
+	def __iter__(self):
+		yield self._base
+		yield self._base + Vector2d(self._dimensions.x, 0)
+		yield self._base + self._dimensions
+		yield self._base + Vector2d(0, self._dimensions.y)
 
 	def __repr__(self):
 		return "Box<base %s, dim %s>" % (self.base, self.dimensions)

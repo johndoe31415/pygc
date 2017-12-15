@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 import time
+import geo
 import gi
 gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk, GObject, GLib
@@ -20,7 +21,8 @@ class GCGTKApplication(Gtk.Window):
 		self.add(self._darea)
 
 		self.set_title("PyGC")
-		self.resize(1280 + 20, 720 + 20)
+		window_size = self._glasscockpit.screen_dimension + geo.Vector2d(20, 20)
+		self.resize(window_size.x, window_size.y)
 		self.set_position(Gtk.WindowPosition.CENTER)
 		self.show_all()
 		self._t0 = 0

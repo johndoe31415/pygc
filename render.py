@@ -9,8 +9,8 @@ from GCGTKApplication import GCGTKApplication
 from GlutApplication import GlutApplication
 
 res = 720
-screen = cwrap.CairoContext.create(geo.Vector2d(res * 16 // 9, res))
 config = {
+	"screen_dimension":	geo.Vector2d(res * 16 // 9, res),
 }
 
 glasscockpit = gcwidget.GlassCockpit(config)
@@ -68,6 +68,9 @@ def modify_data():
 	instrument_data["vor1"]["obs"] = (instrument_data["vor1"]["obs"] + 1.13) % 360
 	instrument_data["ap"]["hdgbug_deg"] = (instrument_data["ap"]["hdgbug_deg"] - 0.75) % 360
 
-GCGTKApplication.run(glasscockpit, 0, data_callback = modify_data)
+#GCGTKApplication.run(glasscockpit, 0, data_callback = modify_data)
+GlutApplication.run(glasscockpit, frametime_millis = 50)
+
+#screen = cwrap.CairoContext.create(geo.Vector2d(res * 16 // 9, res))
 #glasscockpit.render(screen)
 #screen.write_to_png("out.png")
