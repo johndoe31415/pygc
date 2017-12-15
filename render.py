@@ -72,7 +72,7 @@ def modify_data():
 
 glasscockpit = gcwidget.GlassCockpit(config, context_class = cwrap.OpenGLContext, img_prefix = "tex_")
 glasscockpit.feed_data(instrument_data)
-GlutApplication.run(glasscockpit, frametime_millis = 50)
+GlutApplication.run(glasscockpit, frametime_millis = 50, data_callback = modify_data)
 
 #screen = cwrap.CairoContext.create(geo.Vector2d(res * 16 // 9, res))
 #glasscockpit.render(screen)

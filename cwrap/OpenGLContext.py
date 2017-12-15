@@ -1,3 +1,4 @@
+import math
 import cairo
 import collections
 from geo import Vector2d, Box2d
@@ -38,20 +39,16 @@ class OpenGLContext(object):
 			if len(source.texture) == 0:
 				self._finish_texture(source)
 			source = source.texture[0]
-		print(source)
-
-
-#		if source.texid != 1:
-#			return
-
 
 		depth = 0
 
 		glBindTexture(GL_TEXTURE_2D, source.texid)
 
-#		glRotate(10, 0, 0, 1)
-
 		glPushMatrix()
+		if rotation_rad is not None:
+			glTranslate(center_of_rotation.x, center_of_rotation.y, 0)
+			glRotate(180 / math.pi * rotation_rad, 0, 0, 1)
+			glTranslate(-center_of_rotation.x, -center_of_rotation.y, 0)
 		if offset is not None:
 			glTranslate(offset.x, offset.y, 0)
 

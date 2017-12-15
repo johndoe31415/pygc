@@ -19,7 +19,8 @@ class MouseButtonAction(enum.IntEnum):
 	ButtonUp = 1
 
 class GlutApplication(object):
-	def __init__(self, glasscockpit):
+	def __init__(self, glasscockpit, data_callback = None):
+		self._data_callback = data_callback
 		self._glasscockpit = glasscockpit
 		self._initialize_opengl()
 
@@ -68,6 +69,8 @@ class GlutApplication(object):
 		glEnable(GL_BLEND)
 		glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA)
 
+	def _gl_idle(self):
+		self._draw_gl_scene()
 
 	def _draw_test_square(self, box, zvalue = 0):
 		vertices = list(box)
@@ -83,17 +86,14 @@ class GlutApplication(object):
 		glEnd()
 
 	def _draw_gl_scene(self):
+		self._data_callback()
 		glMatrixMode(GL_MODELVIEW)
 		glLoadIdentity()
 
 		self._glasscockpit.render_opengl(self)
-
-		self._draw_test_square(Box2d(Vector2d(0, 0), Vector2d(100, 100)), 0)
+#		self._draw_test_square(Box2d(Vector2d(0, 0), Vector2d(100, 100)), 0)
 
 		glutSwapBuffers(1)
-
-	def _gl_idle(self):
-		pass
 
 	def _gl_keyboard(self, key, pos_x, pos_y):
 		if key == b"\x1b":
@@ -101,5 +101,5 @@ class GlutApplication(object):
 
 	@classmethod
 	def run(cls, glasscockpit, frametime_millis, data_callback = None):
-		app = cls(glasscockpit)
+		app = cls(glasscockpit, data_callback = data_callback)
 		glutMainLoop()
