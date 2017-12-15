@@ -87,6 +87,11 @@ for layer in layers.values():
 		else:
 			raise Exception("Unexpected private layer name: %s" % (layer.name))
 
+def pwr2(value):
+	for i in range(14):
+		if (2 ** i) >= value:
+			return 2 ** i
+
 page_layer = layers["_page"]
 dpi = output_width / page_layer.svgobj.width * 96
 tpc = dpi / 96		# to-pixel-coefficient
@@ -94,9 +99,10 @@ layer_info = [ ]
 for layer in sorted(layers.values(), key = lambda layer: layer.order):
 	if layer.name.startswith("_"):
 		continue
+	(layer_width, layer_height) = (layer.svgobj.width * tpc, layer.svgobj.height * tpc)
 	next_layer_info = {
 		"name": layer.name,
-		"dimensions":	[ layer.svgobj.width * tpc, layer.svgobj.height * tpc ],
+		"dimensions":	[ layer_width, layer_height ],
 		"offset":		[ layer.svgobj.x * tpc, layer.svgobj.y * tpc ],
 	}
 	if layer.clip is not None:
@@ -109,6 +115,18 @@ for layer in sorted(layers.values(), key = lambda layer: layer.order):
 	layer_info.append(next_layer_info)
 	print(next_layer_info)
 	subprocess.check_call(["inkscape", "-i", layer.svgobj.oid, "-j", infile_svg, "--export-dpi=%f" % (dpi), "--export-png=%s/%s.png" % (outdir, layer.name) ], stderr = subprocess.DEVNULL)
+
+	# For texture export, we need to have both length and width multiples 
+	gl_width = pwr2(layer_width)
+	gl_height = pwr2(layer_height)
+	width_dpi = gl_width / layer_width * dpi
+	height_dpi = gl_height / layer_height * dpi
+	gl_dpi = max(width_dpi, height_dpi)
+	gl_overhead = (gl_width * gl_height) / (layer_width * layer_height)
+	print("OpenGL: %d x %d -> %d x %d (%.0f dpi -> %.0f dpi); factor %.2f" % (layer_width, layer_height, gl_width, gl_height, dpi, gl_dpi, gl_overhead))
+	subprocess.check_call(["inkscape", "-i", layer.svgobj.oid, "-j", infile_svg, "--export-dpi=%f" % (gl_dpi), "--export-png=%s/raw.png" % (outdir) ], stderr = subprocess.DEVNULL)
+	subprocess.check_call([ "convert", "+repage", "-geometry", "%dx%d!" % (gl_width, gl_height), "%s/raw.png" % (outdir), "%s/tex_%s.png" % (outdir, layer.name) ], stderr = subprocess.DEVNULL)
+	os.unlink("%s/raw.png" % (outdir))
 	print("~" * 120)
 
 all_info = {
