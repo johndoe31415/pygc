@@ -50,6 +50,8 @@ class OpenGLContext(object):
 		glBindTexture(GL_TEXTURE_2D, source.texid)
 
 #		glRotate(10, 0, 0, 1)
+
+		glPushMatrix()
 		if offset is not None:
 			glTranslate(offset.x, offset.y, 0)
 
@@ -67,6 +69,7 @@ class OpenGLContext(object):
 		glVertex3f(0, source.dimension.y, depth)
 		glEnd()
 
+		glPopMatrix()
 
 	def draw_image(self, img, vertices):
 		glEnable(GL_TEXTURE_2D)
