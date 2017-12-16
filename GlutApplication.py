@@ -20,19 +20,21 @@ class MouseButtonAction(enum.IntEnum):
 	ButtonUp = 1
 
 class GlutApplication(object):
-	def __init__(self, glasscockpit, data_callback = None):
+	def __init__(self, glasscockpit, data_callback = None, fullscreen = False):
 		self._data_callback = data_callback
 		self._screen_ctx = cwrap.OpenGLContext()
 		self._glasscockpit = glasscockpit
-		self._initialize_opengl()
+		self._initialize_opengl(fullscreen = fullscreen)
 
-	def _initialize_opengl(self):
+	def _initialize_opengl(self, fullscreen = False):
 		glutInit(1, "None")
 		glutInitDisplayMode(GLUT_RGBA | GLUT_DOUBLE | GLUT_STENCIL | GLUT_MULTISAMPLE)
 		glutInitWindowSize(self._glasscockpit.screen_dimension.x, self._glasscockpit.screen_dimension.y)
 		glutInitWindowPosition(200, 200)
 
 		self._window = glutCreateWindow(b"Glass Cockpit")
+		if fullscreen:
+			glutFullScreen()
 
 		glutDisplayFunc(self._gl_display)
 		glutIdleFunc(self._gl_idle)
@@ -63,8 +65,7 @@ class GlutApplication(object):
 		scale = actual_height / self._glasscockpit.screen_dimension.y
 #		width = height * aspect
 #		print(height, width)
-		print(height)
-
+#		print(height)
 
 		glMatrixMode(GL_PROJECTION)
 		glLoadIdentity()
@@ -103,6 +104,6 @@ class GlutApplication(object):
 			sys.exit(0)
 
 	@classmethod
-	def run(cls, glasscockpit, frametime_millis, data_callback = None):
-		app = cls(glasscockpit, data_callback = data_callback)
+	def run(cls, glasscockpit, frametime_millis, data_callback = None, fullscreen = False):
+		app = cls(glasscockpit, data_callback = data_callback, fullscreen = fullscreen)
 		glutMainLoop()

@@ -161,6 +161,9 @@ class OpenGLContext(object):
 		glVertex3f(0, source.dimension.y, depth)
 		glEnd()
 
+		if clipped_callback is not None:
+			clipped_callback(self, offset)
+
 		glPopMatrix()
 
 	@staticmethod
@@ -242,6 +245,5 @@ class OpenGLContext(object):
 			pos -= Vector2d(texture.text_extents.x_advance / 2, 0)
 		else:
 			raise Exception(NotImplemented)
-
 
 		self.blit(texture, offset = pos)
