@@ -26,7 +26,7 @@ class GlutApplication(object):
 
 	def _initialize_opengl(self):
 		glutInit(1, "None")
-		glutInitDisplayMode(GLUT_RGBA | GLUT_DOUBLE | GLUT_DEPTH | GLUT_MULTISAMPLE)
+		glutInitDisplayMode(GLUT_RGBA | GLUT_DOUBLE | GLUT_STENCIL | GLUT_MULTISAMPLE)
 		glEnable(GL_MULTISAMPLE)
 		glutInitWindowSize(self._glasscockpit.screen_dimension.x, self._glasscockpit.screen_dimension.y)
 		glutInitWindowPosition(200, 200)
@@ -39,8 +39,6 @@ class GlutApplication(object):
 
 		glClearColor(1.0, 1.0, 1.0, 0.0)
 		glClearDepth(1.0)
-		glDepthFunc(GL_LESS)
-		glEnable(GL_DEPTH_TEST)
 		glShadeModel(GL_SMOOTH)
 		glMatrixMode(GL_PROJECTION)
 		glLoadIdentity()
@@ -49,7 +47,7 @@ class GlutApplication(object):
 
 
 		# Re-init....
-		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT)
+		glClear(GL_COLOR_BUFFER_BIT)
 
 		glViewport(0, 0, self._glasscockpit.screen_dimension.x, self._glasscockpit.screen_dimension.y)
 		glClearDepth(1)

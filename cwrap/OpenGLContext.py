@@ -45,6 +45,36 @@ class OpenGLContext(object):
 		glBindTexture(GL_TEXTURE_2D, source.texid)
 
 		glPushMatrix()
+
+		if clip is not None:
+			# Activate stencil buffer
+			glEnable(GL_STENCIL_TEST)
+
+			# Don't paint any framebuffer components
+			glColorMask(GL_FALSE, GL_FALSE, GL_FALSE, GL_FALSE)
+
+			# Set whole stencil buffer to zero
+			glClear(GL_STENCIL_BUFFER_BIT)
+
+			# But where we paint next, replace stencil buffer by 1
+			glStencilFunc(GL_NEVER, 1, 0)
+			glStencilOp(GL_REPLACE, GL_KEEP, GL_KEEP)
+
+			# Draw the clipping plane (i.e., set stencil to one therein)
+			glBegin(GL_QUADS)
+			for vertex in clip:
+				glVertex3f(vertex.x, vertex.y, 1)
+			glEnd()
+
+			# Re-enable drawing
+			glColorMask(GL_TRUE, GL_TRUE, GL_TRUE, GL_TRUE)
+
+			# But only where stencil == 1
+			glStencilFunc(GL_EQUAL, 1, 0xff)
+		else:
+			glDisable(GL_STENCIL_TEST)
+
+
 		if rotation_rad is not None:
 			glTranslate(center_of_rotation.x, center_of_rotation.y, 0)
 			glRotate(180 / math.pi * rotation_rad, 0, 0, 1)
