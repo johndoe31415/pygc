@@ -7,17 +7,69 @@ from geo import Vector2d, Box2d
 from . import TextExtents
 from OpenGL.GL import *
 
-OpenGLTexture = collections.namedtuple("OpenGLTexture", [ "texid", "dimension", "surface_dimension", "filename" ])
+OpenGLTexture = collections.namedtuple("OpenGLTexture", [ "texid", "dimension", "surface_dimension", "filename", "maxx", "maxy" ])
 OpenGLTexturePromise = collections.namedtuple("OpenGLTexturePromise", [ "dimension", "filename", "texture" ])
 SelectedFont = collections.namedtuple("SelectedFont", [ "name", "size", "color" ])
-RenderedText = collections.namedtuple("RenderedText", [ "renderts", "font", "text", "textureid" ])
+RenderedText = collections.namedtuple("RenderedText", [ "font", "text", "textureid" ])
+
+class ObjectLRUCache(object):
+	def __init__(self, create_callback, purge_callback, purge_timeout = 5):
+		self._create_callback = create_callback
+		self._purge_callback = purge_callback
+		self._purge_timeout = purge_timeout
+		self._autopurge_interval = 1
+		self._last_purge = time.time()
+		self._cache = { }
+
+	def purge(self):
+		now = time.time()
+		self._last_purge = now
+		delete_keys = [ ]
+		delete_items = [ ]
+		for (key, (lastuse_time, item)) in self._cache.items():
+			if (now - lastuse_time) > self._purge_timeout:
+				delete_items.append(item)
+				delete_keys.append(key)
+		if len(delete_items) > 0:
+			self._purge_callback(delete_items)
+			for key in delete_keys:
+				del self._cache[key]
+
+	def _auto_purge(self):
+		time_since_last_purge = time.time() - self._last_purge
+		if time_since_last_purge > self._autopurge_interval:
+			self.purge()
+
+	def __getitem__(self, key):
+		try:
+			item = self._cache.get(key)
+			if item is not None:
+				# Item is cached. Reset timestamp and return object.
+				item[0] = time.time()
+				return item[1]
+
+			# Item not in cache. Create
+			new_item = self._create_callback(*key)
+
+			# Insert into cache and return object
+			self._cache[key] = [ time.time(), new_item ]
+			return new_item
+		finally:
+			self._auto_purge()
+
+	def __str__(self):
+		return "Cache<%d>" % (len(self._cache))
 
 class OpenGLContext(object):
 	_depth = 1
 
 	def __init__(self):
 		self._selected_font = None
-#		self._text
+		self._text_cache = ObjectLRUCache(self.render_text_to_texture, self._delete_text_textures)
+
+	def _delete_text_textures(self, textures):
+		texids = [ texture.texid for texture in textures ]
+		glDeleteTextures(texids)
 
 	@classmethod
 	def load_from_png(cls, png_filename, dimension):
@@ -38,7 +90,7 @@ class OpenGLContext(object):
 		glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR)
 		glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR)
 		glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, surface_dimension.x, surface_dimension.y, 0, GL_RGBA, GL_UNSIGNED_BYTE, rgba_data)
-		texture = OpenGLTexture(texid = texture_id, dimension = promise.dimension, surface_dimension = surface_dimension, filename = promise.filename)
+		texture = OpenGLTexture(texid = texture_id, dimension = promise.dimension, surface_dimension = surface_dimension, filename = promise.filename, maxx = 1, maxy = 1)
 		promise.texture.append(texture)
 		return texture
 
@@ -94,37 +146,17 @@ class OpenGLContext(object):
 		glTexCoord2f(0, 0)
 		glVertex3f(0, 0, depth)
 
-		glTexCoord2f(1, 0)
+		glTexCoord2f(source.maxx, 0)
 		glVertex3f(source.dimension.x, 0, depth)
 
-		glTexCoord2f(1, 1)
+		glTexCoord2f(source.maxx, source.maxy)
 		glVertex3f(source.dimension.x, source.dimension.y, depth)
 
-		glTexCoord2f(0, 1)
+		glTexCoord2f(0, source.maxy)
 		glVertex3f(0, source.dimension.y, depth)
 		glEnd()
 
 		glPopMatrix()
-
-	def draw_image(self, img, vertices):
-		glEnable(GL_TEXTURE_2D)
-		glBindTexture(GL_TEXTURE_2D, source.texid)
-		glBegin(GL_QUADS)
-
-		glTexCoord2f(0, 1)
-		glVertex2f(vertices[0][0], vertices[0][1])
-
-		glTexCoord2f(1, 1)
-		glVertex2f(vertices[1][0], vertices[1][1])
-
-		glTexCoord2f(1, 0)
-		glVertex2f(vertices[2][0], vertices[2][1])
-
-		glTexCoord2f(0, 0)
-		glVertex2f(vertices[3][0], vertices[3][1])
-
-		glEnd()
-		glDisable(GL_TEXTURE_2D)
 
 	@staticmethod
 	def _next_pwr2(value):
@@ -137,28 +169,28 @@ class OpenGLContext(object):
 		cctx.set_font_size(font_params.size)
 		font_params.color.cairo_set_source(cctx)
 
-	def render_text_to_texture(self, text):
+	def render_text_to_texture(self, selected_font, text):
 		# Determine size first by creating a dummy surface
 		surface = cairo.ImageSurface(cairo.FORMAT_ARGB32, 1, 1)
 		cctx = cairo.Context(surface)
 
 		# Then set font parameters on that context to determine text extents
-		self._cctx_set_font(cctx, self._selected_font)
+		self._cctx_set_font(cctx, selected_font)
 		text_extents = TextExtents(*cctx.text_extents(text))
 
 		# Create an appropriately-sized surface now.
 		(width, height) = (text_extents.width + 2, text_extents.height)
 		(gl_width, gl_height) = (self._next_pwr2(width), self._next_pwr2(height))
+#		(gl_width, gl_height) = (int(width), int(height))
 
 		surface = cairo.ImageSurface(cairo.FORMAT_ARGB32, gl_width, gl_height)
 		cctx = cairo.Context(surface)
-		self._cctx_set_font(cctx, self._selected_font)
+		self._cctx_set_font(cctx, selected_font)
 
 		# Upscale for OpenGL
-		cctx.scale(gl_width / width, gl_height / height)
+#		cctx.scale(gl_width / width, gl_height / height)
 
 		# And draw text on it
-		print(text_extents)
 		cctx.move_to(0, -text_extents.y_bearing)
 		cctx.show_text(text)
 
@@ -171,7 +203,7 @@ class OpenGLContext(object):
 		glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR)
 		glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR)
 		glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, gl_width, gl_height, 0, GL_RGBA, GL_UNSIGNED_BYTE, rgba_data)
-		texture = OpenGLTexture(texid = texture_id, dimension = Vector2d(width, height), surface_dimension = Vector2d(width, height), filename = None)
+		texture = OpenGLTexture(texid = texture_id, dimension = Vector2d(width, height), surface_dimension = Vector2d(width, height), filename = None, maxx = width / gl_width, maxy = height / gl_height)
 		return texture
 
 
@@ -179,5 +211,6 @@ class OpenGLContext(object):
 		self._selected_font = SelectedFont(name = fontname, size = fontsize, color = fontcolor)
 
 	def text(self, pos, text, anchor = "tl"):
-		texture = self.render_text_to_texture(text)
+		key = (self._selected_font, text)
+		texture = self._text_cache[key]
 		self.blit(texture, offset = pos)

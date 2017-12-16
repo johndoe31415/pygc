@@ -2,6 +2,7 @@
 import sys
 import enum
 import time
+import cwrap
 from geo import Vector2d, Box2d
 from OpenGL.GL import *
 from OpenGL.GLUT import *
@@ -21,6 +22,7 @@ class MouseButtonAction(enum.IntEnum):
 class GlutApplication(object):
 	def __init__(self, glasscockpit, data_callback = None):
 		self._data_callback = data_callback
+		self._screen_ctx = cwrap.OpenGLContext()
 		self._glasscockpit = glasscockpit
 		self._initialize_opengl()
 
@@ -91,7 +93,7 @@ class GlutApplication(object):
 		glMatrixMode(GL_MODELVIEW)
 		glLoadIdentity()
 
-		self._glasscockpit.render_opengl(self)
+		self._glasscockpit.render_opengl(self._screen_ctx)
 #		self._draw_test_square(Box2d(Vector2d(0, 0), Vector2d(100, 100)), 0)
 
 		glutSwapBuffers(1)

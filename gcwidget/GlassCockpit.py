@@ -175,4 +175,4 @@ class GlassCockpit(object):
 		return self.render(cwrap.CairoContext.wrap(self._config["screen_dimension"], cairo_context))
 
 	def render_opengl(self, opengl_context):
-		return self.render(cwrap.OpenGLContext())
+		return self.render(opengl_context)
