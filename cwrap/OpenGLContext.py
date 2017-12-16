@@ -7,7 +7,7 @@ from geo import Vector2d, Box2d
 from . import TextExtents
 from OpenGL.GL import *
 
-OpenGLTexture = collections.namedtuple("OpenGLTexture", [ "texid", "dimension", "surface_dimension", "filename", "maxx", "maxy", "texoffset" ])
+OpenGLTexture = collections.namedtuple("OpenGLTexture", [ "texid", "dimension", "surface_dimension", "filename", "maxx", "maxy", "text_extents" ])
 OpenGLTexturePromise = collections.namedtuple("OpenGLTexturePromise", [ "dimension", "filename", "texture" ])
 SelectedFont = collections.namedtuple("SelectedFont", [ "name", "size", "color" ])
 RenderedText = collections.namedtuple("RenderedText", [ "font", "text", "textureid" ])
@@ -90,7 +90,7 @@ class OpenGLContext(object):
 		glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR)
 		glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR)
 		glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, surface_dimension.x, surface_dimension.y, 0, GL_RGBA, GL_UNSIGNED_BYTE, rgba_data)
-		texture = OpenGLTexture(texid = texture_id, dimension = promise.dimension, surface_dimension = surface_dimension, filename = promise.filename, maxx = 1, maxy = 1, texoffset = Vector2d(0, 0))
+		texture = OpenGLTexture(texid = texture_id, dimension = promise.dimension, surface_dimension = surface_dimension, filename = promise.filename, maxx = 1, maxy = 1, text_extents = None)
 		promise.texture.append(texture)
 		return texture
 
@@ -139,10 +139,12 @@ class OpenGLContext(object):
 			glTranslate(center_of_rotation.x, center_of_rotation.y, 0)
 			glRotate(180 / math.pi * rotation_rad, 0, 0, 1)
 			glTranslate(-center_of_rotation.x, -center_of_rotation.y, 0)
-		if offset is not None:
-			offset += source.texoffset
-		else:
-			offset = source.texoffset
+
+		if offset is None:
+			offset = Vector2d(0, 0)
+
+		if source.text_extents is not None:
+			offset += Vector2d(0, source.text_extents.y_bearing)
 		glTranslate(offset.x, offset.y, 0)
 
 		glBegin(GL_QUADS)
@@ -202,13 +204,44 @@ class OpenGLContext(object):
 		glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR)
 		glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR)
 		glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, gl_width, gl_height, 0, GL_RGBA, GL_UNSIGNED_BYTE, rgba_data)
-		texture = OpenGLTexture(texid = texture_id, dimension = Vector2d(width, height), surface_dimension = Vector2d(width, height), filename = None, maxx = width / gl_width, maxy = height / gl_height, texoffset = Vector2d(text_extents.x_bearing, text_extents.y_bearing))
+		texture = OpenGLTexture(texid = texture_id, dimension = Vector2d(width, height), surface_dimension = Vector2d(width, height), filename = None, maxx = width / gl_width, maxy = height / gl_height, text_extents = text_extents)
 		return texture
 
 	def font_select(self, fontname, fontsize, fontcolor = None):
 		self._selected_font = SelectedFont(name = fontname, size = fontsize, color = fontcolor)
 
 	def text(self, pos, text, anchor = "tl"):
+		# Anchor is one of top/center/bottom - left/center/right combinations
+		assert(len(anchor) == 2)
+		(valign, halign) = anchor
+		assert(valign in "tcb")
+		assert(halign in "lcr")
+
 		key = (self._selected_font, text)
 		texture = self._text_cache[key]
+		if valign == "b":
+			# Baseline, Cairo default
+			pass
+		elif valign == "t":
+			# Top left
+			pos -= Vector2d(0, texture.text_extents.y_bearing)
+		elif valign == "c":
+			# Center left
+			pos -= Vector2d(0, texture.text_extents.y_bearing / 2)
+		else:
+			raise Exception(NotImplemented)
+
+		if halign == "l":
+			# Left-aligned, Cairo default
+			pass
+		elif halign == "r":
+			# Right-alighed
+			pos -= Vector2d(texture.text_extents.x_advance, 0)
+		elif valign == "c":
+			# Center alignment
+			pos -= Vector2d(texture.text_extents.x_advance / 2, 0)
+		else:
+			raise Exception(NotImplemented)
+
+
 		self.blit(texture, offset = pos)
