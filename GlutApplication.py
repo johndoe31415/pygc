@@ -27,30 +27,17 @@ class GlutApplication(object):
 	def _initialize_opengl(self):
 		glutInit(1, "None")
 		glutInitDisplayMode(GLUT_RGBA | GLUT_DOUBLE | GLUT_STENCIL | GLUT_MULTISAMPLE)
-		glEnable(GL_MULTISAMPLE)
 		glutInitWindowSize(self._glasscockpit.screen_dimension.x, self._glasscockpit.screen_dimension.y)
 		glutInitWindowPosition(200, 200)
 
 		self._window = glutCreateWindow(b"Glass Cockpit")
 
-		glutDisplayFunc(self._draw_gl_scene)
+		glutDisplayFunc(self._gl_display)
 		glutIdleFunc(self._gl_idle)
 		glutKeyboardFunc(self._gl_keyboard)
-
-		glClearColor(1.0, 1.0, 1.0, 0.0)
-		glClearDepth(1.0)
-		glShadeModel(GL_SMOOTH)
-		glMatrixMode(GL_PROJECTION)
-		glLoadIdentity()
-		gluPerspective(45.0, self._glasscockpit.screen_dimension.x / self._glasscockpit.screen_dimension.y, 0.1, 100.0)
-		glMatrixMode(GL_MODELVIEW)
-
-
-		# Re-init....
-		glClear(GL_COLOR_BUFFER_BIT)
+		glutReshapeFunc(self._gl_reshape)
 
 		glViewport(0, 0, self._glasscockpit.screen_dimension.x, self._glasscockpit.screen_dimension.y)
-		glClearDepth(1)
 		glClearColor(0.5, 0.5, 0.5, 0)
 		glClear(GL_COLOR_BUFFER_BIT)
 
@@ -63,12 +50,28 @@ class GlutApplication(object):
 		glScale(1 / self._glasscockpit.screen_dimension.x, -1 / self._glasscockpit.screen_dimension.y, 1)
 		glTranslate(0, -self._glasscockpit.screen_dimension.y, 0)
 
-		glDepthMask(GL_FALSE)
 		glEnable(GL_BLEND)
 		glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA)
 
+	def _gl_reshape(self, width, height):
+		aspect = self._glasscockpit.screen_dimension.ratio
+
+		height_at_fullwidth = width / aspect
+		actual_height = min(height_at_fullwidth, height)
+		scale = actual_height / self._glasscockpit.screen_dimension.y
+#		width = height * aspect
+#		print(height, width)
+		print(height)
+
+
+		glMatrixMode(GL_PROJECTION)
+		glLoadIdentity()
+		glOrtho(0, 1, 0, 1, -1, 1)
+		glScale(scale / self._glasscockpit.screen_dimension.x, -scale / self._glasscockpit.screen_dimension.y, 1)
+		glTranslate(0, -720, 0)
+
 	def _gl_idle(self):
-		self._draw_gl_scene()
+		self._gl_display()
 
 	def _draw_test_square(self, box, zvalue = 0):
 		vertices = list(box)
@@ -83,7 +86,7 @@ class GlutApplication(object):
 		glVertex3f(vertices[3][0], vertices[3][1], zvalue)
 		glEnd()
 
-	def _draw_gl_scene(self):
+	def _gl_display(self):
 		self._data_callback()
 		glMatrixMode(GL_MODELVIEW)
 		glLoadIdentity()

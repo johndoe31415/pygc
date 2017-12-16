@@ -35,6 +35,10 @@ class Vector2d(object):
 	def y(self):
 		return self._y
 
+	@property
+	def ratio(self):
+		return self._x / self._y
+
 	@classmethod
 	def angle(cls, angle, y_flip = False):
 		if not y_flip:
