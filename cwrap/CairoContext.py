@@ -2,8 +2,8 @@ import cairo
 import collections
 from geo import Vector2d
 
-_FontExtents = collections.namedtuple("FontExtents", [ "ascent", "descent", "height", "max_x_advance", "max_y_advance" ])
-_TextExtents = collections.namedtuple("TextExtents", [ "x_bearing", "y_bearing", "width", "height", "x_advance", "y_advance" ])
+FontExtents = collections.namedtuple("FontExtents", [ "ascent", "descent", "height", "max_x_advance", "max_y_advance" ])
+TextExtents = collections.namedtuple("TextExtents", [ "x_bearing", "y_bearing", "width", "height", "x_advance", "y_advance" ])
 
 class CairoContext(object):
 	def __init__(self, dimensions, surface, cairoctx):
@@ -70,7 +70,7 @@ class CairoContext(object):
 			self._cairoctx.set_source_rgb(0, 0, 0)
 		self._cairoctx.select_font_face(fontname, cairo.FONT_SLANT_NORMAL, cairo.FONT_WEIGHT_NORMAL)
 		self._cairoctx.set_font_size(fontsize)
-		self._font_extents = _FontExtents(*self._cairoctx.font_extents())
+		self._font_extents = FontExtents(*self._cairoctx.font_extents())
 
 	def text(self, pos, text, anchor = "tl"):
 		# Anchor is one of top/center/bottom - left/center/right combinations
@@ -79,7 +79,7 @@ class CairoContext(object):
 		assert(valign in "tcb")
 		assert(halign in "lcr")
 
-		text_extents = _TextExtents(*self._cairoctx.text_extents(text))
+		text_extents = TextExtents(*self._cairoctx.text_extents(text))
 		if valign == "b":
 			# Baseline, Cairo default
 			pass

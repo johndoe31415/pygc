@@ -1,15 +1,23 @@
+import time
+import sys
 import math
 import cairo
 import collections
 from geo import Vector2d, Box2d
+from . import TextExtents
 from OpenGL.GL import *
 
 OpenGLTexture = collections.namedtuple("OpenGLTexture", [ "texid", "dimension", "surface_dimension", "filename" ])
 OpenGLTexturePromise = collections.namedtuple("OpenGLTexturePromise", [ "dimension", "filename", "texture" ])
-
+SelectedFont = collections.namedtuple("SelectedFont", [ "name", "size", "color" ])
+RenderedText = collections.namedtuple("RenderedText", [ "renderts", "font", "text", "textureid" ])
 
 class OpenGLContext(object):
 	_depth = 1
+
+	def __init__(self):
+		self._selected_font = None
+#		self._text
 
 	@classmethod
 	def load_from_png(cls, png_filename, dimension):
@@ -118,9 +126,58 @@ class OpenGLContext(object):
 		glEnd()
 		glDisable(GL_TEXTURE_2D)
 
+	@staticmethod
+	def _next_pwr2(value):
+		for i in range(16):
+			if (2 ** i) >= value:
+				return 2 ** i
 
-	def font_select(self, *args, **kwargs):
-		pass
+	def _cctx_set_font(self, cctx, font_params):
+		cctx.select_font_face(font_params.name, cairo.FONT_SLANT_NORMAL, cairo.FONT_WEIGHT_NORMAL)
+		cctx.set_font_size(font_params.size)
+		font_params.color.cairo_set_source(cctx)
 
-	def text(self, *args, **kwargs):
-		pass
+	def render_text_to_texture(self, text):
+		# Determine size first by creating a dummy surface
+		surface = cairo.ImageSurface(cairo.FORMAT_ARGB32, 1, 1)
+		cctx = cairo.Context(surface)
+
+		# Then set font parameters on that context to determine text extents
+		self._cctx_set_font(cctx, self._selected_font)
+		text_extents = TextExtents(*cctx.text_extents(text))
+
+		# Create an appropriately-sized surface now.
+		(width, height) = (text_extents.width + 2, text_extents.height)
+		(gl_width, gl_height) = (self._next_pwr2(width), self._next_pwr2(height))
+
+		surface = cairo.ImageSurface(cairo.FORMAT_ARGB32, gl_width, gl_height)
+		cctx = cairo.Context(surface)
+		self._cctx_set_font(cctx, self._selected_font)
+
+		# Upscale for OpenGL
+		cctx.scale(gl_width / width, gl_height / height)
+
+		# And draw text on it
+		print(text_extents)
+		cctx.move_to(0, -text_extents.y_bearing)
+		cctx.show_text(text)
+
+		# Now create texture from it
+		rgba_data = bytes(surface.get_data())
+		texture_id = glGenTextures(1)
+		glBindTexture(GL_TEXTURE_2D, texture_id)
+		glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP)
+		glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP)
+		glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR)
+		glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR)
+		glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, gl_width, gl_height, 0, GL_RGBA, GL_UNSIGNED_BYTE, rgba_data)
+		texture = OpenGLTexture(texid = texture_id, dimension = Vector2d(width, height), surface_dimension = Vector2d(width, height), filename = None)
+		return texture
+
+
+	def font_select(self, fontname, fontsize, fontcolor = None):
+		self._selected_font = SelectedFont(name = fontname, size = fontsize, color = fontcolor)
+
+	def text(self, pos, text, anchor = "tl"):
+		texture = self.render_text_to_texture(text)
+		self.blit(texture, offset = pos)
