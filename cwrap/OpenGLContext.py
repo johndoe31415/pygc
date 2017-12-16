@@ -7,7 +7,7 @@ from geo import Vector2d, Box2d
 from . import TextExtents
 from OpenGL.GL import *
 
-OpenGLTexture = collections.namedtuple("OpenGLTexture", [ "texid", "dimension", "surface_dimension", "filename", "maxx", "maxy" ])
+OpenGLTexture = collections.namedtuple("OpenGLTexture", [ "texid", "dimension", "surface_dimension", "filename", "maxx", "maxy", "texoffset" ])
 OpenGLTexturePromise = collections.namedtuple("OpenGLTexturePromise", [ "dimension", "filename", "texture" ])
 SelectedFont = collections.namedtuple("SelectedFont", [ "name", "size", "color" ])
 RenderedText = collections.namedtuple("RenderedText", [ "font", "text", "textureid" ])
@@ -90,7 +90,7 @@ class OpenGLContext(object):
 		glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR)
 		glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR)
 		glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, surface_dimension.x, surface_dimension.y, 0, GL_RGBA, GL_UNSIGNED_BYTE, rgba_data)
-		texture = OpenGLTexture(texid = texture_id, dimension = promise.dimension, surface_dimension = surface_dimension, filename = promise.filename, maxx = 1, maxy = 1)
+		texture = OpenGLTexture(texid = texture_id, dimension = promise.dimension, surface_dimension = surface_dimension, filename = promise.filename, maxx = 1, maxy = 1, texoffset = Vector2d(0, 0))
 		promise.texture.append(texture)
 		return texture
 
@@ -140,7 +140,10 @@ class OpenGLContext(object):
 			glRotate(180 / math.pi * rotation_rad, 0, 0, 1)
 			glTranslate(-center_of_rotation.x, -center_of_rotation.y, 0)
 		if offset is not None:
-			glTranslate(offset.x, offset.y, 0)
+			offset += source.texoffset
+		else:
+			offset = source.texoffset
+		glTranslate(offset.x, offset.y, 0)
 
 		glBegin(GL_QUADS)
 		glTexCoord2f(0, 0)
@@ -181,14 +184,10 @@ class OpenGLContext(object):
 		# Create an appropriately-sized surface now.
 		(width, height) = (text_extents.width + 2, text_extents.height)
 		(gl_width, gl_height) = (self._next_pwr2(width), self._next_pwr2(height))
-#		(gl_width, gl_height) = (int(width), int(height))
 
 		surface = cairo.ImageSurface(cairo.FORMAT_ARGB32, gl_width, gl_height)
 		cctx = cairo.Context(surface)
 		self._cctx_set_font(cctx, selected_font)
-
-		# Upscale for OpenGL
-#		cctx.scale(gl_width / width, gl_height / height)
 
 		# And draw text on it
 		cctx.move_to(0, -text_extents.y_bearing)
@@ -203,9 +202,8 @@ class OpenGLContext(object):
 		glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR)
 		glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR)
 		glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, gl_width, gl_height, 0, GL_RGBA, GL_UNSIGNED_BYTE, rgba_data)
-		texture = OpenGLTexture(texid = texture_id, dimension = Vector2d(width, height), surface_dimension = Vector2d(width, height), filename = None, maxx = width / gl_width, maxy = height / gl_height)
+		texture = OpenGLTexture(texid = texture_id, dimension = Vector2d(width, height), surface_dimension = Vector2d(width, height), filename = None, maxx = width / gl_width, maxy = height / gl_height, texoffset = Vector2d(text_extents.x_bearing, text_extents.y_bearing))
 		return texture
-
 
 	def font_select(self, fontname, fontsize, fontcolor = None):
 		self._selected_font = SelectedFont(name = fontname, size = fontsize, color = fontcolor)
