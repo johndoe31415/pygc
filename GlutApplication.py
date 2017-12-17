@@ -25,6 +25,8 @@ class GlutApplication(object):
 		self._screen_ctx = cwrap.OpenGLContext()
 		self._glasscockpit = glasscockpit
 		self._initialize_opengl(fullscreen = fullscreen)
+		self._fps_timesum = 0
+		self._fps_timecnt = 0
 
 	def _initialize_opengl(self, fullscreen = False):
 		glutInit(1, "None")
@@ -82,7 +84,16 @@ class GlutApplication(object):
 
 	def _gl_display(self):
 		try:
+			t0 = time.time()
 			self._gl_display_gc()
+			t1 = time.time()
+			self._fps_timesum += (t1 - t0)
+			self._fps_timecnt += 1
+			if self._fps_timecnt == 10:
+				t = self._fps_timesum / self._fps_timecnt
+				print("Average %.1f ms = %.1f fps (over %d frames)" % (t * 1000, 1 / t, self._fps_timecnt))
+				self._fps_timecnt = 0
+				self._fps_timesum = 0
 		except KeyboardInterrupt:
 			sys.exit(0)
 

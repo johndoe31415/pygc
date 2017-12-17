@@ -2,15 +2,22 @@
 #
 #
 
+import sys
 import geo
 import cwrap
 import gcwidget
 from GCGTKApplication import GCGTKApplication
 from GlutApplication import GlutApplication
+from FriendlyArgumentParser import FriendlyArgumentParser
 
-res = 720
+parser = FriendlyArgumentParser()
+parser.add_argument("-r", "--resolution", metavar = "height", type = int, default = 720, help = "Resolution to display; defaults to %(default)d.")
+parser.add_argument("-m", "--mode", choices = [ "cairo", "gl", "png" ], default = "gl", help = "Type of rendering to use. Can be Cairo, OpenGL or PNG writing. Defaults to %(default)s.")
+parser.add_argument("-f", "--fullscreen", action = "store_true", help = "Display in full screen mode.")
+args = parser.parse_args(sys.argv[1:])
+
 config = {
-	"screen_dimension":	geo.Vector2d(res * 16 // 9, res),
+	"screen_dimension":	geo.Vector2d(args.resolution * 16 // 9, args.resolution),
 }
 
 instrument_data = {
@@ -66,14 +73,16 @@ def modify_data():
 	instrument_data["vor1"]["obs"] = (instrument_data["vor1"]["obs"] + 1.13) % 360
 	instrument_data["ap"]["hdgbug_deg"] = (instrument_data["ap"]["hdgbug_deg"] - 0.75) % 360
 
-#glasscockpit = gcwidget.GlassCockpit(config, context_class = cwrap.CairoContext)
-#glasscockpit.feed_data(instrument_data)
-#GCGTKApplication.run(glasscockpit, 0, data_callback = modify_data)
-
-glasscockpit = gcwidget.GlassCockpit(config, context_class = cwrap.OpenGLContext, img_prefix = "tex_")
-glasscockpit.feed_data(instrument_data)
-GlutApplication.run(glasscockpit, frametime_millis = 50, data_callback = modify_data, fullscreen = False)
-
-#screen = cwrap.CairoContext.create(geo.Vector2d(res * 16 // 9, res))
-#glasscockpit.render(screen)
-#screen.write_to_png("out.png")
+if args.mode == "cairo":
+	glasscockpit = gcwidget.GlassCockpit(config, context_class = cwrap.CairoContext)
+	glasscockpit.feed_data(instrument_data)
+	GCGTKApplication.run(glasscockpit, 0, data_callback = modify_data)
+elif args.mode == "gl":
+	glasscockpit = gcwidget.GlassCockpit(config, context_class = cwrap.OpenGLContext, img_prefix = "tex_")
+	glasscockpit.feed_data(instrument_data)
+	GlutApplication.run(glasscockpit, frametime_millis = 50, data_callback = modify_data, fullscreen = args.fullscreen)
+elif args.mode == "png":
+	screen = cwrap.CairoContext.create(geo.Vector2d(args.resolution * 16 // 9, args.resolution))
+	glasscockpit = gcwidget.GlassCockpit(config, context_class = cwrap.CairoContext)
+	glasscockpit.render(screen)
+	screen.write_to_png("rendering.png")
