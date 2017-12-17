@@ -106,7 +106,13 @@ class OpenGLContext(object):
 
 		glPushMatrix()
 
-		if clip is not None:
+		if clip is True:
+			# Keep clipping but do not modify any settings.
+			pass
+		elif (clip is None) or (clip is False):
+			# Disable clipping
+			glDisable(GL_STENCIL_TEST)
+		else:
 			# Activate stencil buffer
 			glEnable(GL_STENCIL_TEST)
 
@@ -131,9 +137,6 @@ class OpenGLContext(object):
 
 			# But only where stencil == 1
 			glStencilFunc(GL_EQUAL, 1, 0xff)
-		else:
-			glDisable(GL_STENCIL_TEST)
-
 
 		if rotation_rad is not None:
 			glTranslate(center_of_rotation.x, center_of_rotation.y, 0)
@@ -246,4 +249,4 @@ class OpenGLContext(object):
 		else:
 			raise Exception(NotImplemented)
 
-		self.blit(texture, offset = pos)
+		self.blit(texture, offset = pos, clip = True)

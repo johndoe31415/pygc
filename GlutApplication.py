@@ -48,30 +48,21 @@ class GlutApplication(object):
 		glEnable(GL_TEXTURE_2D)
 		glEnable(GL_ALPHA_TEST)
 
-		glMatrixMode(GL_PROJECTION)
-		glLoadIdentity()
-		glOrtho(0, 1, 0, 1, -1, 1)
-		glScale(1 / self._glasscockpit.screen_dimension.x, -1 / self._glasscockpit.screen_dimension.y, 1)
-		glTranslate(0, -self._glasscockpit.screen_dimension.y, 0)
-
 		glEnable(GL_BLEND)
 		glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA)
 
-	def _gl_reshape(self, width, height):
-		aspect = self._glasscockpit.screen_dimension.ratio
-
-		height_at_fullwidth = width / aspect
-		actual_height = min(height_at_fullwidth, height)
-		scale = actual_height / self._glasscockpit.screen_dimension.y
-#		width = height * aspect
-#		print(height, width)
-#		print(height)
-
 		glMatrixMode(GL_PROJECTION)
 		glLoadIdentity()
-		glOrtho(0, 1, 0, 1, -1, 1)
-		glScale(scale / self._glasscockpit.screen_dimension.x, -scale / self._glasscockpit.screen_dimension.y, 1)
-		glTranslate(0, -720, 0)
+		glOrtho(0, self._glasscockpit.screen_dimension.x, self._glasscockpit.screen_dimension.y, 0, -1, 1)
+
+	def _gl_reshape(self, width, height):
+		aspect = self._glasscockpit.screen_dimension.ratio
+		max_width = height * aspect
+		window_width = int(min(width, max_width))
+		window_height = round(window_width / aspect)
+
+		glViewport((width - window_width) // 2, (height - window_height) // 2, window_width, window_height)
+		glClear(GL_COLOR_BUFFER_BIT)
 
 	def _gl_idle(self):
 		self._gl_display()
@@ -90,6 +81,12 @@ class GlutApplication(object):
 		glEnd()
 
 	def _gl_display(self):
+		try:
+			self._gl_display_gc()
+		except KeyboardInterrupt:
+			sys.exit(0)
+
+	def _gl_display_gc(self):
 		self._data_callback()
 		glMatrixMode(GL_MODELVIEW)
 		glLoadIdentity()
