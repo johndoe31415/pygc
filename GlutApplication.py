@@ -52,7 +52,8 @@ class GlutApplication(object):
 		glEnable(GL_ALPHA_TEST)
 
 		glEnable(GL_BLEND)
-		glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA)
+		glBlendEquation(GL_FUNC_ADD)
+		glBlendFunc(GL_ONE, GL_ONE_MINUS_SRC_ALPHA)
 
 		glMatrixMode(GL_PROJECTION)
 		glLoadIdentity()
