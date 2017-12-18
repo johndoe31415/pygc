@@ -110,33 +110,10 @@ class OpenGLContext(object):
 			# Keep clipping but do not modify any settings.
 			pass
 		elif (clip is None) or (clip is False):
-			# Disable clipping
-			glDisable(GL_STENCIL_TEST)
+			glDisable(GL_SCISSOR_TEST)
 		else:
-			# Activate stencil buffer
-			glEnable(GL_STENCIL_TEST)
-
-			# Don't paint any framebuffer components
-			glColorMask(GL_FALSE, GL_FALSE, GL_FALSE, GL_FALSE)
-
-			# Set whole stencil buffer to zero
-			glClear(GL_STENCIL_BUFFER_BIT)
-
-			# But where we paint next, replace stencil buffer by 1
-			glStencilFunc(GL_NEVER, 1, 0)
-			glStencilOp(GL_REPLACE, GL_KEEP, GL_KEEP)
-
-			# Draw the clipping plane (i.e., set stencil to one therein)
-			glBegin(GL_QUADS)
-			for vertex in clip:
-				glVertex3f(vertex.x, vertex.y, 1)
-			glEnd()
-
-			# Re-enable drawing
-			glColorMask(GL_TRUE, GL_TRUE, GL_TRUE, GL_TRUE)
-
-			# But only where stencil == 1
-			glStencilFunc(GL_EQUAL, 1, 0xff)
+			glEnable(GL_SCISSOR_TEST)
+			glScissor(round(clip.base.x), round(720 - (clip.base.y + clip.dimensions.y)), round(clip.dimensions.x), round(clip.dimensions.y))
 
 		if rotation_rad is not None:
 			glTranslate(center_of_rotation.x, center_of_rotation.y, 0)
@@ -168,6 +145,7 @@ class OpenGLContext(object):
 			clipped_callback(self, offset)
 
 		glPopMatrix()
+		glDisable(GL_SCISSOR_TEST)
 
 	@staticmethod
 	def _next_pwr2(value):

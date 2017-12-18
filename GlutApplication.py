@@ -4,6 +4,7 @@ import enum
 import time
 import cwrap
 from geo import Vector2d, Box2d
+from StopWatch import StopWatch
 from OpenGL.GL import *
 from OpenGL.GLUT import *
 from OpenGL.GLU import *
@@ -30,7 +31,7 @@ class GlutApplication(object):
 
 	def _initialize_opengl(self, fullscreen = False):
 		glutInit(1, "None")
-		glutInitDisplayMode(GLUT_RGBA | GLUT_DOUBLE | GLUT_STENCIL | GLUT_MULTISAMPLE)
+		glutInitDisplayMode(GLUT_RGBA | GLUT_DOUBLE | GLUT_MULTISAMPLE)
 		glutInitWindowSize(self._glasscockpit.screen_dimension.x, self._glasscockpit.screen_dimension.y)
 		glutInitWindowPosition(200, 200)
 
@@ -94,6 +95,9 @@ class GlutApplication(object):
 				print("Average %.1f ms = %.1f fps (over %d frames)" % (t * 1000, 1 / t, self._fps_timecnt))
 				self._fps_timecnt = 0
 				self._fps_timesum = 0
+		except GLError as e:
+			print("OpenGL error")
+			sys.exit(1)
 		except KeyboardInterrupt:
 			sys.exit(0)
 
@@ -102,6 +106,7 @@ class GlutApplication(object):
 		glMatrixMode(GL_MODELVIEW)
 		glLoadIdentity()
 
+		glClear(GL_COLOR_BUFFER_BIT)
 		self._glasscockpit.render_opengl(self._screen_ctx)
 #		self._draw_test_square(Box2d(Vector2d(0, 0), Vector2d(100, 100)), 0)
 
